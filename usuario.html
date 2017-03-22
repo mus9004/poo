@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>Tipo Usuario</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/bootstrap.min.js" ></script>
 
 </head>
 <body>
@@ -19,12 +20,38 @@
           </form>
         </div>
 	</div>
-	<div style="margin-left: 90px;margin-right: 95px;">
+
+	
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js" >
+
+	</script>
+
+	<div style="margin-left: 100px;margin-right: 100px;">
 	<h1>Selecciona el plan ideal para ti</h1>
+
 	<table style="font-size: 150%;" class="table table-striped">
 		<tr>
-		<td></td>
-		<td>
+			<td></td>
+			<td colspan="3">
+				<div class="btn-group" data-toggle="buttons">
+					
+				  		<label class="btn btn-success " style="padding: 15px 32px;text-align: center;font-size: 18px;color: white;">
+				   			 <input type="radio" name="options" id="option1" autocomplete="off" >Basico
+				 		</label>
+				 	
+				  		<label class="btn btn-success" style="padding: 15px 32px;text-align: center;font-size: 18px;color: white;">
+				   			 <input type="radio" name="options" id="option2" autocomplete="off"> Estandar
+				  		</label>
+				  	
+				  		<label class="btn btn-success" style="padding: 15px 32px;text-align: center;font-size: 18px;color: white;">
+				    		<input type="radio" name="options" id="option3" autocomplete="off" > Premium
+				  		</label>
+				  		
+				</div>
+			</td>	
+		</tr>
+		<!--<td>
 		<button type="button" class="btn btn-success" style="background-color: #4CAF50; 
     	border: none; color: white;	padding: 15px 32px;	text-align: center; 	text-decoration: none; display: inline-block; font-size: 18px;">Basico
     	</button></td>
@@ -35,8 +62,10 @@
 		<button type="button" class="btn btn-success" style="background-color: #4CAF50; 
     	border: none; color: white;	padding: 15px 32px;	text-align: center; text-decoration: none; display: inline-block; font-size: 18px;">Premium
     	</button></td>
-		</tr>
+		</tr>-->
+
 		<tr>
+		
 			<td>El precio mensual después de que termina el mes gratis el 03-28-17</td>
 			<td>USD7.99</td>
 			<td>USD9.99</td>
@@ -90,5 +119,6 @@
 		<button type="button" class="btn btn-success" style="font-size: 27px">Continuar</button>
 	</div>
 
+	
 </body>
 </html>
