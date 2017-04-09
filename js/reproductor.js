@@ -1,0 +1,11 @@
+$("#btn-reEmbed").click(function(){
+	$("#btn-reEmbed").button("toggle");
+	$.ajax({
+		url:"ajax/procesar-reproductor.php?accion=1",
+		method:"POST",
+		dataType:"html",
+		success:function(respuesta){
+			$("#reproductor").html(respuesta);	
+		}
+	});
+});
