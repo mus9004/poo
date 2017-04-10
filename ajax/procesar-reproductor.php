@@ -1,6 +1,6 @@
 <?php
 	switch ($_GET["accion"]) {
-		case '1':
+		case '1':{
 		?>
 			<video>
         	    <source src="videos/METRO.mp4">
@@ -12,6 +12,21 @@
 		  b.parentNode.insertBefore(m,b)})("reEmbed","script",window,document,"api");
 		</script>
 		<?php
+		}
+		break;
+		case '2':{
+		?>
+			<div id="myElement"></div>
+				<script type="text/JavaScript">
+				var playerInstance = jwplayer("myElement");
+				playerInstance.setup({
+				    file: "videos/METRO.mp4",
+				    mediaid: "xxxxYYYY",
+				
+				});
+				</script>
+		<?php
+		}
 		break;
 		}
 ?>

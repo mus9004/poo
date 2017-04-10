@@ -1,5 +1,8 @@
 $("#btn-reEmbed").click(function(){
 	$("#btn-reEmbed").button("toggle");
+	$("#btn-jwPlayer").button("reset");
+	$("#btn-jwPlayer").attr('checked', 'false');
+	$("#reproductor").empty();
 	$.ajax({
 		url:"ajax/procesar-reproductor.php?accion=1",
 		method:"POST",
@@ -9,3 +12,29 @@ $("#btn-reEmbed").click(function(){
 		}
 	});
 });
+
+$("#btn-jwPlayer").click(function(){
+	$("#btn-reEmbed").button("reset");
+	$("#btn-reEmbed").attr('checked', 'false');
+	$("#btn-jwPlayer").button("toggle");
+	$("#reproductor").empty();
+	$.ajax({
+		url:"ajax/procesar-reproductor.php?accion=2",
+		method:"POST",
+		dataType:"html",
+		success:function(respuesta){
+			$("#reproductor").html(respuesta);
+		}
+	});
+});
+/*$(document).ready(function(){
+	$("#btn-reEmbed").button("toggle");
+	$.ajax({
+		url:"ajax/procesar-reproductor.php?accion=1",
+		method:"POST",
+		dataType:"html",
+		success:function(respuesta){
+			$("#reproductor").html(respuesta);	
+		}
+	});
+});*/
