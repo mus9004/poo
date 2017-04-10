@@ -16,15 +16,27 @@
 		break;
 		case '2':{
 		?>
-			<div id="myElement"></div>
+			<div id="reproduce"></div>
 				<script type="text/JavaScript">
-				var playerInstance = jwplayer("myElement");
+				var playerInstance = jwplayer("reproduce");
 				playerInstance.setup({
 				    file: "videos/METRO.mp4",
 				    mediaid: "xxxxYYYY",
 				
 				});
 				</script>
+		<?php
+		}
+		break;
+		case '3':{
+		?>
+			<script src="codoPlayer/CodoPlayer.js"></script>
+			<script>
+				CodoPlayer("videos/METRO.mp4",{
+			        width: 600,
+			        height: 338
+			    });
+			</script>
 		<?php
 		}
 		break;
