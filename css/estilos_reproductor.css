@@ -1,3 +1,6 @@
+body{
+	color: white;
+}
 .texto-rojo{
 	color:#ff0000;
 	background-color: #000000;
@@ -17,4 +20,12 @@
 
 .margen{
 	margin: 20px;
+}
+
+.separar-arriba{
+	margin-top: 10px;
+}
+.flowplayer .fp-logo {
+  left: auto; /* avoid logo being stuck on left side */
+  right: 3%;
 }

@@ -9,28 +9,61 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/estilos_reproductor.css">
 	<script src="codoPlayer/CodoPlayer.js"></script>
-	<title></title>
+
+	<link rel="stylesheet" href="flowplayer/skin/skin.css">
+	<script src="flowplayer/jquery-1.11.2.min.js"></script>
+	<script src="flowplayer/flowplayer.min.js"></script>
+
+	<script src="https://content.jwplatform.com/libraries/x9XVJGsW.js" ></script>
+	<title>Reproductor</title>
 </head>
 <body style="background-color: rgb(0,0,0)">
 	<div class="margen">
 		<div>
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<button type="button" class="btn btn-default" id="btn-comboPlayer">Combo Player</button>
+				<button type="button" class="btn btn-default" id="btn-codoPlayer">Codo Player</button>
+				<button type="button" class="btn btn-default" id="btn-flowPlayer">Flowplayer</button>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="reproductor">
-				<div id="codoPlayer">
+				<div id="codoPlayer" class="separar-arriba" style="display: none;">
 				<script>
-					CodoPlayer({
-				    	src:"videos/METRO.mp4",
-				    	poster:"img/metro.png",
-				    	title:"METRO (Cortometraje)"});
+				    var player = CodoPlayer([{
+				    		title: "METRO (Cortometraje)",
+				    		poster: "img/metro.png",
+				    		src: "videos/METRO.mp4"
+				    		}],{
+				    		preload: false,
+				    		onReady: function(player) {
+					            console.log(player);
+					        }
+				    	})
+				    	console.log(player);
+				</script>
+				</div>
 
-				    var player = CodoPlayer("videos/metro.mp4",{
-				        onReady: function(player) {
-				            console.log(player);  // API
-				        }
-				    })
-				    console.log(player); // API
+				<div id="flowPlayer" class="separar-arriba" style="display: none;">
+					<div id="player" class="fp-full fp-edgy fp-outlined"></div>
+					<script>
+					var api = flowplayer("#player", {
+						poster: "img/metro.png",
+					    clip: {
+					      title: "METRO (Cortometraje)",
+					      sources: [
+					        { type: "video/mp4",
+					          src: "videos/METRO.mp4" },
+					      ]
+					    }
+					  });
+					</script>
+				</div>
+
+				<div id="JWPlayer" class="separar-arriba">
+				<div id="reproduce"></div>
+				<script>
+				    var playerInstance = jwplayer("reproduce").setup({
+				    	file: "videos/METRO.mp4",
+				    	image:"img/metro.png"
+				    });
 				</script>
 				</div>
             </div>
@@ -38,6 +71,6 @@
     </div>
 	<script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/reproductor.js"></script>
+    <script src="js/reproductores.js"></script>
 </body>
 </html>

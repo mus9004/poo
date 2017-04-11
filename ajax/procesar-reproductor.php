@@ -28,17 +28,5 @@
 		<?php
 		}
 		break;
-		case '3':{
-		?>
-			<script src="codoPlayer/CodoPlayer.js"></script>
-			<script>
-				CodoPlayer("videos/METRO.mp4",{
-			        width: 600,
-			        height: 338
-			    });
-			</script>
-		<?php
-		}
-		break;
 		}
 ?>

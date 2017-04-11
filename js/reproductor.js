@@ -41,18 +41,15 @@ $("#btn-jwPlayer").click(function(){
 		}
 	});
 });
-$("#btn-comboPlayer").click(function(){
-	("#codoPlayer").show();
-	player.play(videos/METRO.mp4);
-});
-/*$(document).ready(function(){
-	$("#btn-reEmbed").button("toggle");
+
+$(document).ready(function(){
+	$("#btn-jwPlayer").button("toggle");
 	$.ajax({
-		url:"ajax/procesar-reproductor.php?accion=1",
+		url:"ajax/procesar-reproductor.php?accion=2",
 		method:"POST",
 		dataType:"html",
 		success:function(respuesta){
 			$("#reproductor").html(respuesta);	
 		}
 	});
-});*/
+});
