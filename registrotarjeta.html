@@ -10,8 +10,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+
     <title>Netblit</title>
      <link href="css/bootstrap.min.css" rel="stylesheet">
+     <script type="text/javascript" src="js/jquery.min.js" ></script>
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+      <script type="text/javascript" src="js/jquery.min.js" ></script>
      <link href="css/normalize-card.min.css" type="text/css" rel="stylesheet">
     
 </head>
@@ -52,12 +57,12 @@
                              </div>
                         </div>
                     </div>
-                      <label class="ui-tab-radio ui-tab-radio--active paymentPicker standardHeight" for="ui-tab-radio-creditOption">
+                      <label class="ui-tab-radio ui-tab-radio--active paymentPicker standardHeight" for="ui-tab-radio-creditOption" id="Tajeta1" >
                           <input type="radio" class="ui-tab-radio--input" id="ui-tab-radio-creditOption" value="on">
                            <div class="mopNameAndLogos"> 
                                 <span class="ui-tab-radio--text card-type-text paymentActive" >Tarjeta de crédito o débito</span>
                                 <div class="logosContainer" >
-                                  <span class="logos logos-inline">
+                                  <span class="logos logos-inline" >
                                         <span class="logoIcon VISA"><img src="images/12_11_2014_icon_visa_37x25.png"></span>
                                         <span class="logoIcon MASTERCARD"><img src="images/10_18_2014_icon_master_37x25.png"></span>
                                         <span class="logoIcon AMEX"><img src="images/10_18_2014_icon_amex_37x25.png"></span>
@@ -68,10 +73,10 @@
                            <span class="ui-svg-icon ui-svg-icon--chevron pull-right pickerArrow">
                            <img src="images/chevron.svg" width="40" height="25" > </span>
                         </label>
-                        <label class="ui-tab-radio ui-tab-radio--active paymentPicker standardHeight" for="ui-tab-radio-paypalOption">
+                        <label class="ui-tab-radio ui-tab-radio--active paymentPicker standardHeight" for="ui-tab-radio-paypalOption" id="tarjet2">
                             <input type="radio" class="ui-tab-radio--input" id="ui-tab-radio-paypalOption" value="on">
                              <div class="mopNameAndLogos" >
-                                <span class="ui-tab-radio--text card-type-text paymentActive">PayPal</span>
+                                <span class="ui-tab-radio--text card-type-text paymentActive" >PayPal</span>
                                 <div class="logosContainer">
                                     <span class="logos logos-inline">
                                        <span class="logoIcon PAYPAL">
@@ -127,5 +132,14 @@
         </div>
       </div>
       <div>
+      <script type="text/javascript">
+        $("#Tajeta1").click(function(){
+          location.href ="registrousuarios.html";
+        });
+         $("#tarjet2").click(function(){
+          location.href ="registrousuarios.html";
+        });
+        
+      </script>
 </body>
 </html>
