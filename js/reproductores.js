@@ -1,14 +1,25 @@
 $("#btn-codoPlayer").click(function(){
+	api.pause();
+	playerInstance.remove();
 	$("#flowPlayer").hide();
+	$("#JWPlayer").hide();
 	$("#codoPlayer").show();
 	//alert(player);
-	api.pause();
 });
 $("#btn-flowPlayer").click(function(){
 	player.pause();
+	playerInstance.remove();
+	$("#JWPlayer").hide();
 	$("#codoPlayer").hide();
 	$("#flowPlayer").show();
 });
-/*$(document).ready(function(){
+$("#btn-JWPlayer").click(function(){
+	player.pause();
+	api.pause();
+	$("#codoPlayer").hide();
+	$("#flowPlayer").hide();
+	$("#JWPlayer").show();
+});
+$(document).ready(function(){
 	$("#codoPlayer").show();
-});*/
+});

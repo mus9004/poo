@@ -23,9 +23,10 @@
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<button type="button" class="btn btn-default" id="btn-codoPlayer">Codo Player</button>
 				<button type="button" class="btn btn-default" id="btn-flowPlayer">Flowplayer</button>
+				<button type="button" class="btn btn-default" id="btn-JWPlayer">JW Player</button>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="reproductor">
-				<div id="codoPlayer" class="separar-arriba" style="display: none;">
+				<div id="codoPlayer" class="separar-arriba">
 				<script>
 				    var player = CodoPlayer([{
 				    		title: "METRO (Cortometraje)",
@@ -56,8 +57,7 @@
 					  });
 					</script>
 				</div>
-
-				<div id="JWPlayer" class="separar-arriba">
+				<div id="JWPlayer" class="separar-arriba" style="display: none;">
 				<div id="reproduce"></div>
 				<script>
 				    var playerInstance = jwplayer("reproduce").setup({
