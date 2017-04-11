@@ -47,8 +47,19 @@
 				    		title: title,
 				    		poster: poster,
 				    		src: link
+				    		},{
+				    			title: "Intro",
+				    			poster: "videos/cover.jpg",
+				    			src: "videos/Intro.mp3",
+				    			engine: "auto"
+				    		},{
+				    			title: "Courtesy Call",
+				    			poster: "videos/cover.jpg",
+				    			src: "videos/CourtesyCall.mp3",
+				    			engine: "auto"
 				    		}],{
 				    		preload: false,
+				    		playlist: false,
 				    		id: "codo",
 				    		onReady: function(player) {
 					            console.log(player);
