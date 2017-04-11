@@ -68,9 +68,9 @@
 			<span style="color:#FFFFFF; ">DISFRUTA DONDE QUIERAS. CANCELA CUANDO QUIERAS.</span>
 		</p><br>
 		<!--<button type="button" class="btn btn-danger" style="font-size: 27px">Disfruta un mes gratis</button>-->
-		<form action="usuario.html">
-			<input style="font-size: 27px" type= "submit" class="btn btn-lg btn-danger" value="Disfruta un mes gratis">
-		</form>
+		
+			<input style="font-size: 27px" type= "submit" class="btn btn-lg btn-danger" value="Disfruta un mes gratis" name="btn-disfruta-mes-gratis" onclick="usuario()">
+		
 			
 	</div>
 	
@@ -123,7 +123,7 @@
 												
 				</div>;
 				<div>
-					<input class="btn btn-danger" type="submit" value="Disfruta un mes gratis" name="btn-disfruta-mes-gratis" id="btn-disfruta-mes-gratis">
+					<input class="btn btn-danger" type="submit" value="Disfruta un mes gratis" name="btn-disfruta-mes-gratis" id="btn-disfruta-mes-gratis" onclick="usuario()">
 
 				</div>
 				</div>
@@ -223,7 +223,7 @@
 
 						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
 							<div style="text-align: center; margin-top: 10px;">
-							<input class="btn btn-danger" type="submit" value="Disfruta un mes gratis" name="btn-disfruta-mes-gratis" id="btn-disfruta-mes-gratis">
+							<input class="btn btn-danger" type="submit" value="Disfruta un mes gratis" name="btn-disfruta-mes-gratis" id="btn-disfruta-mes-gratis" onclick="usuario()">
 							</div>
 						</div>
 	    			
@@ -352,7 +352,7 @@
 
 						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
 							<div style="text-align: center; margin-top: 10px;">
-							<input class="btn btn-danger" type="submit" value="Disfruta un mes gratis" name="btn-disfruta-mes-gratis" id="btn-disfruta-mes-gratis">
+							<input class="btn btn-danger" type="submit" value="Disfruta un mes gratis" name="btn-disfruta-mes-gratis" id="btn-disfruta-mes-gratis" onclick="usuario()">
 							</div>
 						</div>
 	    			
@@ -467,7 +467,11 @@
     </section>
 	 
 
-
+<script type="text/javascript">
+	function usuario(){
+		location.href ="usuario.html";
+	}
+</script>
 
 
 
