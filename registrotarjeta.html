@@ -134,11 +134,29 @@
       <div>
       <script type="text/javascript">
         $("#Tajeta1").click(function(){
+           var tarjeta="tipo1"
           location.href ="registrousuarios.html";
+
         });
          $("#tarjet2").click(function(){
+          var tarjeta="tipo1"
           location.href ="registrousuarios.html";
         });
+        $("#btn-enviar").click(function(){
+          var parametros={
+            "txt-tipo" :tarjeta
+            
+        };
+        $.ajax({
+          url: "class/class-procesar.php", 
+            data:parametros,
+            method:"POST",
+            success: function(result){
+                  location.href ="registrotarjeta.html";
+            }
+          });
+
+        }); 
         
       </script>
 </body>
