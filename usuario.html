@@ -18,7 +18,7 @@
 		 </div>-->
 		<div id="navbar" class="navbar-collapse collapse" style="padding-top: 20px">
           <form class="navbar-form navbar-right" action="login.html">
-            <input type= "submit" class="btn btn-lg btn btn-success" value="Iniciar Sesion">
+            <input type= "submit" class="btn btn-lg btn btn-success" id="iniciarsecion" value="Iniciar Sesion">
           </form>
         </div>
 	</div>
@@ -155,9 +155,11 @@
 		              location.href ="registrotarjeta.html";
 	          }
 	      });
-			
 
    		 });
+		$("#iniciarsecion").click(function(){
+			location.href ="login.html";
+		})
 		
 	</script>
 </body>
