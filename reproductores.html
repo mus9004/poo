@@ -19,6 +19,11 @@
 	<link href="video-js/video-js.css" rel="stylesheet" type="text/css">
   	<script src="video-js/video.js"></script>
   	<script src="video-js/lang/es.js"></script>
+  	<script>
+  		var title = "METRO (Cortometraje)";
+  		var link = "videos/METRO.mp4";
+		var poster = "img/metro.png";
+  	</script>
 	<title>Reproductor</title>
 </head>
 <body style="background-color: rgb(0,0,0)">
@@ -34,11 +39,22 @@
 				<div id="codoPlayer" class="separar-arriba">
 				<script>
 				    var player = CodoPlayer([{
-				    		title: "METRO (Cortometraje)",
-				    		poster: "img/metro.png",
-				    		src: "videos/METRO.mp4"
+				    		title: title,
+				    		poster: poster,
+				    		src: link
+				    		},{
+				    			title: "Intro",
+				    			poster: "img/cover.jpg",
+				    			src: "videos/Intro.mp3",
+				    			engine: "auto"
+				    		},{
+				    			title: "Courtesy Call",
+				    			poster: "img/cover.jpg",
+				    			src: "videos/CourtesyCall.mp3",
+				    			engine: "auto"
 				    		}],{
 				    		preload: false,
+				    		playlist: false,
 				    		id: "codo",
 				    		onReady: function(player) {
 					            console.log(player);
@@ -52,12 +68,12 @@
 					<div id="player" class="fp-full fp-edgy fp-outlined"></div>
 					<script>
 					var api = flowplayer("#player", {
-						poster: "img/metro.png",
+						poster: poster,
 					    clip: {
-					      title: "METRO (Cortometraje)",
+					      title: title,
 					      sources: [
 					        { type: "video/mp4",
-					          src: "videos/METRO.mp4" },
+					          src: link },
 					      ]
 					    }
 					  });
@@ -71,11 +87,11 @@
 					<script>
 						var playerJs = videojs('my-player',{
 							sources: [{
-								src: "videos/METRO.mp4"
+								src: link
 							}],
 							width: $("#codo").width(),
 							height: $("#codo").height(),
-							poster: "img/metro.png",
+							poster: poster,
 						  	controls: true,
 						  	autoplay: false,
 						  	preload: 'auto'
@@ -90,14 +106,27 @@
     <script src="js/reproductores.js"></script>
     <script>
 	var playerInstance = jwplayer("reproduce").setup({
-				    	file: "videos/METRO.mp4",
-				    	image:"img/metro.png",
-				    	title: "METRO (Cortometraje)",
-				    	mediaid: "control",
+				    	file: link,
+				    	image: poster,
+				    	title: title,
 				    	description: "Una maravillosa fantasía minimalista...",
 				    	sharing: {
     					sites: ["facebook","twitter","email","googleplus"]}
 				    });
+	playerInstance.load([{
+		file: link,
+		image: poster,
+		title: title,
+		description: "Una maravillosa fantasía minimalista..."
+	},{
+		file: "videos/Intro.mp3",
+		image: "img/cover.jpg",
+		title: "Intro"
+	},{
+		file: "videos/CourtesyCall.mp3",
+		image: "img/cover.jpg",
+		title: "Courtesy Call"
+	}]);
 	</script>
 </body>
 </html>
