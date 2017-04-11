@@ -1,14 +1,13 @@
 $("#btn-codoPlayer").click(function(){
 	api.pause();
-	playerInstance.pause();
+	playerInstance.pause(true);
 	$("#flowPlayer").hide();
 	$("#JWPlayer").hide();
 	$("#codoPlayer").show();
-	//alert(jwplayer().on('play');
 });
 $("#btn-flowPlayer").click(function(){
 	player.pause();
-	playerInstance.pause();
+	playerInstance.pause(true);
 	$("#JWPlayer").hide();
 	$("#codoPlayer").hide();
 	$("#flowPlayer").show();
@@ -21,7 +20,7 @@ $("#btn-JWPlayer").click(function(){
 	$("#JWPlayer").show();
 });
 $(document).ready(function(){
+	$("#JWPlayer").hide();
 	$("#flowPlayer").hide();
-	$("#codoPlayer").hide();
-	$("#JWPlayer").show();
+	$("#codoPlayer").show();
 });
