@@ -112,7 +112,7 @@ body {
 }
 
 #menu {
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(32,33,33,0.95);
   display: none; /* hide by default */
   left: 0;
   position: fixed;
@@ -167,7 +167,7 @@ body {
 }
 
 #menu1 {
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(32,33,33,0.95);
   display: none; /* hide by default */
   left: 0;
   position: fixed;
