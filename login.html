@@ -27,7 +27,7 @@
  
      <div >
           <div class="navbar-header">
-          <h1 style="color: #B40431;font-weight: 900; font-size: 350%;font-style: oblique; ">NETBIT</h1>
+          <h1 id="logo" style="color: #B40431;font-weight: 900; font-size: 350%;font-style: oblique; ">NETBIT</h1>
     </div> 
   
     <div id="navbar" class="navbar-collapse collapse" style="padding-top: 20px">
@@ -74,10 +74,7 @@
         <select class="form-control idiomas">
           <option>Español</option>
           <option>English</option>
-        </select>
-      
-       
-            
+        </select>  
                 
               
         </div>
@@ -87,6 +84,11 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+      $("#logo").click(function(){
+          location.href="index.html";
+      });
+    </script>
 
   
   </body>
