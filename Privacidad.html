@@ -15,7 +15,7 @@
 		 </div>-->
 		<div id="navbar" class="navbar-collapse collapse" style="padding-top: 20px">
           <form class="navbar-form navbar-right">  
-            <a href=""> Acceso a miembros</a> <button type="button" class="btn btn-primary">Comienza tu mes gratis</button>
+            <a href="micuenta.html"> Acceso a miembros</a> <button type="button"  id="btn-gratis" class="btn btn-primary">Comienza tu mes gratis</button>
           </form>
         </div>
 	</div>
@@ -232,12 +232,12 @@
 		<div class="row">
 			<div class="col-md-3  col-lg-3" style="text-align: center">
 					<br><br>
-					<span style="text-align: center;"><a href="#"> Términos de uso</span>
+					<span style="text-align: center;"><a href="TerminosdeUso.html"> Términos de uso</span>
 				<br>
 			</div>
 			<div class="col-md-3  col-lg-3" style="text-align: center">
 				<br><br>
-					<span style="text-align: center;"><a href="#"> Privacidad</span>
+					<span style="text-align: center;"><a href="Privacidad.html"> Privacidad</span>
 				<br><br>
 			</div>
 			<div class="col-md-3  col-lg-3" style="text-align: center">
@@ -252,7 +252,16 @@
 			</div>
 	</div>
 	</div>
-	
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	 
+	<script type="text/javascript">
+
+		$("#btn-gratis").click(function(){
+
+			location.href="usuario.html";
+		});
+	</script>
 	
 
 </body>

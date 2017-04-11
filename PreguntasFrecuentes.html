@@ -16,7 +16,7 @@
 		 </div>-->
 		<div id="navbar" class="navbar-collapse collapse" style="padding-top: 20px">
           <form class="navbar-form navbar-right">  
-            <button type="button" class="btn btn-success">Iniciar Sesion</button>
+            <button id="btn-secion" type="button" class="btn btn-success">Iniciar Sesion</button>
           </form>
         </div>
 	</div>
@@ -66,15 +66,23 @@
 			</div>
 			<br>
 		</div>
-		<br><br>;
+		<br><br>
+
+		<section>
+			<br>
+		</section>
+		<br><br>
 		
 
 		<section id="que-netbit">
 			<div class="row">
 				<div class="col-md-2  col-lg-2" style="text-align: center">
+				<br><br>
+				</div>
+				<div class="col-md-2  col-lg-2" style="text-align: center">
 					<br><br>
 					<img src="img/what-red.png">
-				<br>
+				<br><br>
 				</div>
 				<div class="col-md-10  col-lg-10">
 					<h1 style="color: #000">¿Qué es NetBit?</h1>
@@ -99,8 +107,8 @@
 					<p>Pruebe gratis durante 1 mes! Si disfrutas de tu prueba de NetBit, no hagas nada y tu membresía continuará automáticamente mientras seas miembro.</p><br>
 					<img src="img/Sin título.png"><br><br>
 					<p>La suscripción a netBit es una suscripción de mes a mes que comienza en la fecha de registro. Sin contrato, sin gastos de cancelación, sin compromiso. Cancela en línea en cualquier momento, las 24 horas del día</p><br>
-					<form action="usuario.html">
-						<input style="font-size: 27px" type= "submit" class="btn btn-lg btn-danger" value="Disfruta un mes gratis">
+					<form>
+						<button id="btn-disfruta-me" type="button" class="btn btn-lg btn btn-danger" style="font-size: 27px">Disfruta un mes gratis</button>
 					</form><br><br>
 				</div>
 			</div>
@@ -192,8 +200,8 @@
 					Puede cancelar su prueba gratuita en cualquier momento durante los primeros 30 días y nunca se le cobrará. Si decide no cancelar, su cuenta no se cargará hasta que finalice su prueba gratuita. Te enviaremos un correo electrónico de recordatorio tres días antes de que finalice tu prueba gratuita para asegurarte de que sigues disfrutando de NetBit.<br><br>
 
 					Como miembro de NetBit, se le cobrará una vez al mes en la fecha en la que se registró originalmente. Si decide que NetBit no es para usted, siempre tiene la opción de cancelar en línea, en cualquier momento.<br><br>
-					<form action="usuario.html">
-						<input style="font-size: 27px" type= "submit" class="btn btn-lg btn-danger" value="Disfruta un mes gratis">
+					<form >
+						<button id="btn-disfruta-mes" type="button" class="btn btn-lg btn btn-danger" style="font-size: 27px">Disfruta un mes gratis</button>
 					</form><br><br>
 				</div>
 			</div>
@@ -231,7 +239,24 @@
 		<br><br><br><br>
 	</div>
 	
-	
+	  <script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	 
+	<script type="text/javascript">
+		$("#btn-secion").click(function(){
+			location.href ="login.html";
+		});
+
+		$("#btn-disfruta-me").click(function(){
+
+			location.href="usuario.html";
+		});
+		$("#btn-disfruta-mes").click(function(){
+
+			location.href="usuario.html";
+		});
+		
+	</script>
 
 </body>
 </html>
