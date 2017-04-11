@@ -1,0 +1,14 @@
+$("#btn-codoPlayer").click(function(){
+	$("#flowPlayer").hide();
+	$("#codoPlayer").show();
+	//alert(player);
+	api.pause();
+});
+$("#btn-flowPlayer").click(function(){
+	player.pause();
+	$("#codoPlayer").hide();
+	$("#flowPlayer").show();
+});
+$(document).ready(function(){
+	$("#codoPlayer").show();
+});
