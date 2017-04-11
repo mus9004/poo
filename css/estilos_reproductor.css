@@ -1,6 +1,3 @@
-body{
-	color: white;
-}
 .texto-rojo{
 	color:#ff0000;
 	background-color: #000000;
@@ -20,13 +17,4 @@ body{
 
 .margen{
 	margin: 20px;
-}
-
-.separar-arriba{
-	margin-top: 10px;
-}
-
-.flowplayer .fp-waiting {
-  background: url(img/loading.gif) no-repeat center center;
-  height: 100%;
 }

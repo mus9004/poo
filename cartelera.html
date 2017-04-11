@@ -2,16 +2,25 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Tipo Usuario</title>
+	<title>Netbit Cartelera</title>
+
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="icon" type="image/icon" href="images/netbit.ico" />
+	 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<!-- bxSlider Javascript file -->
 	<script src="js/jquery.bxslider.min.js"></script>
 	<!-- bxSlider CSS file -->
 	<link href="css/jquery.bxslider.css" rel="stylesheet" />
+
 	<link rel="stylesheet" type="text/css" href="css/menus.css">
 	<link rel="stylesheet" type="text/css" href="css/signin.css">
+	
 	<style>
+
+	   #mdialTamanio{
+	      width: 80% !important;
+	   }
 		
 	.bordeimg1 {-moz-transition: all 1s;-webkit-transition: all 1s;-o-transition: all 1s;padding:15px !important;border:1px solid #ccc;background:#FFF;}
 	.bordeimg1:hover {-moz-transition: all 1s;-webkit-transition: all 1s;-o-transition: all 1s;border-radius: 0% 50%;box-shadow: 0px 0px 15px #000000;cursor:pointer;border:0;}.bordeimg2 {-moz-transition: all 1s;-webkit-transition: all 1s;-o-transition: all 1s;border-radius: 50% 0;box-shadow: 0px 0px 15px #000;padding:15px !important;border:0;background:#FFF;}.bordeimg2:hover {-moz-transition: all 1s;-webkit-transition: all 1s;-o-transition: all 1s;border-radius:0;cursor:pointer;}.bordeimg3 {-moz-transition: all 1s;-webkit-transition: all 1s;-o-transition: all 1s;padding:0 !important;}.bordeimg3:hover {-moz-transition: all 1s;-webkit-transition: all 1s;-o-transition: all 1s;border-radius: 50%;box-shadow: 0px 0px 15px #000000;border:0;cursor:pointer;}.bordeimg4 {border:0; padding:0 !important;-moz-transition: all 1s;-webkit-transition: all 1s;
@@ -21,7 +30,6 @@
 	</style>
 </head>
 <body style="background-color: #000000;" id="todos">
-
  
 	<div style="background-color: rgba(216,216,216,0.2); border: 1px;size: 150px;border-style: solid;border-color: rgba(110,110,110,0.2); padding: 5px">
 		<div class="navbar-header">
@@ -87,97 +95,338 @@
         </div>
 	</div>
 
-<div></div>
+    <div></div>
+     
+    <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#modal-sinopsis">Large modal</button> -->
+		
+
+		   <div class="modal fade bs-example-modal-lg" id="modal-sinopsis" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+             <div class="modal-dialog modal-lg" role="document" style="margin-left: 80px;margin-right: 80px;filter:alpha(opacity=50); opacity:0.9; color:#000000; ">
+                <div class="modal-content" style="width: 1102px;">
+                  <div class="modal-header">
+		                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="glyphicon glyphicon-remove-circle" ></span></button>
+		            
+		           </div>
+			        <table class="table table-striped table-hover">
+			        	<tr>
+			        		<td style="padding-right: 8px;width: 463px;">
+					        	<div style="width: 455px;height: 656px;">
+					        	    <img class="hook hidden-xs hidden-sm" src="http://www.pelismundo.com/wp-content/uploads/2015/07/Rambo-4-Regreso-al-Infierno-John-Rambo-4.jpg">
+					        	</div>
+			        			
+			        		</td>
+			        		<td style="padding-left: 8px;">
+			        		    <div>
+			        		    	<div class="modal-body">
+		                          <h1 class="modal-title" id="myModalLabel" style="text-align: center">Nombre Pelicula</h1><br>
+
+		                       </div>
+			                	<div class="modal-body" id="tabla-usuarios">
+					              <table class="table table-striped table-hover">
+					                  <tr>
+					                    <td><h4>Sinopsis:</h4>
+					                    </td>
+					                    <td><br><br><br> <h5>aqui ira la descripcion de la pelicula</h5></td>
+					                    
+					                  </tr>
+					                   <tr>
+					                    <td><h4>protagonistas:</h4>
+					                    </td>
+					                    <td><br> <h5>Campo por programar</h5></td>
+					                  </tr>
+					                  <tr>
+					                    <td><h4>Clasificación:</h4>
+					                    </td>
+					                    <td><br><br><br> <h5>aqui ira la clasificación de la pelicula</h5></td>
+					                  </tr>
+					                   <tr>
+					                    <td><h4>Clasificación:</h4>
+					                    </td>
+					                    <td><br> <h5>aqui ira la clasificación de la pelicula</h5></td>
+					                  </tr>
+					                 
+					                  <tr>
+					                    <td><h4>Productora:</h4>
+					                    </td>
+					                    <td><br> <h5>aqui ira la productora de la pelicula</h5></td>
+					                  </tr>
+					              </table>
+					          	</div>
+
+					           <div class="modal-footer">
+					            	<button type="button" class=" btn btn-success submit" data-dismiss="modal">Cerrar</span></button>
+					            	 <button type="button" class="btn btn-danger" id="btn-reproducir" data-loading-text="Abriendo..." >Ver Pelicula</button>
+					          </div>		
+			        			
+
+			        		 </div>   
+
+
+			                </td>
+			        	</tr> 
+
+			        	
+			        </table>
+   
+		    </div>
+		  </div>
+		</div>
+
 	<div style="margin-left: 100px;margin-right: 100px;margin-top: 80px;background-color: #000000;" >
 		
 		<h3 style="color: #fff">Peliculas Romace</h3>
 		<div class="slider1" >
-		  <div class="slide" ><a href="https://www.google.hn"><img src="img/img/18.jpg" ></a></div>
-		  <div class="slide" ><a href="https://www.google.hn"><img src="img/img/32.jpg" ></a></div>
-		  <div class="slide" ><a href="https://www.google.hn"><img src="img/img/48.jpg" ></a></div>
-		  <div class="slide" ><a href="https://www.google.hn"><img src="img/img/50.jpg" ></a></div>
-		  <div class="slide" ><a href="https://www.google.hn"><img src="img/img/26.jpg" ></a></div>
-		  <div class="slide" ><a href="https://www.google.hn"><img src="img/img/34.jpg" ></a></div>
-		  <div class="slide" ><a href="https://www.google.hn"><img src="img/img/25.jpg" ></a></div>
-		  <div class="slide" ><a href="https://www.google.hn"><img src="img/img/73.jpg" ></a></div>
-		  <div class="slide" ><a href="https://www.google.hn"><img src="img/img/72.jpg" ></a></div>
-		  <div class="slide" ><a href="https://www.google.hn"><img src="img/img/36.jpg" ></a></div>
-		  <div class="slide" ><a href="https://www.google.hn"><img src="img/img/74.jpg" ></a></div>
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/18.jpg" >
+		  </div>
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		     <img src="img/img/32.jpg" >
+		  </div>
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		      <img src="img/img/48.jpg" > 
+		  </div>
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		      <img src="img/img/50.jpg" > 
+		  </div>
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		      <img src="img/img/26.jpg" > 
+		  </div>
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		      <img src="img/img/34.jpg" > 
+		  </div>
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		      <img src="img/img/25.jpg" > 
+		  </div>
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		      <img src="img/img/73.jpg" > 
+		  </div>
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		      <img src="img/img/72.jpg" > 
+		  </div>
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		      <img src="img/img/36.jpg" > 
+		  </div>
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		      <img src="img/img/74.jpg" > 
+		  </div>
 		  
 		</div>	
 	
 		<h3 style="color: #fff">Peliculas Accion</h3>
 		<div class="slider2" style="background-color: #000000;">
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/37.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/41.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/35.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/55.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/45.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/08.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/52.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/57.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/62.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/11.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/67.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/46.jpg"></a></div>
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		        <img src="img/img/37.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		        <img src="img/img/41.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		        <img src="img/img/35.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		        <img src="img/img/55.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		        <img src="img/img/45.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		        <img src="img/img/08.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		        <img src="img/img/52.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		        <img src="img/img/57.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		        <img src="img/img/62.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		        <img src="img/img/11.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		        <img src="img/img/67.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		        <img src="img/img/46.jpg">
+		  </div>
+
 		  
 		</div>
 	
 		<h3 style="color: #fff">Peliculas Ciencia Ficcion</h3>
 		<div class="slider3">
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/02.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/04.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/07.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/31.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/37.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/59.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/60.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/69.png"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/03.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/12.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/46.jpg"></a></div>
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/02.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/04.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/07.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/31.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/37.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/59.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/60.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/69.png">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/03.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/12.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/46.jpg">
+		  </div>
+
 		  
 		</div>	
 	
 		<h3 style="color: #fff">Peliculas Terror</h3>
 		<div class="slider4">
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/06.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/09.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/04.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/16.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/33.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/27.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/49.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/51.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/63.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/66.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/70.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/17.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/15.jpg"></a></div>
-		  <div class="slide"><a href="https://www.google.hn"><img src="img/img/22.jpg"></a></div>
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/06.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/49.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/09.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/04.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/16.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/33.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/27.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/51.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/63.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/66.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/70.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/17.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/15.jpg">
+		  </div>
+
+		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
+		       <img src="img/img/22.jpg">
+		  </div>
+
 		  
 		</div>	
 	    
 	</div>
+     
+         <div class="footer-top" style="margin: 30px auto 0;width: 940px;">
+            <div class="site-footer">
+                   <p class="footer-top">
+                 ¿Tienes problemas? llama al &nbsp;<a class="footer-top-a" href=" +(504) 9206-0911 (HND)"> +(504) 9206-0911 (HND)</a>
+               </p>
+               
+          <table class="site-footer" style="border-color: #999797; border: 0px; width: 980px;">
+            <tr >
+              <td style="color: #999797">Preguntas frecuentes</td>
+              <td style="color: #999797">Centro de ayuda</td>
+              <td style="color: #999797"><a href="Cuenta.php"  style="color: #999797">Cuenta</td>
+              <td style="color: #999797">Prensa</td>
+            </tr>
 
-	 <div class="cuadro1">
-          
-        <span style="margin-left: 45px;">¿Tienes preguntas? Llama al<a class="condiciones" href=""> +(504) 9206-0911 (HND)</a></span>
-        <ul>
-          <li><a href="">Terminos de las tarjetas de regalo</a></li>
-          <li><a href="">Terminos de uso</a></li>
-          <li><a href="">Declaracion de privacidad.</a></li>
-        </ul><br>
-        <select class="form-control idiomas">
-          <option>Español</option>
-          <option>English</option>
-        </select>
-      
-       
-            
-                
-              
-     </div>
+            <tr>
+              <td style="color: #999797">Relaciones con inversionistas</td>
+              <td style="color: #999797">Empleo</td>
+              <td style="color: #999797">Formas de ver</td>
+              <td style="color: #999797">Términos de uso</td>
+            </tr>
+            <tr>
+              <td style="color: #999797">Privacidad</td>
+              <td style="color: #999797">Preferencias de cookies</td>
+              <td style="color: #999797">Prueba de velocidad</td>
+              <td style="color: #999797">Originales de NetBit</td>
+            </tr>         
+          </table><br><br>
+
+
+          <div>
+              <div class="glyphicon icon-globe">
+              	 
+              </div>
+              <div>
+              	<select class="form-control" style="padding-right: 0px; width: 134px;">
+                     <option value="1">ESPAÑOL</option>
+                     <option value="2">INGLES</option>
+                </select>
+              </div>
+          	  
+            </div>
+
+           
+
+                <p style="margin-top: 20px; color: #999797; padding-top: 20px;">Netbit Honduras</p>
+           </div>
+         </div>
+
+    <script src="js/bootstrap.min.js"></script>
+
 	<script type="text/javascript">
 		$(document).ready(function(){
 		  $('.slider1').bxSlider({
@@ -288,6 +537,7 @@
 	});
 	
 	</script>	
+	 
 
 </body>
 </html>

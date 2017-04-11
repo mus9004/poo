@@ -31,17 +31,12 @@
 		case '3':{
 		?>
 			<script src="codoPlayer/CodoPlayer.js"></script>
-			<div id="codoPlayer" class="margen">
-				<script>
-				    CodoPlayer({
-				    	title: "METRO (Cortometraje)",
-				    	poster: "img/metro1.jpg",
-				    	src: "videos/METRO.mp4"
-				    	},{
-				    		preload: false
-				    	}); // API
-				</script>
-				</div>
+			<script>
+				CodoPlayer("videos/METRO.mp4",{
+			        width: 600,
+			        height: 338
+			    });
+			</script>
 		<?php
 		}
 		break;
