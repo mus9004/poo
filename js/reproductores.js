@@ -9,6 +9,6 @@ $("#btn-flowPlayer").click(function(){
 	$("#codoPlayer").hide();
 	$("#flowPlayer").show();
 });
-$(document).ready(function(){
+/*$(document).ready(function(){
 	$("#codoPlayer").show();
-});
+});*/
