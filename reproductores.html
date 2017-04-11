@@ -42,7 +42,7 @@
 				</script>
 				</div>
 
-				<div id="flowPlayer" class="separar-arriba" style="display: none;">
+				<div id="flowPlayer" class="separar-arriba">
 					<div id="player" class="fp-full fp-edgy fp-outlined"></div>
 					<script>
 					var api = flowplayer("#player", {
@@ -57,14 +57,8 @@
 					  });
 					</script>
 				</div>
-				<div id="JWPlayer" class="separar-arriba" style="display: none;">
+				<div id="JWPlayer" class="separar-arriba">
 				<div id="reproduce"></div>
-				<script>
-				    var playerInstance = jwplayer("reproduce").setup({
-				    	file: "videos/METRO.mp4",
-				    	image:"img/metro.png"
-				    });
-				</script>
 				</div>
             </div>
          </div>
@@ -72,5 +66,11 @@
 	<script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/reproductores.js"></script>
+    <script>
+	var playerInstance = jwplayer("reproduce").setup({
+				    	file: "videos/METRO.mp4",
+				    	image:"img/metro.png"
+				    });
+	</script>
 </body>
 </html>

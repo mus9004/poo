@@ -33,7 +33,7 @@
 </head>
 <body style="background-color: #000000;" id="todos">
  
-	<div style="background-color: rgba(216,216,216,0.2); border: 1px;size: 150px;border-style: solid;border-color: rgba(110,110,110,0.2); padding: 5px">
+	<div style="background-color: rgba(216,216,216,0.2); border: 1px;size: 150px;border-style: solid;border-color: rgba(110,110,110,0.2); padding: 5px; font-size: 20px">
 		<div class="navbar-header">
 		<h1 style="color: #B40431;font-weight: 900; font-size: 250%;font-style: oblique; ">NETBIT</h1></div> 
 		 <a href="#" id="menu-trigger">Explorar<span class="arrow"></span></a>
@@ -128,7 +128,7 @@
 					                  <tr>
 					                    <td><h4>Sinopsis:</h4>
 					                    </td>
-					                    <td><br><br><br> <h5>aqui ira la descripcion de la pelicula</h5></td>
+					                    <td><br><br><br> <h5>aquí ira la descripción de la película</h5></td>
 					                    
 					                  </tr>
 					                   <tr>
@@ -139,25 +139,25 @@
 					                  <tr>
 					                    <td><h4>Clasificación:</h4>
 					                    </td>
-					                    <td><br><br><br> <h5>aqui ira la clasificación de la pelicula</h5></td>
+					                    <td><br><br><br> <h5>aquí ira la clasificación de la película</h5></td>
 					                  </tr>
 					                   <tr>
 					                    <td><h4>Clasificación:</h4>
 					                    </td>
-					                    <td><br> <h5>aqui ira la clasificación de la pelicula</h5></td>
+					                    <td><br> <h5>aquí ira la clasificación de la película</h5></td>
 					                  </tr>
 					                 
 					                  <tr>
 					                    <td><h4>Productora:</h4>
 					                    </td>
-					                    <td><br> <h5>aqui ira la productora de la pelicula</h5></td>
+					                    <td><br> <h5>aqui ira la productora de la película</h5></td>
 					                  </tr>
 					              </table>
 					          	</div>
 
 					           <div class="modal-footer">
 					            	<button type="button" class=" btn btn-success submit" data-dismiss="modal">Cerrar</span></button>
-					            	 <button type="button" class="btn btn-danger" id="btn-reproducir" data-loading-text="Abriendo..." >Ver Pelicula</button>
+					            	 <button type="button" class="btn btn-danger" id="btn-reproducir" data-loading-text="Abriendo..." >Ver Película</button>
 					          </div>		
 			        			
 
@@ -176,7 +176,7 @@
 
 	<div style="margin-left: 100px;margin-right: 100px;margin-top: 80px;background-color: #000000;" >
 		
-		<h3 style="color: #fff">Peliculas Romace</h3>
+		<h3 style="color: #fff">Películas Romance</h3>
 		<div class="slider1" >
 		  <div class="slide" data-toggle="modal" data-target="#modal-sinopsis">
 		       <img src="img/img/18.jpg" >
@@ -537,7 +537,9 @@
 		}
 		
 	});
-	
+	$("#btn-reproducir").click(function(){
+			location.href ="reproductores.html";
+		});
 	</script>	
 	 
 
