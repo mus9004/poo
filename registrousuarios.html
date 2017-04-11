@@ -61,43 +61,43 @@
 			<td style=" text-align: left;">
 				<h4>Nombre:</h4> 
 			</td>
-			<td><input type="text" name="txt-nombre" class="form-control"></td>
+			<td><input type="text" name="txt-nombre" id="txt-nombre" class="form-control"></td>
 		</tr>
 		<tr>
 			<td style="text-align: left;">
 				<h4>Apellido:</h4> 
 			</td>
-			<td><input type="text" name="txt-apellido" class="form-control"></td>
+			<td><input type="text" name="txt-apellido" id="txt-apellido" class="form-control"></td>
 		</tr>
 		<tr>
 			<td style="text-align: left;">
 				<h4 class="txt-left">Edad:</h4> 
 			</td>
-			<td><input type="text" name="txt-edad" class="form-control"></td>
+			<td><input type="text" name="txt-edad" id="txt-edad" class="form-control"></td>
 		</tr>
 		<tr>
 			<td style="text-align: left;">
 				<h4>Direccion:</h4> 
 			</td>
-			<td><input type="text" name="txt-rireccion" class="form-control"></td>
+			<td><input type="text" name="txt-direccion" id="txt-rireccion" class="form-control"></td>
 		</tr>
 		<tr>
 			<td style="text-align: left;">
 				<h4>Ciudad:</h4> 
 			</td>
-			<td><input type="text" name="txt-ciudad" class="form-control"></td>
+			<td><input type="text" name="txt-ciudad" id="txt-ciudad" class="form-control"></td>
 		</tr>
 		<tr>
 			<td style="text-align: left;">
 				<h4>Pais:</h4> 
 			</td>
-			<td><input type="text" name="txt-pais" class="form-control"></td>
+			<td><input type="text" name="txt-pais" id="txt-pais" class="form-control"></td>
 		</tr>
 		<tr>
 			<td style="text-align: left;">
 				<h4>Codigo Postal:</h4> 
 			</td>
-			<td><input type="text" name="txt-codigo-postal" class="form-control" style="width: 30%"></td>
+			<td><input type="text" name="txt-codigo-postal" id="txt-codigo-postal" class="form-control" style="width: 30%"></td>
 		</tr>
 		<tr>
 			<td colspan="2">
@@ -110,7 +110,7 @@
 			<td colspan="2">
 			
 				<br><br>
-				<input type="button" name="btn-guardar" class="btn btn-danger" value="Guardar">
+				<input type="button" name="btn-guardar" id="btn-guardar" class="btn btn-danger" value="Guardar">
 		
 			</td>
 			
@@ -131,7 +131,7 @@
           <div class="modal-body">
             <p>
                    !BIENVENIDOS!
-                Registrate con netflix
+                Registrate con netbit
                 
             </p>
           </div>
@@ -148,7 +148,27 @@
     <script src="../../dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
-    
+   	<script type="text/javascript">
+	    $("#btn-guardar").click(function(){
+				var parametros={
+			        "txt-name" :$("#txt-nombre").val(),
+			        "txt-apellido" :$("#txt-apellido").val(),
+			        "txt-edad" :$("#txt-edad").val(),
+			        "txt-direccion" :$("#txt-direccion").val(),
+			        "txt-ciudad" :$("#txt-ciudad").val(),
+			        "txt-pais" :$("#txt-pais").val(),
+			        "txt-codigo-postal" :$("#txt-codigo-postal").val(),
+					};
+				$.ajax({
+		        url: "class/class-procesar.php", 
+			        data:parametros,
+			        method:"POST",
+			        success: function(result){
+			              location.href ="Cuenta.php";
+		          }
+		      });
 
+	   		 });
+    </script>
 </body>
 </html>
