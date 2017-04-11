@@ -15,6 +15,10 @@
 	<script src="flowplayer/flowplayer.min.js"></script>
 
 	<script src="https://content.jwplatform.com/libraries/x9XVJGsW.js" ></script>
+
+	<link href="video-js/video-js.css" rel="stylesheet" type="text/css">
+  	<script src="video-js/video.js"></script>
+  	<script src="video-js/lang/es.js"></script>
 	<title>Reproductor</title>
 </head>
 <body style="background-color: rgb(0,0,0)">
@@ -24,6 +28,7 @@
 				<button type="button" class="btn btn-default" id="btn-codoPlayer">Codo Player</button>
 				<button type="button" class="btn btn-default" id="btn-flowPlayer">Flowplayer</button>
 				<button type="button" class="btn btn-default" id="btn-JWPlayer">JW Player</button>
+				<button type="button" class="btn btn-default" id="btn-videoJs">Video JS</button>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="reproductor">
 				<div id="codoPlayer" class="separar-arriba">
@@ -34,6 +39,7 @@
 				    		src: "videos/METRO.mp4"
 				    		}],{
 				    		preload: false,
+				    		id: "codo",
 				    		onReady: function(player) {
 					            console.log(player);
 					        }
@@ -60,6 +66,22 @@
 				<div id="JWPlayer" class="separar-arriba">
 				<div id="reproduce"></div>
 				</div>
+				<div id="videoJs" class="separar-arriba">
+				<video id="my-player" class="video-js vjs-default-skin" ></video>
+					<script>
+						var playerJs = videojs('my-player',{
+							sources: [{
+								src: "videos/METRO.mp4"
+							}],
+							width: $("#codo").width(),
+							height: $("#codo").height(),
+							poster: "img/metro.png",
+						  	controls: true,
+						  	autoplay: false,
+						  	preload: 'auto'
+						});
+					</script>
+				</div>
             </div>
          </div>
     </div>
@@ -72,8 +94,9 @@
 				    	image:"img/metro.png",
 				    	title: "METRO (Cortometraje)",
 				    	mediaid: "control",
+				    	description: "Una maravillosa fantasía minimalista...",
 				    	sharing: {
-    					sites: ["facebook","twitter"]}
+    					sites: ["facebook","twitter","email","googleplus"]}
 				    });
 	</script>
 </body>

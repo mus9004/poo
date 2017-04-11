@@ -1,6 +1,8 @@
 $("#btn-codoPlayer").click(function(){
 	api.pause();
 	playerInstance.pause(true);
+	playerJs.pause();
+	$("#videoJs").hide();
 	$("#flowPlayer").hide();
 	$("#JWPlayer").hide();
 	$("#codoPlayer").show();
@@ -8,6 +10,8 @@ $("#btn-codoPlayer").click(function(){
 $("#btn-flowPlayer").click(function(){
 	player.pause();
 	playerInstance.pause(true);
+	playerJs.pause();
+	$("#videoJs").hide();
 	$("#JWPlayer").hide();
 	$("#codoPlayer").hide();
 	$("#flowPlayer").show();
@@ -15,11 +19,23 @@ $("#btn-flowPlayer").click(function(){
 $("#btn-JWPlayer").click(function(){
 	player.pause();
 	api.pause();
+	playerJs.pause();
 	$("#codoPlayer").hide();
 	$("#flowPlayer").hide();
+	$("#videoJs").hide();
 	$("#JWPlayer").show();
 });
+$("#btn-videoJs").click(function(){
+	player.pause();
+	api.pause();
+	playerInstance.pause(true);
+	$("#codoPlayer").hide();
+	$("#flowPlayer").hide();
+	$("#JWPlayer").hide();
+	$("#videoJs").show();
+});
 $(document).ready(function(){
+	$("#videoJs").hide();
 	$("#JWPlayer").hide();
 	$("#flowPlayer").hide();
 	$("#codoPlayer").show();
