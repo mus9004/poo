@@ -1,205 +1,148 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Tipo Usuario</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" type="image/icon" href="images/netbit.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    
-
-    <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <!-- <link href="cover.css" rel="stylesheet"> -->
-    <link rel="stylesheet" type="text/css" href="css/cover.css">
-    <!-- <link rel="stylesheet" type="text/css" href="css/signin.css"> -->
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
-    
+	     <meta charset="utf-8">
+	     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	     <meta name="viewport" content="width=device-width, initial-scale=1">
+	     <link rel="icon" type="image/icon" href="images/netbit.ico" />
+	    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	     <meta name="description" content="">
+	     <meta name="author" content="">
+	     <title>Netblit</title>
+	     <link href="css/bootstrap.min.css" rel="stylesheet">
+	     <script type="text/javascript" src="js/jquery.min.js" ></script>
+	     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	     <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+	     <script type="text/javascript" src="js/jquery.min.js" ></script>
+	     <link href="css/normalize-card.min.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-	<div style="background-color: #565656; border: 1px;size: 150px;border-style: solid;border-color: #6E6E6E; padding: 5px" >
-		<div class="navbar-header">
-		<h1 style="color: #B40431;font-weight: 900; font-size: 450%;font-style: oblique; ">NETBIT</h1></div> 
-		<!--<div class="navbar-collapse collapse">
-			<input type="button" name="btn-inicioSesion" class="btn btn-warning" >
-		 </div>-->
-		<div id="navbar" class="navbar-collapse collapse" style="padding-top: 20px">
-          <form action="login.html">  
-            <input type="submit" class="btn btn-success" value="Iniciar Sesion" style="margin-left: 800px;"></input>
-          </form>
-        </div>
-	</div>
-     <div class="container-viewport" >
-     <form class="form-signin">
-	<!-- <div style="margin-left: 100px;width: 50%; " class="formulario" > -->
-	<di>
-	<p><h2>Registro de Usuarios</h2></p>
-	<hr>
-	<p style=" font-size: 16px;" >favor introdusca todos los datos necesario para crear la cuenta</p><br><br>
-	<table style="border-collapse: collapse;width: 100%;">
-		
-		<tr>
-			<td style=" text-align: left;">
-				<h4>Nombre:</h4> 
-			</td>
-			<td><input type="text" name="txt-nombre" id="txt-nombre" class="form-control"></td>
-		</tr>
-		<tr>
-			<td style="text-align: left;">
-				<h4>Apellido:</h4> 
-			</td>
-			<td><input type="text" name="txt-apellido" id="txt-apellido" class="form-control"></td>
-		</tr>
-		<tr>
-			<td style="text-align: left;">
-				<h4 class="txt-left">Edad:</h4> 
-			</td>
-			<td><input type="text" name="txt-edad" id="txt-edad" class="form-control"></td>
-		</tr>
-		<tr>
-			<td style="text-align: left;">
-				<h4>Direccion:</h4> 
-			</td>
-			<td><input type="text" name="txt-rireccion" id="txt-rireccion" class="form-control"></td>
-		</tr>
-		<tr>
-			<td style="text-align: left;">
-				<h4>Ciudad:</h4> 
-			</td>
-			<td><input type="text" name="txt-ciudad" id="txt-ciudad" class="form-control"></td>
-		</tr>
-		<tr>
-			<td style="text-align: left;">
-				<h4>Pais:</h4> 
-			</td>
-			<td><input type="text" name="txt-pais" id="txt-pais" class="form-control"></td>
-		</tr>
-		<tr>
-			<td style="text-align: left;">
-				<h4>Codigo Postal:</h4> 
-			</td>
-			<td><input type="text" name="txt-codigo-postal" id="txt-codigo-postal" class="form-control" style="width: 30%"></td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				<br><br>
-				No se cobrara hasta despues del periodo de prueba
-			</td>
-			
-		</tr>
-		<tr>
-			<td colspan="2">
-			
-				<br><br>
-				<input type="button" name="btn-guardar" id="btn-guardar" class="btn btn-danger" value="Guardar">
-		
-			</td>
-			
-		</tr>
+     <div >
+        <div >
+           <div class="container" >
+	         <div class="row">
+	            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6">
+	            	  <h1 class=" signupBasicHeader" style="color: #E50914;font-weight: 900;font-size: 250%;font-style: oblique;margin-bottom: 0px;border-top-width:10px;padding-top: 20px;">NETBIT</h1></div>
+	              <!-- icono de netbit -->
+	             <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6"> 
+	                  <a href="/signout" class="authLinks signupBasicHeader" >Cerrar sesión</a>
+	            </div>
+	         </div>
+           </div><br><br><br>
+           <div class="radSimpleContainer" >	<!--  data-transitioned-child="true"-->
+              <div > <!-- class="centerContainer" style="display: block; transform: translateX(0px); opacity: 1; transition-duration: 250ms;"
+              si se quiere aplicar una transicion aplique esta clase al div-->
+                  <form>
+                     <div class="paymentFormContainer">
+                        <div class="messageContainer">
+                        	
+                        </div>
+                        <div class="stepHeader">
+                           <span class="stepIndicator">PASO <b>3</b> DE <b>3</b></span>
+                              <h1 class="stepTitle">Configura tu tarjeta de crédito o débito</h1>
+                        </div>
+                        <div class="fieldContainer">
+                           <div class="">
+                               <span class="logos logos-block">
+                                 <span class="logoIcon VISA"><img src="images/12_11_2014_icon_visa_37x25.png"></span>
+                                 <span class="logoIcon MASTERCARD"><img src="images/10_18_2014_icon_master_37x25.png"></span>
+                                 <span class="logoIcon AMEX"><img src="images/10_18_2014_icon_amex_37x25.png"></span>
+                                 <span class="logoIcon DISCOVERY"><img src="images/10_18_2014_icon_discovery_37x25.png"></span>
+                                 <span><img src="images/ringloader_white_57x57_tail_red.gif" style=" width: 25px; height: 25px;"></span>
+                               </span>
+                           </div>
+                           <div class="radForm">
+                              <label class="floating-label unfocused firstName ui-label ui-input-label">
+                                     <input data-testid="firstName" placeholder="Nombre" class="ui-text-input medium" >
+                               </label>
+                               <label class="floating-label unfocused lastName ui-label ui-input-label">
+                                   <input data-testid="lastName" placeholder="Apellidos" class="ui-text-input medium">
+                                </label>
+                                <div class="cardNumberContainer">
+                                    <label class="floating-label unfocused creditCardNumber ui-label ui-input-label">
+                                       <input type="tel" placeholder="Número de tarjeta" class="ui-text-input medium" >
+                                    </label>
+                                 </div>
+                                 <label class="floating-label unfocused creditExpirationMonth ui-label ui-input-label">
+                                    <input type="tel" class="ui-text-input medium" placeholder="Fecha de vencimiento (MM/AA)" value="" >
+                                  </label>
+                                  <label class="floating-label unfocused creditCardSecurityCode ui-label ui-input-label">
+                                      <input type="tel" data-testid="creditCardSecurityCode" class="ui-text-input medium" placeholder="Código de seguridad (CVV)">
+                                   </label>
+                            </div>
+                            <div class="changePlanContainer">
+                               <div class="changePlanTitle">TU PLAN</div>
+                               <div class="planDesc" id="info-plan">Información de tu plan "este campo debe ser programado su id es (info-plan)"</div>
+                               <a class="changePlanLink pointer">Cambiar</a>
+                             </div>
+                             <div class="radForm">
+                               <div class="signupTerms" id="inicio-gratis">
+                                   <span>
+                                     <p>Al hacer click en el botón "Iniciar suscripción" a continuación, aceptas nuestros<a target="blank" href="">Términos de uso</a>, nuestra <a target="blank" href="">Declaración de privacidad</a> y que ya has cumplido los 18. Puedes cancelar la suscripción cuando quieras durante la prueba gratuita y no se te cobrará nada. Para cancelarla, ve a la página web de tu cuenta y haz clic en "Cancelar suscripción".</p>
+                                     <p>
+                                       <b>Si no la cancelas, cuando termine tu periodo gratuito de prueba Netflix dará por hecho automáticamente que tu suscripción sigue en vigor y te cobrará la tarifa correspondiente (tarifa actual <span id="tarifa">"Campo por programar (id="tarifa")"</span>) a través de tu forma de pago cada mes.</b> No recibirás reembolsos ni créditos por los meses parciales.</p>
+                                   </span>
+                               </div>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="submitBtnContainer">
+                       <button class="Tappable-inactive btn simplicity btn-red btn-large" type="submit" id="comenzarpago" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; cursor: pointer;">
+                           <span>Iniciar suscripción</span>
+                        </button>
+                    </div>
+                 </form>
+               </div>
+            </div><br>
+<div > 
+       <div>
+             <div class="footer-top">
+                  <div class="site-footer">
+                       <p class="footer-top">¿Tienes problemas? llama al &nbsp;<a  style="text-decoration: none" class="footer-top-a" href=" +(504) 9206-0911 (HND)"> +(504) 9206-0911 (HND)</a>
+                         </p>
+                 
+                           <table class="site-footer" style="border-color: #999797;">
+                            <tr >
+                              <td style="color: #999797"><a href="PreguntasFrecuentes.html" style="text-decoration: none">Preguntas frecuentes</a></td>
+                              <td style="color: #999797"><a href="Ayuda.html" style="text-decoration: none">Centro de ayuda</a></td>
+                              <td style="color: #999797"><a href="Cuenta.php"  style="text-decoration: none">Cuenta</td>
+                              <td style="color: #999797"><a href="#"  style="text-decoration: none">Prensa</a></td>
+                            </tr>
 
-	</table>
-	</form>
-	<!-- </div> -->
-	</div>
-   <!-- modal -->
-   <div class="modal">
-    <div class="ventana">
-       <!-- contenido-->
-        <div>
-        	 <img src="img/registrarse-movilnet-colombia.jpg">
-                   
-                
-            </p>
-        </div>
-        <span class="cerrar">x</span>
+                            <tr>
+                              <td style="color: #999797"><a href="#"  style="text-decoration: none">Relaciones con inversionistas</a></td>
+                              <td style="color: #999797"><a href="#"  style="text-decoration: none">Empleo</a></td>
+                              <td style="color: #999797"><a href="#"  style="text-decoration: none">Formas de ver</a></td>
+                              <td style="color: #999797"><a href="TerminosdeUso.html"  style="text-decoration: none">Términos de uso</a></td>
+                            </tr>
+                            <tr>
+                              <td style="color: #999797"><a href="Privacidad.html"  style="text-decoration: none">Privacidad</a></td>
+                              <td style="color: #999797"><a href="Preferenciasdecookies.html"  style="text-decoration: none">Preferencias de cookies</a></td>
+                              <td style="color: #999797"><a href="Velocidad.html"  style="text-decoration: none">Prueba de velocidad</a></td>
+                              <td style="color: #999797"><a href="originales.html"  style="text-decoration: none">Originales de NetBit</a></td>
+                            </tr>         
+                           </table><br><br>
+                  <div>
+                      <div class="glyphicon icon-globe"> 
+                      </div>
+                      <div>
+                           <select class="form-control" style="padding-right: 0px; width: 134px;">
+                               <option value="1">ESPAÑOL</option>
+                               <option value="2">INGLES</option>
+                           </select>
+                      </div>
+                 </div>
+                <p style="margin-top: 20px; color: #999797; padding-top: 20px;">Netbit Honduras</p>
+         </div>
+      </div>
     </div>
-</div>
-	<!-- <div class="modal fade" tabindex="-1" role="dialog" id="modal">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">NETFLIX</h4>
-          </div>
-          <div class="modal-body">
-            <p>
-                   !BIENVENIDOS!
-                Registrate con netflix
+  </div>
                 
-            </p>
-          </div>
-          <div class="modal-footer">
-            <button  id="cerrar" type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-          </div>
-        </div> --><!-- /.modal-content
-       </div>/.modal-dialog -->
-    <!-- </div>/.modal --> -->
-
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-   <!-- <script>
-    $(document).ready(function(){
-  
-    $(".modal").fadeIn();
-  
-    $(".cerrar").click(function(){
-      
-        $(".modal").fadeOut(300);
-      
-    });
-
-});
-</script>-->
-	
-	<script type="text/javascript">
-				
-		$("#btn-guardar").click(function(){
-			var parametros={
-		        "txt-nombre" :$("#txt-nombre").val(),
-		        "txt-apellido" :$("#txt-apellido").val(),
-		        "txt-edad" :$("#txt-edad").val(),
-		        "txt-rireccion" :$("#txt-rireccion").val(),
-		        "txt-ciudad" :$("#txt-ciudad").val(),
-		        "txt-pais" :$("#txt-pais").val(),
-		        "txt-codigo-postal" :$("#txt-codigo-postal").val(),
-		        
-				};
-			$.ajax({
-	        url: "class/class-procesar.php", 
-		        data:parametros,
-		        method:"POST",
-		        success: function(result){
-		              location.href ="cuenta.php";
-	          }
-	      	});
-	      	location.href ="cuenta.php";
-
-   		 });
-		$("#iniciarsecion").click(function(){
-			location.href ="login.html";
-		});
-		
-	</script>
-
-</body>
+              
+    
+        </div>
+      <div>	
+    </div>
+  </body>
 </html>
+
