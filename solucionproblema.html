@@ -17,7 +17,7 @@
 		 </div>-->
 		<div id="navbar" class="navbar-collapse collapse" style="padding-top: 20px">
           <form class="navbar-form navbar-right">  
-            <button type="button" class="btn btn-success">Iniciar Sesion</button>
+            <button type="button" id="btn-sesion" class="btn btn-success">Iniciar Sesion</button>
           </form>
         </div>
 	</div>
@@ -49,8 +49,8 @@
         <span style="margin-left: 45px;">¿Tienes preguntas? Llama al<a class="condiciones" href=""> +(504) 9206-0911 (HND)</a></span>
         <ul>
           <li><a href="">Terminos de las tarjetas de regalo</a></li>
-          <li><a href="">Terminos de uso</a></li>
-          <li><a href="">Declaracion de privacidad.</a></li>
+          <li><a href="TerminosdeUso.html">Terminos de uso</a></li>
+          <li><a href="Privacidad.html">Declaracion de privacidad.</a></li>
         </ul><br>
         <select class="form-control idiomas">
           <option>Español</option>
@@ -62,6 +62,16 @@
 		
 		
 	</div>
+
+	 <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+   
+  <script type="text/javascript">
+    $("#btn-sesion").click(function(){
+      location.href ="login.html";
+    });
+
+  </script>
 
 </body>
 </html>
