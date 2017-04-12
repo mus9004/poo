@@ -1,81 +1,140 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/estilos_reproductor.css">
-	<link rel="icon" type="image/icon" href="images/netbit.ico"/>
-	<style>
-		.cuadro-transparente{
-        background-color: rgba(180,4,49,0.62);
-        border: 1px; border-color: #ffffff;
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos_reproductor.css">
+    <link rel="icon" type="image/icon" href="images/netbit.ico" />
+    <style>
+    a {
+    	color: white;
+    }
+    .cuadro-transparente {
+        background-color: rgba(180, 4, 49, 0.62);
+        border: 1px;
+        border-color: #ffffff;
         border-style: solid;
         padding: 50px;
         margin: 50px;
-      }
-	</style>
-	<title>NETBIN Prueba de Velocidad</title>
+    }
+    </style>
+    <title>NETBIN Prueba de Velocidad</title>
 </head>
+
 <body style="background-color: rgb(0,0,0);">
-<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: white">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          </button>
-          <a href="index.html" style="text-decoration: none"><h1 class=" signupBasicHeader" style="color: #E50914;font-weight: 900;font-size: 250%;font-style: oblique;margin-bottom: 0px;border-top-width:10px;padding-top: 8px;margin-top: 0px;padding-left: 15px;">NETBIT</h1></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: white">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                </button>
+                <a href="index.html" style="text-decoration: none"><h1 class=" signupBasicHeader" style="color: #E50914;font-weight: 900;font-size: 250%;font-style: oblique;margin-bottom: 0px;border-top-width:10px;padding-top: 8px;margin-top: 0px;padding-left: 15px;">NETBIT</h1></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse" style=" text-align: right;">
+                <a type="button" class="btn btn-danger submit" style="margin-top: 10px; margin-right: 10px; margin-bottom: 10px" href="login.html">Iniciar Sesión</a>
+            </div>
         </div>
-        <div id="navbar" class="navbar-collapse collapse"  style=" text-align: right;">
-          <a type="button" class="btn btn-danger submit" style="margin-top: 10px; margin-right: 10px; margin-bottom: 10px" href="login.html">Iniciar Sesión</a>
+    </nav>
+    <br>
+    <br>
+    <div style=" text-align: center; font-size: 60px;">
+        <h1 style="color: #B40431;font-weight: 900; font-size: 150%;font-style: oblique; ">Prueba de Velocidad</h1>
+        <img id="img-loader" src="img/loader.gif">
+        <div id="div-resultado"></div>
+    </div>
+    <img id="desplegar" src="img/ask.png" width="200" height="200" style="margin-left: 60px">
+    <img id="cerrar" src="img/close.png" width="200" height="200" style="margin-left: 60px; display: none">
+    <div id="texto" style="font-size: 30px; display: none" class="cuadro-transparente">
+        <strong>¿Qué mide nuestra Prueba de Velocidad?</strong>
+        <p>La prueba de Velocidad la rapidez de su conexión de bajada. Lo usual es conseguir esta información de diferentes speedtest alrededor de la web, pero nos interesa que usted sepa esta información fácilmente, siendo esto un paso a la hora de corroborar su internet.</p>
+        <strong>¿Por qué solo informamos la velocidad de bajada en 1mb?</strong>
+        <br>
+        <p>La velocidad total de su internet no necesariamente es la mostarda aquí, ya que solo informamos básicamente lo que tarda en bajar 1mb, pero esto es muy importante a la hora de establecer lo que puede decir de cargar una página que en la normal esto es lo que pesa una página antes de los contenidos multimedia.</p>
+        <strong>¿Por qué no incluimos en el informe datos sobre ping, latencia, vibración, etc.?</strong>
+        <br>
+        <p>Ya que esto solo es para revisar su internet rápidamente y determinar si un dispositivo u algo esta restando velocidad a su internet, no para revisar su compañía de red.</p>
+        <strong>¿Cómo se calcula la velocidad de descarga?</strong>
+        <br>
+        <p>Para calcular la velocidad de descarga, Nosotros descargamos un archivo de 1mb, y de ahí lo determinamos con el tiempo que tarda en bajarse.</p>
+        <strong>¿La prueba de velocidad de funcionará en todas partes?</strong>
+        <br>
+        <p>Posiblemente no podamos determinar la velocidad de bajada por restricciones en su navegación que no necesariamente reflejan un mal estado del internet.</p>
+        <strong>¿Por qué ofrecemos la prueba de velocidad?</strong>
+        <br>
+        <p>Queremos que nuestros miembros tengan una manera sencilla, rápida y sin publicidad de calcular la velocidad aproximada que les ofrece su proveedor de servicios de Internet.</p>
+        <strong>¿Qué puedo hacer si no recibo la velocidad que pago?</strong>
+        <br>
+        <p>Si los resultados de nuestro medidor y de otras pruebas de velocidad de otros proveedores de algún servicio similar revelan una velocidad menor de la que pagas, consulta a tu proveedor de servicios de Internet.</p>
+    </div>
+    <div>
+        <div style=" margin-left: 100px; margin-right: 100px; margin-right: 100px">
+            <div class="footer-top" style="margin: 30px auto 0;width: 1050px;">
+                <div class="site-footer" style="font-size: 150%;">
+                    <p class="footer-top">¿Tienes problemas? llama al &nbsp;<a class="footer-top-a" href=" +(504) 9206-0911 (HND)"> +(504) 9206-0911 (HND)</a>
+                    </p>
+                    <table class="site-footer" style="border: 0px; width: 1050px; background-color: rgba(180, 4, 49, 0.62); border: 1px;border-color: #ffffff; border-style: solid;">
+                        <tbody>
+                            <tr>
+                                <td><a href="PreguntasFrecuentes.html" style="text-decoration: none">Preguntas frecuentes</a></td>
+                                <td><a href="Ayuda.html" style="text-decoration: none">Centro de ayuda</a></td>
+                                <td><a href="Cuenta.php" style="text-decoration: none">Cuenta</a></td>
+                                <td><a href="#" style="text-decoration: none">Prensa</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" style="text-decoration: none">Relaciones con inversionistas</a></td>
+                                <td><a href="#" style="text-decoration: none">Empleo</a></td>
+                                <td><a href="#" style="text-decoration: none">Formas de ver</a></td>
+                                <td><a href="TerminosdeUso.html" style="text-decoration: none">Términos de uso</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="Privacidad.html" style="text-decoration: none">Privacidad</a></td>
+                                <td><a href="Preferenciasdecookies.html" style="text-decoration: none">Preferencias de cookies</a></td>
+                                <td><a href="Velocidad.html" style="text-decoration: none">Prueba de velocidad</a></td>
+                                <td><a href="originales.html" style="text-decoration: none">Originales de NetBit</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <div>
+                        <div class="glyphicon icon-globe">
+                        </div>
+                        <div>
+                            <select class="form-control" style="padding-right: 0px; width: 134px;">
+                                <option value="1">ESPAÑOL</option>
+                                <option value="2">INGLES</option>
+                            </select>
+                        </div>
+                    </div>
+                    <p style="margin-top: 20px; padding-top: 20px;">Netbit Honduras</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </nav><br><br>
-<div style=" text-align: center; font-size: 60px;">
-<h1 style="color: #B40431;font-weight: 900; font-size: 150%;font-style: oblique; ">Prueba de Velocidad</h1>
-<img id="img-loader" src="img/loader.gif">
-<div id="div-resultado"></div>
-</div>
-<img id="desplegar" src="img/ask.png"  width="200" height="200" style="margin-left: 60px">
-<img id="cerrar" src="img/close.png"  width="200" height="200" style="margin-left: 60px; display: none">
-<div id="texto" style="font-size: 30px; display: none" class="cuadro-transparente">
-<strong>¿Qué mide nuestra Prueba de Velocidad?</strong>
-<p>La prueba de Velocidad la rapidez de su conexión de bajada. Lo usual es conseguir esta información de diferentes speedtest alrededor de la web, pero nos interesa que usted sepa esta información fácilmente, siendo esto un paso a la hora de corroborar su internet.</p>
-<strong>¿Por qué solo informamos la velocidad de bajada en 1mb?</strong><br>
-<p>La velocidad total de su internet no necesariamente es la mostarda aquí, ya que solo informamos básicamente lo que tarda en bajar 1mb, pero esto es muy importante a la hora de establecer lo que puede decir de cargar una página que en la normal esto es lo que pesa una página antes de los contenidos multimedia.</p>
-<strong>¿Por qué no incluimos en el informe datos sobre ping, latencia, vibración, etc.?</strong><br>
-<p>Ya que esto solo es para revisar su internet rápidamente y determinar si un dispositivo u algo esta restando velocidad a su internet, no para revisar su compañía de red.</p>
-<strong>¿Cómo se calcula la velocidad de descarga?</strong><br>
-<p>Para calcular la velocidad de descarga, Nosotros descargamos un archivo de 1mb, y de ahí lo determinamos con el tiempo que tarda en bajarse.</p>
-<strong>¿La prueba de velocidad de funcionará en todas partes?</strong><br>
-<p>Posiblemente no podamos determinar la velocidad de bajada por restricciones en su navegación que no necesariamente reflejan un mal estado del internet.</p>
-<strong>¿Por qué ofrecemos la prueba de velocidad?</strong><br>
-<p>Queremos que nuestros miembros tengan una manera sencilla, rápida y sin publicidad de calcular la velocidad aproximada que les ofrece su proveedor de servicios de Internet.</p>
-<strong>¿Qué puedo hacer si no recibo la velocidad que pago?</strong><br>
-<p>Si los resultados de nuestro medidor y de otras pruebas de velocidad de otros proveedores de algún servicio similar revelan una velocidad menor de la que pagas, consulta a tu proveedor de servicios de Internet.</p>
-</div>
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script>
-$(document).ready(function(){
-	$.ajax({
-				url: "ajax/procesar-velocidad.php",
-				method:"POST",
-				dataType:"html",
-				success: function(result){
-		        	$("#div-resultado").html(result);
-		        	$("#img-loader").fadeOut(0);
-			    }
-			});
-});
-$("#desplegar").click(function(){
-	$("#texto").fadeIn(20);
-	$("#desplegar").fadeOut(0);
-	$("#cerrar").fadeIn(20);
-});
-$("#cerrar").click(function(){
-	$("#texto").fadeOut(20);
-	$("#cerrar").fadeOut(0);
-	$("#desplegar").fadeIn(20);
-});
-</script>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $.ajax({
+            url: "ajax/procesar-velocidad.php",
+            method: "POST",
+            dataType: "html",
+            success: function(result) {
+                $("#div-resultado").html(result);
+                $("#img-loader").fadeOut(0);
+            }
+        });
+    });
+    $("#desplegar").click(function() {
+        $("#texto").fadeIn(20);
+        $("#desplegar").fadeOut(0);
+        $("#cerrar").fadeIn(20);
+    });
+    $("#cerrar").click(function() {
+        $("#texto").fadeOut(20);
+        $("#cerrar").fadeOut(0);
+        $("#desplegar").fadeIn(20);
+    });
+    </script>
 </body>
+
 </html>
