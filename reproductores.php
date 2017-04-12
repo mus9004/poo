@@ -1,10 +1,16 @@
+<?php
+	$title = "METRO (Cortometraje)";
+	$url = "videos/METRO.mp4";
+	$poster = "img/metro.png";
+?>
 <!DOCTYPE html>
 <html lang="es" id="pagina">
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/icon" href="images/netbit.ico" />
+	    <link rel="icon" type="image/icon" href="images/netbit.ico" />
+
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/estilos_reproductor.css">
 	<script src="codoPlayer/CodoPlayer.js"></script>
@@ -18,7 +24,6 @@
 	<link href="video-js/video-js.css" rel="stylesheet" type="text/css">
   	<script src="video-js/video.js"></script>
   	<script src="video-js/lang/es.js"></script>
-  	<script src="videojs-playlist/dist/videojs-playlist.js"></script>
   	<script>
   		var title = "METRO (Cortometraje)";
   		var link = "videos/METRO.mp4";
@@ -27,21 +32,9 @@
 	<title>Reproductor</title>
 </head>
 <body style="background-color: rgb(0,0,0)">
-<nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          </button>
-          <a href="index.html" style="text-decoration: none"><h1 class=" signupBasicHeader" style="color: #E50914;font-weight: 900;font-size: 250%;font-style: oblique;margin-bottom: 0px;border-top-width:10px;padding-top: 8px;margin-top: 0px;padding-left: 15px;">NETBIT</h1></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse"  style=" text-align: right;">
-          <a type="button" class="btn btn-danger submit" style="margin-top: 10px; margin-right: 10px; margin-bottom: 10px" href="login.html">Iniciar Sesion</a>
-        </div>
-      </div>
-    </nav><br><br>
 	<div class="margen">
 		<div>
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center; margin-top:35px">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<button type="button" class="btn btn-default" id="btn-codoPlayer">Codo Player</button>
 				<button type="button" class="btn btn-default" id="btn-flowPlayer">Flowplayer</button>
 				<button type="button" class="btn btn-default" id="btn-JWPlayer">JW Player</button>
@@ -56,12 +49,12 @@
 				    		src: link
 				    		},{
 				    			title: "Intro",
-				    			poster: "img/cover.jpg",
+				    			poster: "videos/cover.jpg",
 				    			src: "videos/Intro.mp3",
 				    			engine: "auto"
 				    		},{
 				    			title: "Courtesy Call",
-				    			poster: "img/cover.jpg",
+				    			poster: "videos/cover.jpg",
 				    			src: "videos/CourtesyCall.mp3",
 				    			engine: "auto"
 				    		}],{
@@ -108,20 +101,6 @@
 						  	autoplay: false,
 						  	preload: 'auto'
 						});
-						playerJs.playlist([{
-							sources: [{
-						    src: link,
-						    type: 'video/mp4'
-						  }],
-						  poster: poster
-						}, {
-						  sources: [{
-						    src: link,
-						    type: 'video/mp4'
-						  }],
-						  poster: poster
-						}]);
-						playerJs.playlist.autoadvance(0);
 					</script>
 				</div>
             </div>
@@ -132,20 +111,10 @@
     <script src="js/reproductores.js"></script>
     <script>
 	var playerInstance = jwplayer("reproduce").setup({
-						playlist : [{
-							file: link,
-							image: poster,
-							title: title,
-							description: "Una maravillosa fantasía minimalista..."
-						},{
-							file: "videos/Intro.mp3",
-							image: "img/cover.jpg",
-							title: "Intro"
-						},{
-							file: "videos/CourtesyCall.mp3",
-							image: "img/cover.jpg",
-							title: "Courtesy Call"
-						}],
+				    	file: link,
+				    	image: poster,
+				    	title: title,
+				    	mediaid: "control",
 				    	description: "Una maravillosa fantasía minimalista...",
 				    	sharing: {
     					sites: ["facebook","twitter","email","googleplus"]}
