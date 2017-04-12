@@ -19,6 +19,11 @@
   	<script src="video-js/video.js"></script>
   	<script src="video-js/lang/es.js"></script>
   	<script src="videojs-playlist/dist/videojs-playlist.js"></script>
+  	<style>
+    a {
+    	color: white;
+    }
+    </style>
   	<script>
   		var title = "METRO (Cortometraje)";
   		var link = "videos/METRO.mp4";
@@ -66,7 +71,7 @@
 				    			engine: "auto"
 				    		}],{
 				    		preload: false,
-				    		playlist: false,
+				    		playlist: true,
 				    		id: "codo",
 				    		onReady: function(player) {
 					            console.log(player);
@@ -126,6 +131,52 @@
 				</div>
             </div>
          </div>
+    </div>
+    <br>
+    <br>
+    <div>
+        <div style=" margin-left: 100px; margin-right: 100px; margin-right: 100px">
+            <div class="footer-top" style="margin: 30px auto 0;width: 1050px;">
+                <div class="site-footer" style="font-size: 150%;">
+                    <p class="footer-top">¿Tienes problemas? llama al &nbsp;<a class="footer-top-a" href=" +(504) 9206-0911 (HND)"> +(504) 9206-0911 (HND)</a>
+                    </p>
+                    <table class="site-footer" style="border: 0px; width: 1050px; background-color: rgba(180, 4, 49, 0.62); border: 1px;border-color: #ffffff; border-style: solid;">
+                        <tbody>
+                            <tr>
+                                <td><a href="PreguntasFrecuentes.html" style="text-decoration: none">Preguntas frecuentes</a></td>
+                                <td><a href="Ayuda.html" style="text-decoration: none">Centro de ayuda</a></td>
+                                <td><a href="Cuenta.php" style="text-decoration: none">Cuenta</a></td>
+                                <td><a href="#" style="text-decoration: none">Prensa</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" style="text-decoration: none">Relaciones con inversionistas</a></td>
+                                <td><a href="#" style="text-decoration: none">Empleo</a></td>
+                                <td><a href="#" style="text-decoration: none">Formas de ver</a></td>
+                                <td><a href="TerminosdeUso.html" style="text-decoration: none">Términos de uso</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="Privacidad.html" style="text-decoration: none">Privacidad</a></td>
+                                <td><a href="Preferenciasdecookies.html" style="text-decoration: none">Preferencias de cookies</a></td>
+                                <td><a href="Velocidad.html" style="text-decoration: none">Prueba de velocidad</a></td>
+                                <td><a href="originales.html" style="text-decoration: none">Originales de NetBit</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <div>
+                        <div class="glyphicon icon-globe">
+                        </div>
+                        <div>
+                            <select class="form-control" style="padding-right: 0px; width: 134px;">
+                                <option value="1">ESPAÑOL</option>
+                                <option value="2">INGLES</option>
+                            </select>
+                        </div>
+                    </div>
+                    <p style="margin-top: 20px; padding-top: 20px;">Netbit Honduras</p>
+                </div>
+            </div>
+        </div>
     </div>
 	<script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
