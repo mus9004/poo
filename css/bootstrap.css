@@ -3343,8 +3343,8 @@ fieldset[disabled] .btn-warning.focus {
 }
 .btn-danger {
   color: #fff;
-  background-color: #d9534f;
-  border-color: #d43f3a;
+  background-color: #B40431;
+  border-color: #B40431;
 }
 .btn-danger:focus,
 .btn-danger.focus {
