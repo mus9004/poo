@@ -105,7 +105,7 @@
 			<td colspan="2">
 			
 				<br><br>
-				<input type="button" name="btn-guardar" class="btn btn-danger" value="Guardar">
+				<input type="button" name="btn-guardar" id="btn-guardar" class="btn btn-danger" value="Guardar">
 		
 			</td>
 			
@@ -173,7 +173,7 @@
 	
 	<script type="text/javascript">
 				
-		$("#btn-enviar").click(function(){
+		$("#btn-guardar").click(function(){
 			var parametros={
 		        "txt-nombre" :$("#txt-nombre").val(),
 		        "txt-apellido" :$("#txt-apellido").val(),
@@ -189,10 +189,10 @@
 		        data:parametros,
 		        method:"POST",
 		        success: function(result){
-		              location.href ="cuenta.html";
+		              location.href ="cuenta.php";
 	          }
 	      	});
-	      	location.href ="cuenta.html";
+	      	location.href ="cuenta.php";
 
    		 });
 		$("#iniciarsecion").click(function(){
