@@ -96,8 +96,8 @@
 			</td>
 		</tr>
 	</table>
-
-		
+		<br><br><br>
+		<input type="button" name="btn-continuar" id="btn-continuar" class="btn btn-success" value="Continuar" style="font-size: 140%">
 		
 	</div>
 
@@ -128,6 +128,11 @@
 			$("#activar").hide();
 			
 		});
+
+		$("#btn-continuar").click(function(){
+
+    		location.href ="cartelera.html";
+    	});
 
     	$("#Ccorreo").click(function(){
 
