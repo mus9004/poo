@@ -41,10 +41,10 @@
 	              
 		          <ul>
 		              <li><a href="index.html">Inicio</a></li>
-		              <li><a href="#">Mi lista</a></li>
-		              <li><a href="#">Originales</a></li>
-		              <li><a href="#">Novedades</a></li>
-		              <li><a href="#">Formas de Ver</a></li>
+		              <li><a href="Cuenta.php">Mi Cuenta</a></li>
+		              <li><a href="originales.html">Originales</a></li>
+		              <li><a href="ayuda.html">Ayudas</a></li>
+		              <li><a href="velocidad.html">Chequear tu velocidad</a></li>
 		          </ul>
 	          </div>
 	          <!--/.column-->
@@ -100,7 +100,7 @@
     <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#modal-sinopsis">Large modal</button> -->
 		
 
-		   <div class="modal fade bs-example-modal-lg" id="modal-sinopsis" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+		   <div class="modal fade bs-example-modal-lg" id="modal-sinopsis" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style=" z-index: 1000000;">
              <div class="modal-dialog modal-lg" role="document" style="margin-left: 80px;margin-right: 80px;filter:alpha(opacity=50); opacity:0.9; color:#000000; ">
                 <div class="modal-content" style="width: 1102px;">
                   <div class="modal-header">
@@ -526,6 +526,18 @@
 			}
 
 		}
+		$(document).scroll(function(event) {
+ 		     if (menu.is(":visible"))
+			{
+				menu.slideUp(400);
+				$(this).removeClass("open");
+			}
+			if (menu1.is(":visible"))
+			{
+				menu1.slideUp(400);
+				$(this).removeClass("open");
+			}
+		});
 		
 	});
 	$("#btn-reproducir").click(function(){
