@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	     <meta charset="utf-8">
+	     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	     <meta name="viewport" content="width=device-width, initial-scale=1">
+	     <link rel="icon" type="image/icon" href="images/netbit.ico" />
+	    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	     <meta name="description" content="">
+	     <meta name="author" content="">
+	     <title>Netblit</title>
+	     <link href="css/bootstrap.min.css" rel="stylesheet">
+	     <script type="text/javascript" src="js/jquery.min.js" ></script>
+	     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	     <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+	     <script type="text/javascript" src="js/jquery.min.js" ></script>
+	     <link href="css/normalize-card.min.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+     <div >
+        <div >
+           <div class="container" >
+	         <div class="row">
+	            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6">
+	            	  <h1 class=" signupBasicHeader" style="color: #E50914;font-weight: 900;font-size: 250%;font-style: oblique;margin-bottom: 0px;border-top-width:10px;padding-top: 20px;">NETBIT</h1></div>
+	              <!-- icono de netbit -->
+	             <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6"> 
+	                  <a href="/signout" class="authLinks signupBasicHeader" >Cerrar sesión</a>
+	            </div>
+	         </div>
+           </div><br><br><br>
+           <div class="radSimpleContainer" >	<!--  data-transitioned-child="true"-->
+              <div > <!-- class="centerContainer" style="display: block; transform: translateX(0px); opacity: 1; transition-duration: 250ms;"
+              si se quiere aplicar una transicion aplique esta clase al div-->
+                  <form>
+                     <div class="paymentFormContainer">
+                        <div class="messageContainer">
+                        	
+                        </div>
+                        <div class="stepHeader">
+                           <span class="stepIndicator">PASO <b>3</b> DE <b>3</b></span>
+                              <h1 class="stepTitle">Configura tu tarjeta de crédito o débito</h1>
+                        </div>
+                        <div class="fieldContainer">
+                           <div class="">
+                               <span class="logos logos-block">
+                                 <span class="logoIcon VISA"><img src="images/12_11_2014_icon_visa_37x25.png"></span>
+                                 <span class="logoIcon MASTERCARD"><img src="images/10_18_2014_icon_master_37x25.png"></span>
+                                 <span class="logoIcon AMEX"><img src="images/10_18_2014_icon_amex_37x25.png"></span>
+                                 <span class="logoIcon DISCOVERY"><img src="images/10_18_2014_icon_discovery_37x25.png"></span>
+                                 <span><img src="images/ringloader_white_57x57_tail_red.gif" style=" width: 25px; height: 25px;"></span>
+                               </span>
+                           </div>
+                           <div class="radForm">
+                              <label class="floating-label unfocused firstName ui-label ui-input-label">
+                                     <input data-testid="firstName" placeholder="Nombre" class="ui-text-input medium" >
+                               </label>
+                               <label class="floating-label unfocused lastName ui-label ui-input-label">
+                                   <input data-testid="lastName" placeholder="Apellidos" class="ui-text-input medium">
+                                </label>
+                                <div class="cardNumberContainer">
+                                    <label class="floating-label unfocused creditCardNumber ui-label ui-input-label">
+                                       <input type="tel" placeholder="Número de tarjeta" class="ui-text-input medium" >
+                                    </label>
+                                 </div>
+                                 <label class="floating-label unfocused creditExpirationMonth ui-label ui-input-label">
+                                    <input type="tel" class="ui-text-input medium" placeholder="Fecha de vencimiento (MM/AA)" value="" >
+                                  </label>
+                                  <label class="floating-label unfocused creditCardSecurityCode ui-label ui-input-label">
+                                      <input type="tel" data-testid="creditCardSecurityCode" class="ui-text-input medium" placeholder="Código de seguridad (CVV)">
+                                   </label>
+                            </div>
+                            <div class="changePlanContainer">
+                               <div class="changePlanTitle">TU PLAN</div>
+                               <div class="planDesc" id="info-plan">Información de tu plan "este campo debe ser programado su id es (info-plan)"</div>
+                               <a class="changePlanLink pointer">Cambiar</a>
+                             </div>
+                             <div class="radForm">
+                               <div class="signupTerms" id="inicio-gratis">
+                                   <span>
+                                     <p>Al hacer click en el botón "Iniciar suscripción" a continuación, aceptas nuestros<a target="blank" href="">Términos de uso</a>, nuestra <a target="blank" href="">Declaración de privacidad</a> y que ya has cumplido los 18. Puedes cancelar la suscripción cuando quieras durante la prueba gratuita y no se te cobrará nada. Para cancelarla, ve a la página web de tu cuenta y haz clic en "Cancelar suscripción".</p>
+                                     <p>
+                                       <b>Si no la cancelas, cuando termine tu periodo gratuito de prueba Netflix dará por hecho automáticamente que tu suscripción sigue en vigor y te cobrará la tarifa correspondiente (tarifa actual <span id="tarifa">"Campo por programar (id="tarifa")"</span>) a través de tu forma de pago cada mes.</b> No recibirás reembolsos ni créditos por los meses parciales.</p>
+                                   </span>
+                               </div>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="submitBtnContainer">
+                       <button class="Tappable-inactive btn simplicity btn-red btn-large" type="submit" id="comenzarpago" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; cursor: pointer;">
+                           <span>Iniciar suscripción</span>
+                        </button>
+                    </div>
+                 </form>
+               </div>
+            </div><br>
+           <div class="footer-top" >
+            <div class="site-footer">
+                 <p class="footer-top">¿Tienes problemas? llama al &nbsp;<a class="footer-top-a" href=" +(504) 9206-0911 (HND)"> +(504) 9206-0911 (HND)</a></p>
+               
+			      <table class="site-footer" style="border-color: #999797; border: 0px; width: 980px;">
+			            <tr >
+			              <td style="color: #999797">Preguntas frecuentes</td>
+			              <td style="color: #999797">Centro de ayuda</td>
+			              <td style="color: #999797"><a href="Cuenta.php"  style="color: #999797">Cuenta</td>
+			              <td style="color: #999797">Prensa</td>
+			            </tr>
+
+			            <tr>
+			              <td style="color: #999797">Relaciones con inversionistas</td>
+			              <td style="color: #999797">Empleo</td>
+			              <td style="color: #999797">Formas de ver</td>
+			              <td style="color: #999797">Términos de uso</td>
+			            </tr>
+			            <tr>
+			              <td style="color: #999797">Privacidad</td>
+			              <td style="color: #999797">Preferencias de cookies</td>
+			              <td style="color: #999797">Prueba de velocidad</td>
+			              <td style="color: #999797">Originales de NetBit</td>
+			            </tr>         
+			       </table><br><br>
+                   <div>
+                      <div class="glyphicon icon-globe">
+              	 
+                      </div>
+                      <div>
+              	          <select class="form-control" style="padding-right: 0px; width: 134px;">
+                               <option value="1">ESPAÑOL</option>
+                               <option value="2">INGLES</option>
+                          </select>
+                      </div>
+                   </div>
+                   <p style="margin-top: 20px; color: #999797; padding-top: 20px;">Netbit Honduras</p>
+           </div>
+          </div>
+        </div>
+      <div>	
+    </div>
+  </body>
+</html>
+
