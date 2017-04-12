@@ -6,11 +6,11 @@ $file = file_get_contents($link);
 $end = time();
 
 $time = $end - $start;
-echo $time.' segundos<br>';
+echo $time.' segundos para descargar 1mb<br>';
 $size = /*$size / 102400*/1024;
 $speed = round(($size / $time),2);
-echo "Tu velocidad es: $speed Kb/s";
+echo "Tu velocidad es: ".(($speed>1000)?((round(($speed/1024),2)) ." Mb/s"):($speed." KB/s"));
 if($speed>2048){
-	echo "Pucha man, descargame una peli xD";
+	echo "<br>Pucha man, descargame una peli xD";
 }
 ?>
