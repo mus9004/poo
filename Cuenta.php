@@ -131,6 +131,21 @@
 
 		$("#btn-continuar").click(function(){
 
+			var parametros={
+		        "txt-email" :$("#txt-email").val(),
+		        "txt-password" :$("#txt-password").val(),
+		        
+		        
+				};
+			$.ajax({
+	        url: "class/class-procesar.php", 
+		        data:parametros,
+		        method:"POST",
+		        success: function(result){
+		              location.href ="cartelera.html";
+	          }
+	      	});
+
     		location.href ="cartelera.html";
     	});
 
