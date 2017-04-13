@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+     <link rel="icon" type="image/icon" href="images/Netbit.ico" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>Netblit</title>
+     <link href="css/bootstrap.min.css" rel="stylesheet">
+     <script type="text/javascript" src="js/jquery.min.js" ></script>
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+      <script type="text/javascript" src="js/jquery.min.js" ></script>
+     <link href="css/normalize-card.min.css" type="text/css" rel="stylesheet">
+    
+</head>
+<body>
+
+     <div class="modal fade bs-example-modal-lg" id="modal-sinopsis" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style=" z-index: 1000000;">
+             <div class="modal-dialog modal-lg" role="document" style="margin-left: 380px;margin-right: 80px;filter:alpha(opacity=50);opacity:0.9;color:#000000;">
+                <div class="modal-content" style="width: 500px;height: 902px;">
+                  <div class="modal-header">
+                      <span class="stepTitle" style="font-size: 20px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Información de Pago</span>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: #000000">
+                      <span class="glyphicon glyphicon-remove-circle" ></span></button>
+                 </div><br>
+                 <div>
+                      <form>
+                         <div class="paymentFormContainer">
+                            <div class="messageContainer">
+                              
+                            </div>
+                            <div class="stepHeader">
+                               <span class="stepIndicator">PASO <b>3</b> DE <b>3</b></span>
+                                  <h1 class="stepTitle">Configura tu tarjeta de crédito o débito</h1>
+                            </div>
+                            <div class="fieldContainer">
+                               <div class="">
+                                   <span class="logos logos-block">
+                                     <span class="logoIcon VISA"><img src="images/12_11_2014_icon_visa_37x25.png"></span>
+                                     <span class="logoIcon MASTERCARD"><img src="images/10_18_2014_icon_master_37x25.png"></span>
+                                     <span class="logoIcon AMEX"><img src="images/10_18_2014_icon_amex_37x25.png"></span>
+                                     <span class="logoIcon DISCOVERY"><img src="images/10_18_2014_icon_discovery_37x25.png"></span>
+                                     <span><img src="images/ringloader_white_57x57_tail_red.gif" style=" width: 25px; height: 25px;"></span>
+                                   </span>
+                               </div>
+                               <div class="radForm">
+                                  <label class="floating-label unfocused firstName ui-label ui-input-label">
+                                         <input data-testid="firstName" placeholder="Nombre" class="ui-text-input medium" >
+                                   </label>
+                                   <label class="floating-label unfocused lastName ui-label ui-input-label">
+                                       <input data-testid="lastName" placeholder="Apellidos" class="ui-text-input medium">
+                                    </label>
+                                    <div class="cardNumberContainer">
+                                        <label class="floating-label unfocused creditCardNumber ui-label ui-input-label">
+                                           <input type="tel" placeholder="Número de tarjeta" class="ui-text-input medium" >
+                                        </label>
+                                     </div>
+                                     <label class="floating-label unfocused creditExpirationMonth ui-label ui-input-label">
+                                        <input type="tel" class="ui-text-input medium" placeholder="Fecha de vencimiento (MM/AA)" value="" >
+                                      </label>
+                                      <label class="floating-label unfocused creditCardSecurityCode ui-label ui-input-label">
+                                          <input type="tel" data-testid="creditCardSecurityCode" class="ui-text-input medium" placeholder="Código de seguridad (CVV)">
+                                       </label>
+                                </div>
+                                <div class="changePlanContainer">
+                                   <div class="changePlanTitle">TU PLAN</div>
+                                   <div class="planDesc" id="info-plan">Información de tu plan "este campo debe ser programado su id es (info-plan)"</div>
+                                   <a class="changePlanLink pointer">Cambiar</a>
+                                 </div>
+                                 <div class="radForm">
+                                   <div class="signupTerms" id="inicio-gratis">
+                                       <span>
+                                         <p>Al hacer click en el botón "Iniciar suscripción" a continuación, aceptas nuestros<a target="blank" href="">Términos de uso</a>, nuestra <a target="blank" href="">Declaración de privacidad</a> y que ya has cumplido los 18. Puedes cancelar la suscripción cuando quieras durante la prueba gratuita y no se te cobrará nada. Para cancelarla, ve a la página web de tu cuenta y haz clic en "Cancelar suscripción".</p>
+                                         <p>
+                                           <b>Si no la cancelas, cuando termine tu periodo gratuito de prueba Netbit dará por hecho automáticamente que tu suscripción sigue en vigor y te cobrará la tarifa correspondiente (tarifa actual <span id="tarifa">"Campo por programar (id="tarifa")"</span>) a través de tu forma de pago cada mes.</b> No recibirás reembolsos ni créditos por los meses parciales.</p>
+                                       </span>
+                                   </div>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="submitBtnContainer">
+                          <a class="Tappable-inactive btn simplicity btn-red btn-large" href="quienUsaraNetflix.html" type="submit" id="comenzarpago" style="text-decoration:none;-webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; cursor: pointer;">
+                               <span>Iniciar suscripción</span>
+                            </a>
+                        </div>
+                     </form>
+                 </div>
+       
+   
+        </div>
+      </div>
+    </div>
+
+
+
+     <div>
+       <div>
+           <div class="container" >
+           <div class="row">
+              <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6">
+                  <a href="index.html" style="text-decoration: none"><h1 class=" signupBasicHeader" style="color: #E50914;font-weight: 900;font-size: 250%;font-style: oblique;margin-bottom: 0px;border-top-width:10px;padding-top: 20px;">Netbit</h1></a></div>
+                <!-- icono de Netbit -->
+               <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6"> 
+                    <a href="index.html" class="authLinks signupBasicHeader" >Cerrar sesión</a>
+              </div>
+           </div>
+           </div><br><br>
+         <div class="radSimpleContainer">
+           <div class="centerContainer contextStep firstLoad">
+              <div class="paymentContainer">
+                
+                   <div class="messageContainer"></div>
+
+                   <div>
+                       <span class="stepLogo paymentStepLogo">
+                         <img src="images/Lock.png">
+                       </span><br>
+                   </div>
+                   <div class="stepHeader">
+                        <span class="stepIndicator">PASO <b>3</b> DE <b>3</b></span>
+                        <h1 class="stepTitle">Selecciona tu forma de pago.</h1>
+                   </div>
+                   <div class="narrowContainer">
+                       <div class="contextRow contextRowFirst">
+                              Cancela antes del <b>"fecha por programar" y no se te cobrará ningún cargo, hasta que finalice tu periodo de prueba.</b>
+                       </div>
+                       <div class="contextRow">
+                                Como recordatorio, <b>te enviaremos un email 3 días antes.</b>
+                       </div>
+                       <div class="contextRow">
+                             <div>
+                                <b>Sin compromisos.&nbsp; &nbsp; </b>
+                            
+                                <br>
+                                <b>Cancela online en cualquier momento.</b>
+                             </div>
+                        </div>
+                    </div>
+                      <label class="ui-tab-radio ui-tab-radio--active paymentPicker standardHeight"  data-toggle="modal" data-target="#modal-sinopsis" > <!-- id="Tajeta1"-->
+                           <div class="mopNameAndLogos"> 
+                                <span class="ui-tab-radio--text card-type-text paymentActive" >Tarjeta de crédito o débito</span>
+                                <div class="logosContainer" >
+                                  <span class="logos logos-inline" >
+                                        <span class="logoIcon VISA"><img src="images/12_11_2014_icon_visa_37x25.png"></span>
+                                        <span class="logoIcon MASTERCARD"><img src="images/10_18_2014_icon_master_37x25.png"></span>
+                                        <span class="logoIcon AMEX"><img src="images/10_18_2014_icon_amex_37x25.png"></span>
+                                        <span class="logoIcon DISCOVERY"><img src="images/10_18_2014_icon_discovery_37x25.png"></span>
+                                  </span>
+                                </div>
+                           </div>
+                           <span class="ui-svg-icon ui-svg-icon--chevron pull-right pickerArrow">
+                           <img src="images/chevron.svg" width="40" height="25" > </span>
+                        </label>
+
+                        <label class="ui-tab-radio ui-tab-radio--active paymentPicker standardHeight" data-toggle="modal" data-target="#modal-sinopsis"><!-- id="tarjet2"-->
+                             <div class="mopNameAndLogos" >
+                                <span class="ui-tab-radio--text card-type-text paymentActive" >PayPal</span>
+                                <div class="logosContainer">
+                                    <span class="logos logos-inline">
+                                       <span class="logoIcon PAYPAL">
+                                         <img src="images/paypal.png" width="70" height="20">
+                                       </span>
+                                    </span>
+                                </div>
+                              </div>
+                              <span class="ui-svg-icon ui-svg-icon--chevron pull-right pickerArrow">
+                           <img src="images/chevron.svg" width="40" height="25" > </span>
+                      </label>
+              </div>
+            </div>
+         </div>
+
+
+  <div> 
+       <div>
+             <div class="footer-top" >
+                  <div class="site-footer">
+                       <p class="footer-top">¿Tienes problemas? llama al &nbsp;<a  style="text-decoration: none" class="footer-top-a" href=" +(504) 9206-0911 (HND)"> +(504) 9206-0911 (HND)</a>
+                         </p>
+                 
+                           <table class="site-footer" style="border-color: #999797;">
+                            <tr >
+                              <td style="color: #999797"><a href="PreguntasFrecuentes.html" style="text-decoration: none">Preguntas frecuentes</a></td>
+                              <td style="color: #999797"><a href="Ayuda.html" style="text-decoration: none">Centro de ayuda</a></td>
+                              <td style="color: #999797"><a href="Cuenta.php"  style="text-decoration: none">Cuenta</td>
+                              <td style="color: #999797"><a href="#"  style="text-decoration: none">Prensa</a></td>
+                            </tr>
+
+                            <tr>
+                              <td style="color: #999797"><a href="#"  style="text-decoration: none">Relaciones con inversionistas</a></td>
+                              <td style="color: #999797"><a href="#"  style="text-decoration: none">Empleo</a></td>
+                              <td style="color: #999797"><a href="#"  style="text-decoration: none">Formas de ver</a></td>
+                              <td style="color: #999797"><a href="TerminosdeUso.html"  style="text-decoration: none">Términos de uso</a></td>
+                            </tr>
+                            <tr>
+                              <td style="color: #999797"><a href="Privacidad.html"  style="text-decoration: none">Privacidad</a></td>
+                              <td style="color: #999797"><a href="Preferenciasdecookies.html"  style="text-decoration: none">Preferencias de cookies</a></td>
+                              <td style="color: #999797"><a href="Velocidad.html"  style="text-decoration: none">Prueba de velocidad</a></td>
+                              <td style="color: #999797"><a href="originales.html"  style="text-decoration: none">Originales de Netbit</a></td>
+                            </tr>         
+                           </table><br><br>
+                  <div>
+                      <div class="lang-selection-container">
+                           <div class="ui-select-wrapper">
+                               <label class="ui-label no-display">
+                                   <span class="ui-label-text"></span>
+                                 </label>
+                                 <div class="select-arrow medium prefix globe">          
+                                     <select class="ui-select medium"> 
+                                         <option>Español</option>
+                                         <option>English</option>
+                                     </select>
+                                 </div>
+                            </div>
+                       </div>
+                 </div>
+                <p style="margin-top: 20px; color: #999797; padding-top: 20px;">Netbit Honduras</p>
+         </div>
+      </div>
+    </div>
+  </div>
+           
+        </div>
+      </div>
+      <script type="text/javascript">
+        $("#Tajeta1").click(function(){
+           var tarjeta="tipo1"
+          location.href ="opcionescredito.html";
+
+        });
+         $("#tarjet2").click(function(){
+          var tarjeta="tipo1"
+          location.href ="registrousuarios.html";
+        });
+        $("#btn-enviar").click(function(){
+          var parametros={
+            "txt-tipo" :tarjeta
+            
+        };
+        $.ajax({
+          url: "class/class-procesar.php", 
+            data:parametros,
+            method:"POST",
+            success: function(result){
+                  location.href ="registrotarjeta.html";
+            }
+          });
+
+        }); 
+        
+      </script>
+</body>
+</html>
