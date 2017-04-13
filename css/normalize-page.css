@@ -1894,8 +1894,7 @@ th {
     content: "\F045"
 }
 
-body,
-html {
+body,html {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background: #f3f3f3;
     color: #333;
