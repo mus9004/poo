@@ -195,7 +195,7 @@
 		};
 		
 		$("#btn-enviar").click(function(){
-			location.href ="registrotarjeta.html";
+			location.href ="registrotarjeta-modal.html";
 			var parametros={
 		        "txt-name" :$("#txt-name").val(),
 		        "btn-enviar" :$("#btn-enviar").val()
@@ -205,7 +205,7 @@
 		        data:parametros,
 		        method:"POST",
 		        success: function(result){
-		              location.href ="registrotarjeta.html";
+		              location.href ="registrotarjeta-modal.html";
 	          }
 	      });
 
