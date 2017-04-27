@@ -34,11 +34,12 @@
     <div class="container-viewport" >
        <form class="form-signin">
             <h2 class="form-signin-heading">Iniciar sesión</h2>
-            <label for="inputEmail" class="sr-only">Email address</label>
+            <label for="inputEmail" class="sr-only">Correo</label>
+            <div id="resultado"></div>
             <h4>Email</h4>
             <input type="email" id="inputEmail" class="form-control" placeholder="Email, (Admin, solo para administradores)"  required autofocus>
             <h4>Password:</h4>
-            <label for="inputPassword" class="sr-only">Password</label>
+            <label for="inputPassword" class="sr-only">Contraseña</label>
             <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
             <div class="checkbox">
               <label>
@@ -46,7 +47,7 @@
               </label>
             </div>
 
-            <button class="btn btn-lg btn-primary btn-block" id="btn-inicio-sesion" type="button">Sign in</button><hr>
+            <button class="btn btn-lg btn-primary btn-block" id="btn-login" type="button">Entrar</button><hr>
             <form action="https://es-la.facebook.com/" method="POST">
             <button class="boton-face"></button><a class="anchor" href="https://www.facebook.com/" target="_blank">Inicia sesión con Facebook</a>  
              </form>
@@ -104,23 +105,23 @@
                 
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
-   
+   <script type="text/javascript"  src="js/controlador.js"></script> 
   <script type="text/javascript">
 
-    $("#logo").click(function(){
-          location.href="index.html";
-      });
+    // $("#logo").click(function(){
+    //       location.href="index.html";
+    //   });
 
-    $("#btn-inicio-sesion").click(function(){
-      if($("#inputEmail").val()=="Admin" || $("#inputEmail").val()=="admin"){
-        location.href ="registropeliculas.html";
-      }else
-       location.href ="cartelera.html";
+    // $("#btn-inicio-sesion").click(function(){
+    //   if($("#inputEmail").val()=="Admin" || $("#inputEmail").val()=="admin"){
+    //     location.href ="registropeliculas.html";
+    //   }else
+    //    location.href ="cartelera.html";
 
       //if ($("#inputEmail").val()!="Admini" ) {}
 
       
-    });
+    // });
 
   </script>         
   
