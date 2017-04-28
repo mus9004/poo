@@ -7,11 +7,14 @@ $.ajax({
 			url:"ajax/acciones.php?accion=1",
 			data:parametros,
 			method: "POST",
-			success:function(resultado){
-				 $("#resultado").html(resultado);
-				// alert("aqui estoy");
-
-			
+			dataType:"json",
+			success:function(respuesta){
+				if (respuesta.codigo_resultado==0) 
+					$("#resultado").html('<div style="color: red"> '+respuesta.mensaje+"</div>");
+				if (respuesta.codigo_resultado==1) 
+					location.href="cartelera.html";
+				$("#btn-login").button("reset");
+		
 			},
 			error:function(){
 				alert("algo esta mal");
@@ -19,4 +22,3 @@ $.ajax({
 			}
 		});
 });
-// $(document).ready(function(){

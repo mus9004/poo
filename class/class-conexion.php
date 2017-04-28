@@ -6,7 +6,7 @@
 		private $puerto = 3306;
 		private $usuario = "root";
 		private $contrasena = "";
-		private $baseDatos = "playstore_db";
+		private $baseDatos = "netflix_bd";
 		private $enlace;
 
 		public function __construct(){}
@@ -19,7 +19,7 @@
 			    echo "Mensaje Error: " . mysqli_connect_error() . "<br>";
 			    exit;
 			}
-			echo "Conexion Satisfactoria";
+			// echo "Conexion Satisfactoria";
 		}
 
 		public function cerrarConexion(){
