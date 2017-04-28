@@ -13,6 +13,7 @@
           background-attachment: fixed;
           border-top-width: 0px;
           margin-top: 0px; 
+          margin-bottom:0px;
 		}
 		.cuadro1{
 			background-color:#151515; 
@@ -47,7 +48,7 @@
 		    padding-bottom: 0px;
 		    padding-left: 15px;
 		}
-		  
+
 	</style>
 
 </head>
@@ -73,13 +74,11 @@
 			
 	</div>
 	
-
-    <div class="cuadro1">
-   	 <section id="sin-compromisos">
-          
+	<section id="sin-compromisos">
+    <div class="cuadro1">   
         <div style=" max-width: 980px; align-items: center;margin-left: 200px; margin-right: 200px;">                       
                    <ul class="nav nav-tabs nav-justified" style="align-items: center;">
-			    		<li  class="text-center" class="active"><a href="#sin-compromisos">
+			    		<li  class="text-center" class="active"><a href="#sin-compromisos" onclick="javascript:oculta();">
 						   <div class="thumbnaile">
 						   		<span class="glyphicon glyphicon-tag " style= "font-size: 6em"  aria-hidden="true" ></span>
 						    <div class="caption">
@@ -90,14 +89,14 @@
 						    </div>
 							</a></li>
 
-			    		<li  class="text-center"><a href="#ve-donde-quieras"><div class="thumbnaile">
+			    		<li  class="text-center"><a href="#ve-donde-quieras" onclick="javascript:oculta1();"><div class="thumbnaile">
 						   		<span class="glyphicon glyphicon-play-circle " style= "font-size: 6em"  aria-hidden="true" ></span>
 						    <div class="caption">
 						        
 						              <p><br>Ve desde donde quieras<br></p> 
 						      </div>
 						    </div></a></li>
-			    		<li  class="text-center"><a href="#elige-plan"><div class="thumbnaile">
+			    		<li  class="text-center"><a href="#elige-plan" onclick="javascript:oculta2();"><div class="thumbnaile">
 						   		<span class="glyphicon glyphicon-facetime-video" style= "font-size: 6em"  aria-hidden="true" ></span>
 						    <div class="caption">
 						        
@@ -186,12 +185,12 @@
 		</div>	
     </section>
 
-    <section id="ve-donde-quieras">
+    <section id="ve-donde-quieras" style="display: none;">
 	    <div class="cuadro1 ">
 	    	<div>
 	    		 <div style=" max-width: 980px; align-items: center;margin-left: 200px; margin-right: 200px;">                       
                    <ul class="nav nav-tabs nav-justified" style="align-items: center;">
-			    		<li  class="text-center" class="active"><a href="#sin-compromisos">
+			    		<li  class="text-center" class="active"><a href="#sin-compromisos" onclick="javascript:oculta();">
 						   <div class="thumbnaile">
 						   		<span class="glyphicon glyphicon-tag " style= "font-size: 6em"  aria-hidden="true" ></span>
 						    <div class="caption">
@@ -202,14 +201,14 @@
 						    </div>
 							</a></li>
 
-			    		<li  class="text-center"><a href="#ve-donde-quieras"><div class="thumbnaile">
+			    		<li  class="text-center"><a href="#ve-donde-quieras" onclick="javascript:oculta1();"><div class="thumbnaile">
 						   		<span class="glyphicon glyphicon-play-circle " style= "font-size: 6em"  aria-hidden="true" ></span>
 						    <div class="caption">
 						        
 						              <p><br>Ve desde donde quieras<br></p> 
 						      </div>
 						    </div></a></li>
-			    		<li  class="text-center"><a href="#elige-plan"><div class="thumbnaile">
+			    		<li  class="text-center"><a href="#elige-plan" onclick="javascript:oculta2();"><div class="thumbnaile">
 						   		<span class="glyphicon glyphicon-facetime-video" style= "font-size: 6em"  aria-hidden="true" ></span>
 						    <div class="caption">
 						        
@@ -324,12 +323,12 @@
     </section>
 
 
-    <section id="elige-plan">
+    <section id="elige-plan" style="display: none;">
 	    <div class="cuadro1 ">
 	    	<div>
 	    		 <div style=" max-width: 980px; align-items: center;margin-left: 200px; margin-right: 200px;">                       
                    <ul class="nav nav-tabs nav-justified" style="align-items: center;">
-			    		<li  class="text-center" class="active"><a href="#sin-compromisos">
+			    		<li  class="text-center" class="active"><a href="#sin-compromisos" onclick="javascript:oculta();">
 						   <div class="thumbnaile">
 						   		<span class="glyphicon glyphicon-tag " style= "font-size: 6em"  aria-hidden="true" ></span>
 						    <div class="caption">
@@ -340,14 +339,14 @@
 						    </div>
 							</a></li>
 
-			    		<li  class="text-center"><a href="#ve-donde-quieras"><div class="thumbnaile">
+			    		<li  class="text-center"><a href="#ve-donde-quieras" onclick="javascript:oculta1();"><div class="thumbnaile">
 						   		<span class="glyphicon glyphicon-play-circle " style= "font-size: 6em"  aria-hidden="true" ></span>
 						    <div class="caption">
 						        
 						              <p><br>Ve desde donde quieras<br></p> 
 						      </div>
 						    </div></a></li>
-			    		<li  class="text-center"><a href="#elige-plan"><div class="thumbnaile">
+			    		<li  class="text-center"><a href="#elige-plan" onclick="javascript:oculta2();"><div class="thumbnaile">
 						   		<span class="glyphicon glyphicon-facetime-video" style= "font-size: 6em"  aria-hidden="true" ></span>
 						    <div class="caption">
 						        
@@ -378,7 +377,7 @@
 	    		<br><br><br>
 
 				<div style="color: white">
-					<table style="border-color: #fff; border: 0px; width: 980px;" class="table ">
+					<table style="border-color: #000; border: 0px; width: 980px; " class="table">
 						<tr>
 							<td></td>
 							<td>BÁSICO</td>
@@ -521,6 +520,26 @@
 
 			location.href="usuario.html";
 		});
+
+	
+		function oculta(){
+			$("#sin-compromisos").show();
+			$("#ve-donde-quieras").fadeOut(0);
+			$("#elige-plan").fadeOut(0);
+		}
+
+		function oculta1(){
+			$("#ve-donde-quieras").show();
+			$("#sin-compromisos").fadeOut(0);
+			$("#elige-plan").fadeOut(0);
+		}
+
+		function oculta2(){
+			$("#elige-plan").show();
+			$("#ve-donde-quieras").fadeOut(0);
+			$("#sin-compromisos").fadeOut(0);
+			
+		}
 
 
 	</script>
