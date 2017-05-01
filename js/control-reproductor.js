@@ -1,13 +1,15 @@
 $(document).ready(function(){
+	var parametros = "codigo_video="+"1";
 	$.ajax({
 			url:"ajax/procesar-reproductor.php?accion=1",
-			method: "POST",
-			datadataType:"json",
+			method:"POST",
+			data:parametros,
+			dataType:"json",
 			success:function(resultado){
-				$("#resultado").html('<div style="color: white;">'+resultado.url + " Uno</div>");
+				$("#resultado").html('<div style="color: white;">'+resultado+' Uno</div>');
 			},
-			error:function(resultado){
-				alert("Something..." + resultado.url);
+			error:function(){
+				alert("Something...");
 			}
 		});
 	$("#videoJs").hide();

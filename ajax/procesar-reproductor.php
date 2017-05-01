@@ -4,12 +4,9 @@
 			include_once("../class/class-conexion.php");
 			$conexion = new Conexion();
 			$conexion->establecerConexion();
-			$resultadoVideo = $conexion->ejecutarInstruccion("SELECT url_contenido, nombre_contenido, descripcion_contenido FROM tbl_contenidos WHERE codigo_contenido = 1");
+			$resultadoVideo = $conexion->ejecutarInstruccion("SELECT url_contenido, nombre_contenido, descripcion_contenido FROM tbl_contenidos WHERE codigo_contenido =" . $_POST["codigo_video"]);
 			$fila = $conexion->obtenerRegistro($resultadoVideo);
-			$resultado = array();
-			$resultado["url"] = $fila["url_contenido"];
-			echo json_encode($resultado);
-			$conexion->cerrarConexion();
+			echo json_encode($fila);
 			break;
 		
 		default:
