@@ -6,7 +6,7 @@ $(document).ready(function(){
 			data:parametros,
 			dataType:"json",
 			success:function(resultado){
-				$("#resultado").html('<div style="color: white;">'+resultado+' Uno</div>');
+				$("#resultado").html('<div style="color: white;">'+resultado.url_contenido+' Uno</div>');
 			},
 			error:function(){
 				alert("Something...");
