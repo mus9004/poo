@@ -11,9 +11,9 @@
 				WHERE codigo_contenido =1");
 			$fila = $conexion->obtenerRegistro($resultadoVideo);
 			$resultado = array();
-			$resultado["url_contenido"] = $fila["url_contenido"];
-			$resultado["nombre_contenido"] = $fila["nombre_contenido"];
-			$resultado["descripcion_contenido"] = $fila["descripcion_contenido"];
+			$resultado["url_contenido"] = utf8_encode($fila["url_contenido"]);
+			$resultado["nombre_contenido"] = utf8_encode($fila["nombre_contenido"]);
+			$resultado["descripcion_contenido"] = utf8_encode($fila["descripcion_contenido"]);
 			echo json_encode($resultado);
 			break;
 		

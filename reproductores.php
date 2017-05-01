@@ -1,3 +1,14 @@
+<?php
+include_once("class/class-conexion.php");
+			$conexion = new Conexion();
+			$conexion->establecerConexion();
+			$resultadoVideo = $conexion->ejecutarInstruccion("SELECT url_contenido,
+				nombre_contenido,
+				descripcion_contenido
+				FROM tbl_contenidos 
+				WHERE codigo_contenido =1");
+			$fila = $conexion->obtenerRegistro($resultadoVideo);
+?>
 <!DOCTYPE html>
 <html lang="es" id="pagina">
 <head>
@@ -9,7 +20,6 @@
 	
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/estilos_reproductor.css">
-	<script src="codoPlayer/CodoPlayer.js"></script>
     
 	<link rel="stylesheet" href="flowplayer/skin/skin.css">
 	<script src="flowplayer/jquery-1.11.2.min.js"></script>
@@ -25,7 +35,7 @@
      <link href="css/normalize-card.min.css" type="text/css" rel="stylesheet">
   	<script>
   		var title = "METRO (Cortometraje)";
-  		var link = "videos/METRO.mp4";
+  		var link = "videos/CourtesyCall.mp3";
 		var poster = "img/metro.png";
   	</script>
 	<title>Reproductor</title>
@@ -51,51 +61,15 @@
 	<div class="margen">
 		<div>
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center; margin-top:35px">
-				<button type="button"  id="btn-codoPlayer" class="btn simplicity btn-submit btn-large" style="padding-left: 10px; width:137px ">Codo Player</button>
 				<button type="button" class="btn simplicity btn-submit btn-large" style="padding-left: 10px; width:137px " id="btn-flowPlayer">&nbsp;Flowplayer</button>
 				<button type="button" class="btn simplicity btn-submit btn-large" style="padding-left: 10px; width:137px " id="btn-JWPlayer">&nbsp;&nbsp;JW Player</button>
 				<button type="button" class="btn simplicity btn-submit btn-large" style="padding-left: 10px; width:137px " id="btn-videoJs">&nbsp;&nbsp;&nbsp;Video JS</button>
 			</div>
 			<div id="resultado"></div>
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="reproductor">
-				<div id="codoPlayer" class="separar-arriba">
-				<script>
-				    var player = CodoPlayer([{
-				    			title: "Intro",
-				    			poster: "img/cover.jpg",
-				    			src: "videos/Intro.mp3",
-				    			engine: "auto"
-				    		},{
-				    			title: "Courtesy Call",
-				    			poster: "img/cover.jpg",
-				    			src: "videos/CourtesyCall.mp3",
-				    			engine: "auto"
-				    		}],{
-				    		preload: false,
-				    		playlist: true,
-				    		id: "codo",
-				    		onReady: function(player) {
-					            console.log(player);
-					        }
-				    	})
-				    	console.log(player);
-				</script>
-				</div>
 
 				<div id="flowPlayer" class="separar-arriba">
 					<div id="player" class="fp-full fp-edgy fp-outlined"></div>
-					<script>
-					var api = flowplayer("#player", {
-						poster: poster,
-					    clip: {
-					      title: title,
-					      sources: [
-					        { type: "video/mp4",
-					          src: link },
-					      ]
-					    }
-					  });
-					</script>
 				</div>
 				<div id="JWPlayer" class="separar-arriba">
 				<div id="reproduce"></div>
@@ -181,7 +155,7 @@
                 <p style="margin-top: 20px; color: #999797; padding-top: 20px;">Netbit Honduras</p>
          </div>
       </div>
-	<script src="js/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/control-reproductor.js"></script>
     <!-- <script>
