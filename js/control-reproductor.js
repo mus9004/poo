@@ -7,9 +7,9 @@ $(document).ready(function(){
 			dataType:"json",
 			success:function(resultado){
 				api= flowplayer("#player", {
-						poster: poster,
+						poster: resultado.nombre_imagen,
 					    clip: {
-					      title: title,
+					      title: resultado.nombre_contenido,
 					      sources: [
 					        { type: "video/mp4",
 					          src: resultado.url_contenido },
