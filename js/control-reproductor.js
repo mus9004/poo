@@ -1,0 +1,54 @@
+$(document).ready(function(){
+	$.ajax({
+			url:"ajax/procesar-reproductor.php?accion=1",
+			method: "POST",
+			datadataType:"json",
+			success:function(resultado){
+				$("#resultado").html('<div style="color: white;">'+resultado.url + " Uno</div>");
+			},
+			error:function(resultado){
+				alert("Something..." + resultado.url);
+			}
+		});
+	$("#videoJs").hide();
+	$("#JWPlayer").hide();
+	$("#flowPlayer").hide();
+	$("#codoPlayer").show();
+
+	$("#btn-codoPlayer").click(function(){
+		api.pause();
+		//playerInstance.pause(true);
+		playerJs.pause();
+		$("#videoJs").hide();
+		$("#flowPlayer").hide();
+		$("#JWPlayer").hide();
+		$("#codoPlayer").show();
+	});
+	$("#btn-flowPlayer").click(function(){
+		player.pause();
+		//playerInstance.pause(true);
+		playerJs.pause();
+		$("#videoJs").hide();
+		$("#JWPlayer").hide();
+		$("#codoPlayer").hide();
+		$("#flowPlayer").show();
+	});
+	$("#btn-JWPlayer").click(function(){
+		player.pause();
+		api.pause();
+		playerJs.pause();
+		$("#codoPlayer").hide();
+		$("#flowPlayer").hide();
+		$("#videoJs").hide();
+		$("#JWPlayer").show();
+	});
+	$("#btn-videoJs").click(function(){
+		player.pause();
+		api.pause();
+		//playerInstance.pause(true);
+		$("#codoPlayer").hide();
+		$("#flowPlayer").hide();
+		$("#JWPlayer").hide();
+		$("#videoJs").show();
+	});
+});
