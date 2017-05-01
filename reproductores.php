@@ -1,21 +1,3 @@
-<?php
-include_once("class/class-conexion.php");
-			include_once("../class/class-conexion.php");
-			$conexion = new Conexion();
-			$conexion->establecerConexion();
-			$resultadoVideo = $conexion->ejecutarInstruccion("SELECT url_contenido,
-				nombre_contenido,
-				descripcion_contenido,
-				b.codigo_imagen,
-				c.nombre_imagen
-				FROM tbl_contenidos a
-				LEFT JOIN tbl_imagenes_x_contenido b
-				ON (a.codigo_contenido = b.codigo_contenido)
-				LEFT JOIN tbl_imagen c
-				ON (b.codigo_imagen = c.codigo_imagen)
-				WHERE a.codigo_contenido =" . $_POST["codigo_video"]);
-			$fila = $conexion->obtenerRegistro($resultadoVideo);
-?>
 <!DOCTYPE html>
 <html lang="es" id="pagina">
 <head>
@@ -27,12 +9,13 @@ include_once("class/class-conexion.php");
 	
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/estilos_reproductor.css">
+	<script src="codoPlayer/CodoPlayer.js"></script>
     
 	<link rel="stylesheet" href="flowplayer/skin/skin.css">
 	<script src="flowplayer/jquery-1.11.2.min.js"></script>
 	<script src="flowplayer/flowplayer.min.js"></script>
 
-	<!-- <script src="https://content.jwplatform.com/libraries/x9XVJGsW.js" ></script> -->
+	<script src="https://content.jwplatform.com/libraries/x9XVJGsW.js" ></script>
 
 	<link href="video-js/video-js.css" rel="stylesheet" type="text/css">
 	<link href="video-js/skin.css" rel="stylesheet" type="text/css">
@@ -43,7 +26,7 @@ include_once("class/class-conexion.php");
   	<script>
   		var title = "METRO (Cortometraje)";
   		var link = "videos/METRO.mp4";
-		var poster = "img/metro.png";
+		var poster = "img/poster/metro.png";
   	</script>
 	<title>Reproductor</title>
 </head>
@@ -68,6 +51,7 @@ include_once("class/class-conexion.php");
 	<div class="margen">
 		<div>
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center; margin-top:35px">
+				<button type="button"  id="btn-codoPlayer" class="btn simplicity btn-submit btn-large" style="padding-left: 10px; width:137px ">Codo Player</button>
 				<button type="button" class="btn simplicity btn-submit btn-large" style="padding-left: 10px; width:137px " id="btn-flowPlayer">&nbsp;Flowplayer</button>
 				<button type="button" class="btn simplicity btn-submit btn-large" style="padding-left: 10px; width:137px " id="btn-JWPlayer">&nbsp;&nbsp;JW Player</button>
 				<button type="button" class="btn simplicity btn-submit btn-large" style="padding-left: 10px; width:137px " id="btn-videoJs">&nbsp;&nbsp;&nbsp;Video JS</button>
@@ -75,7 +59,9 @@ include_once("class/class-conexion.php");
 			<input type="hidden" id = "obtenerVideo" value="<?php echo $_GET["accion"];?>">
 			<div id="resultado"></div>
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="reproductor">
-
+				<div id="codoPlayer" class="separar-arriba">
+					<div id="my-play"></div>
+				</div>
 				<div id="flowPlayer" class="separar-arriba">
 					<div id="player" class="fp-full fp-edgy fp-outlined"></div>
 				</div>
@@ -84,33 +70,6 @@ include_once("class/class-conexion.php");
 				</div>
 				<div id="videoJs" class="separar-arriba">
 				<video id="my-player" class="video-js vjs-default-skin" ></video>
-					<script>
-						var playerJs = videojs('my-player',{
-							sources: [{
-								src: link
-							}],
-							width: $("#codo").width(),
-							height: $("#codo").height(),
-							poster: poster,
-						  	controls: true,
-						  	autoplay: false,
-						  	preload: 'auto'
-						});
-						playerJs.playlist([{
-							sources: [{
-						    src: link,
-						    type: 'video/mp4'
-						  }],
-						  poster: poster
-						}, {
-						  sources: [{
-						    src: "https://www.quirksmode.org/html5/videos/big_buck_bunny.mp4",
-						    type: 'video/mp4'
-						  }],
-						  poster: "https://peach.blender.org/wp-content/uploads/bird1.jpg"
-						}]);
-						playerJs.playlist.autoadvance(0);
-					</script>
 				</div>
             </div>
          </div>
@@ -166,26 +125,5 @@ include_once("class/class-conexion.php");
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/control-reproductor.js"></script>
-    <!-- <script>
-	var playerInstance = jwplayer("reproduce").setup({
-						playlist : [{
-							file: link,
-							image: poster,
-							title: title,
-							description: "Una maravillosa fantasía minimalista..."
-						},{
-							file: "videos/Intro.mp3",
-							image: "img/cover.jpg",
-							title: "Intro"
-						},{
-							file: "videos/CourtesyCall.mp3",
-							image: "img/cover.jpg",
-							title: "Courtesy Call"
-						}],
-				    	description: "Una maravillosa fantasía minimalista...",
-				    	sharing: {
-    					sites: ["facebook","twitter","email","googleplus"]}
-				    });
-	</script> -->
 </body>
 </html>
