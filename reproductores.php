@@ -35,7 +35,7 @@ include_once("class/class-conexion.php");
      <link href="css/normalize-card.min.css" type="text/css" rel="stylesheet">
   	<script>
   		var title = "METRO (Cortometraje)";
-  		var link = "videos/CourtesyCall.mp3";
+  		var link = "videos/METRO.mp4";
 		var poster = "img/metro.png";
   	</script>
 	<title>Reproductor</title>
@@ -65,6 +65,7 @@ include_once("class/class-conexion.php");
 				<button type="button" class="btn simplicity btn-submit btn-large" style="padding-left: 10px; width:137px " id="btn-JWPlayer">&nbsp;&nbsp;JW Player</button>
 				<button type="button" class="btn simplicity btn-submit btn-large" style="padding-left: 10px; width:137px " id="btn-videoJs">&nbsp;&nbsp;&nbsp;Video JS</button>
 			</div>
+			<input type="hidden" id = "obtenerVideo" value="<?php echo $_GET["accion"];?>">
 			<div id="resultado"></div>
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="reproductor">
 

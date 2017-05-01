@@ -8,7 +8,7 @@
 				nombre_contenido,
 				descripcion_contenido
 				FROM tbl_contenidos 
-				WHERE codigo_contenido =1");
+				WHERE codigo_contenido =" . $_POST["codigo_video"]);
 			$fila = $conexion->obtenerRegistro($resultadoVideo);
 			$resultado = array();
 			$resultado["url_contenido"] = utf8_encode($fila["url_contenido"]);

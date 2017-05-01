@@ -1,12 +1,12 @@
 $(document).ready(function(){
-	var parametros = "codigo_video="+"1";
+	var parametros = "codigo_video="+$("#obtenerVideo").val();
 	$.ajax({
 			url:"ajax/procesar-reproductor.php?accion=1",
 			method:"POST",
 			data:parametros,
 			dataType:"json",
 			success:function(resultado){
-				flowplayer("#player", {
+				api= flowplayer("#player", {
 						poster: poster,
 					    clip: {
 					      title: title,
@@ -16,7 +16,7 @@ $(document).ready(function(){
 					      ]
 					    }
 					  });
-				api = $(".flowplayer:first").data("flowplayer");
+				$.api = $(".flowplayer:first").data("flowplayer");
 			},
 			error:function(){
 				alert("Something...");
@@ -27,23 +27,23 @@ $(document).ready(function(){
 	$("#flowPlayer").show();
 
 	$("#btn-flowPlayer").click(function(){
-		player.pause();
+		//player.pause();
 		//playerInstance.pause(true);
 		playerJs.pause();
 		$("#videoJs").hide();
 		$("#JWPlayer").hide();
 		$("#flowPlayer").show();
 	});
-	$("#btn-JWPlayer").click(function(){
-		player.pause();
+	/*$("#btn-JWPlayer").click(function(){
+		//player.pause();
 		api.pause();
 		playerJs.pause();
 		$("#flowPlayer").hide();
 		$("#videoJs").hide();
 		$("#JWPlayer").show();
-	});
+	});*/
 	$("#btn-videoJs").click(function(){
-		player.pause();
+		//player.pause();
 		api.pause();
 		//playerInstance.pause(true);
 		$("#flowPlayer").hide();
