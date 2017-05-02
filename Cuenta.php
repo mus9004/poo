@@ -40,12 +40,13 @@
 	<h1>Mi cuenta</h1>
 	<table style="border-collapse: collapse;width: 100%;">
 		<tr style="border-bottom: 3px solid #ddd;">
+		
 			<td><div style="float: left;"><h3>Membresia</h3></div> </td>
 		</tr>
 		<tr>
 			<td>
 				<div class="col-md-1  col-lg-1"></div>
-				<div class="col-md-8 col-lg-8">Juan Perez</div>  
+				 <div id ="resultado"></div>
 			</td>
 		</tr>
 		<tr>
@@ -116,7 +117,7 @@
                <div class="footer-top" style="margin: 30px auto 0;width: 1050px;">
             <div class="site-footer">
                    <p class="footer-top">
-                 ¿Tienes problemas? llama al &nbsp;<a  style="text-decoration: none" class="footer-top-a" href=" +(504) 9206-0911 (HND)"> +(504) 9206-0911 (HND)</a>
+                 ¿Tienes problemas? llama al &nbsp;<a  style="text-decoration: none" class="footer-top-a" href=" +(504) 9206-0911 (HND)"> +(504) 32358952 (HND)</a>
                   </p>
 	               
 	             <table class="site-footer" style="border-color: #999797; border: 0px; width: 980px;">
@@ -156,61 +157,60 @@
 
 	</div>
 	</div>
-    <script type="text/javascript">
-    	$(document).ready(function(){
-			$("#txt-email").hide();
-			$("#txt-password").hide();
-			$("#hd").hide();
-			$("#dvd").hide();
-			$("#ultra").hide();
-			$("#hd1").hide();
-			$("#dvd1").hide();
-			$("#ultra1").hide();
-			$("#activar").hide();
+   
+  <!-- //   	$(document).ready(function(){
+		// 	$("#txt-email").hide();
+		// 	$("#txt-password").hide();
+		// 	$("#hd").hide();
+		// 	$("#dvd").hide();
+		// 	$("#ultra").hide();
+		// 	$("#hd1").hide();
+		// 	$("#dvd1").hide();
+		// 	$("#ultra1").hide();
+		// 	$("#activar").hide();
 			
-		});
+		// });
 
-		$("#btn-continuar").click(function(){
+		// $("#btn-continuar").click(function(){
 
-			var parametros={
-		        "txt-email" :$("#txt-email").val(),
-		        "txt-password" :$("#txt-password").val(),
+		// 	var parametros={
+		//         "txt-email" :$("#txt-email").val(),
+		//         "txt-password" :$("#txt-password").val(),
 		        
 		        
-				};
-			$.ajax({
-	        url: "class/class-procesar.php", 
-		        data:parametros,
-		        method:"POST",
-		        success: function(result){
-		              location.href ="cartelera.html";
-	          }
-	      	});
+		// 		};
+		// 	$.ajax({
+	 //        url: "class/class-procesar.php", 
+		//         method:"POST",
+		//         success: function(result){
+		//               location.href ="cartelera.html";
+	 //          }
+	 //      	});
 
-    		location.href ="cartelera.html";
-    	});
+  //   		location.href ="cartelera.html";
+  //   	});
 
-    	$("#Ccorreo").click(function(){
+   //  	$("#Ccorreo").click(function(){
 
-    		$("#txt-email").show("swing");
-    	});
-    	$("#contrasena").click(function(){
-    		$("#txt-password").show("swing");
-    	});
-    	$("#plan").click(function(){
-    		$("#hd").show("swing");
-			$("#dvd").show("swing");
-			$("#ultra").show("swing");
-    	});
-    	$("#Agregar").click(function(){
-    		$("#hd1").show("swing");
-			$("#dvd1").show("swing");
-			$("#ultra1").show("swing");
-    	});
-    	$("#control").click(function(){
-    		$("#activar").show("swing");
-    	});
-    </script>
+   //  		$("#txt-email").show("swing");
+   //  	});
+   //  	$("#contrasena").click(function(){
+   //  		$("#txt-password").show("swing");
+   //  	});
+   //  	$("#plan").click(function(){
+   //  		$("#hd").show("swing");
+			// $("#dvd").show("swing");
+			// $("#ultra").show("swing");
+   //  	});
+   //  	$("#Agregar").click(function(){
+   //  		$("#hd1").show("swing");
+			// $("#dvd1").show("swing");
+			// $("#ultra1").show("swing");
+   //  	});
+   //  	$("#control").click(function(){
+   //  		$("#activar").show("swing");
+   //  	}); -->
+   <script type="text/javascript" src="js/cuenta.js"></script>
     
 
 </body>

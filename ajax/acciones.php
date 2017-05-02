@@ -5,45 +5,46 @@ $conexion->establecerConexion();
 
 switch ($_GET["accion"]) {
 	case '1':
-	  
-	  // $password=$_POST["inputPassword"];
 	  $verificar=array();
-	  
       $sql= sprintf("SELECT a.codigo_usuario, a.correo_electronico, b.contrasena
       FROM tbl_usuarios a
       LEFT JOIN tbl_personas b
       ON a.codigo_usuario=b.codigo_persona        
-      ");
-     
+      "); 
         $resultado=$conexion->ejecutarInstruccion($sql);
-        
-       
         while($linea=$conexion->obtenerRegistro($resultado)){
         	if ($linea["correo_electronico"]!= $_POST["inputEmail"] || $linea["contrasena"]!=$_POST["inputPassword"]) {
-        		
         		$verificar["codigo_resultado"]=0;
         	     $verificar["mensaje"]="Usuario o Contraseña incorrecto";	
         		}
-            
-             
-
-        	
         	else{
         		 $verificar["codigo_resultado"]=1;
- 	
-        	}
-
-        	
+        	}  	
         }
-       
         echo json_encode($verificar);
 		break;
-      
-       
-	
+    case '2':
+     
+      $sql=  "SELECT c.codigo_persona, c.apellido_persona, c.nombre_usuario, c.contrasena, 
+      d.correo_electronico, e.hd_disponible, e.ultra_hd_disponible
+      FROM tbl_personas c
+      LEFT JOIN tbl_usuarios d
+      ON c.codigo_persona=d.codigo_usuario
+      LEFT JOIN tbl_membresia e 
+      ON c.codigo_persona=e.codigo_membresia
+      WHERE c.codigo_persona
+      ";
 
+      $resultado=$conexion->ejecutarInstruccion($sql);
+      while ($usuario=$conexion->obtenerRegistro($resultado)) {
+ ?>
+           <div class="col-md-8 col-lg-8"><?php echo  $usuario["nombre_usuario"]; ?></div> 
+            
+ <?php       
 
+      }
+
+      break;
 }
-
 $conexion->cerrarConexion();
  ?>

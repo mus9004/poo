@@ -1,5 +1,4 @@
 $("#btn-login").click(function(){
-	// alert("ejecutando JS");
 	var parametros="inputEmail="+$("#inputEmail").val() +"&"+
 	"inputPassword="+$("#inputPassword").val();
 
@@ -21,4 +20,7 @@ $.ajax({
 
 			}
 		});
+
+
 });
+
