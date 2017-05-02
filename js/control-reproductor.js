@@ -6,6 +6,14 @@ $(document).ready(function(){
 			data:parametros,
 			dataType:"json",
 			success:function(resultado){
+				player = CodoPlayer([{
+				    		title: resultado.nombre_contenido,
+				    		poster: resultado.nombre_imagen,
+				    		src: resultado.url_contenido
+				    		}], {
+				    preload: false,
+				    id: "codo"
+				}, "#my-play");
 				api= flowplayer("#player", {
 						poster: resultado.nombre_imagen,
 					    clip: {
@@ -16,14 +24,6 @@ $(document).ready(function(){
 					      ]
 					    }
 					  });
-				player = CodoPlayer([{
-				    		title: resultado.nombre_contenido,
-				    		poster: resultado.nombre_imagen,
-				    		src: resultado.url_contenido
-				    		}], {
-				    preload: false,
-				    id: "codo"
-				}, "#my-play");
 				playerInstance = jwplayer("reproduce").setup({
 						file: resultado.url_contenido,
 						image: resultado.nombre_imagen,
