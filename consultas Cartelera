@@ -4,3 +4,25 @@ LEFT JOIN tbl_contenidos ON tbl_imagenes_x_contenido.codigo_contenido = tbl_cont
 LEFT JOIN tbl_imagen ON tbl_imagenes_x_contenido.codigo_imagen = tbl_imagen.codigo_imagen 
 LEFT JOIN tbl_categorias_x_contenido ON tbl_contenidos.codigo_contenido = tbl_categorias_x_contenido.codigo_contenido 
 LEFT JOIN tbl_categorias ON tbl_categorias_x_contenido.codigo_categoria = tbl_categorias.codigo_categoria 
+
+
+
+
+SELECT tbl_imagenes_x_contenido.codigo_imagen, tbl_imagenes_x_contenido.codigo_contenido, tbl_imagen.codigo_imagen, tbl_imagen.nombre_imagen, tbl_contenidos.codigo_contenido, tbl_contenidos.codigo_tipo_contenido, tbl_contenidos.codigo_esrb, tbl_contenidos.nombre_contenido, tbl_contenidos.descripcion_contenido, tbl_contenidos.fecha_lanzamiento, tbl_contenidos.duracion_contenido, tbl_contenidos.calificacion_promedio, tbl_contenidos.url_contenido
+				FROM tbl_imagenes_x_contenido
+				LEFT JOIN tbl_contenidos ON tbl_imagenes_x_contenido.codigo_contenido = tbl_contenidos.codigo_contenido 
+				LEFT JOIN tbl_imagen ON tbl_imagenes_x_contenido.codigo_imagen = tbl_imagen.codigo_imagen
+				WHERE tbl_contenidos.codigo_contenido=2
+
+
+
+
+
+SELECT tbl_imagenes_x_contenido.codigo_imagen, tbl_imagenes_x_contenido.codigo_contenido, tbl_imagen.codigo_imagen, tbl_imagen.nombre_imagen, tbl_contenidos.codigo_contenido, tbl_contenidos.codigo_esrb, tbl_contenidos.nombre_contenido, tbl_contenidos.descripcion_contenido, tbl_contenidos.fecha_lanzamiento, tbl_contenidos.duracion_contenido, tbl_contenidos.calificacion_promedio, tbl_contenidos.url_contenido, tbl_categorias_x_contenido.codigo_contenido, tbl_categorias_x_contenido.codigo_categoria, tbl_categorias.codigo_categoria, tbl_categorias.nombre_categoria, tbl_esrb.codigo_esrb, tbl_esrb.codigo_imagen, tbl_esrb.nombre_esrb
+					FROM tbl_imagenes_x_contenido
+					LEFT JOIN tbl_contenidos ON tbl_imagenes_x_contenido.codigo_contenido = tbl_contenidos.codigo_contenido 
+					LEFT JOIN tbl_imagen ON tbl_imagenes_x_contenido.codigo_imagen = tbl_imagen.codigo_imagen 
+					LEFT JOIN tbl_categorias_x_contenido ON tbl_contenidos.codigo_contenido = tbl_categorias_x_contenido.codigo_contenido 
+					LEFT JOIN tbl_esrb ON tbl_imagen.codigo_imagen = tbl_esrb.codigo_imagen 
+					LEFT JOIN tbl_categorias ON tbl_categorias_x_contenido.codigo_categoria = tbl_categorias.codigo_categoria
+					WHERE tbl_contenidos.codigo_contenido=				
