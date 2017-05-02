@@ -3,9 +3,15 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
+<<<<<<< HEAD
 -- Tiempo de generación: 02-05-2017 a las 01:53:57
 -- Versión del servidor: 5.7.14
 -- Versión de PHP: 5.6.25
+=======
+-- Tiempo de generación: 01-05-2017 a las 23:12:35
+-- Versión del servidor: 5.7.14
+-- Versión de PHP: 7.0.10
+>>>>>>> origin/master
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -36,6 +42,7 @@ CREATE TABLE `tbl_imagenes_x_contenido` (
 --
 
 INSERT INTO `tbl_imagenes_x_contenido` (`codigo_imagen`, `codigo_contenido`) VALUES
+<<<<<<< HEAD
 (1, 2),
 (2, 3),
 (3, 4),
@@ -44,6 +51,9 @@ INSERT INTO `tbl_imagenes_x_contenido` (`codigo_imagen`, `codigo_contenido`) VAL
 (6, 7),
 (7, 8),
 (8, 9);
+=======
+(6, 1);
+>>>>>>> origin/master
 
 --
 -- Índices para tablas volcadas
