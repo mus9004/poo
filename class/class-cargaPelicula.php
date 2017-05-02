@@ -55,7 +55,7 @@ switch ($_GET["accion"]) {
 					        		echo '<td style="padding-left: 8px;">';
 					        		   echo ' <div>';
 					        		    	echo '<div class="modal-body">';
-				                         		echo '<h1 class="modal-title" id="myModalLabel" style="text-align: center">'.$pel["nombre_contenido"].'</h1><br>';
+				                         		echo '<h1 class="modal-title" id="myModalLabel" style="text-align: center">'.utf8_encode($pel["nombre_contenido"]).'</h1><br>';
 				                       		echo '</div>';
 						                	echo '<div class="modal-body" id="tabla-usuarios">';
 								              echo '<table class="table table-striped table-hover">';

@@ -15,7 +15,7 @@
 
 	<link rel="stylesheet" type="text/css" href="css/menus.css">
 	<link rel="stylesheet" type="text/css" href="css/signin.css">
-	
+	 
 	<style>
 
 	   #mdialTamanio{
@@ -180,18 +180,19 @@
 
 	<div id="prueba1"><input type="button" name="gg" onclick="ppp()" value="prueba"></div>     
     <script src="js/bootstrap.min.js"></script>
+ 	<script type="text/javascript" src="js/cartelera.js"></script>
 
 	<script type="text/javascript">
 
-	function ventanaModal(codigoPelicula){
-		//alert(codigoPelicula);
+	/*function ventanaModal(codigoPelicula){
+		
 		parametros="id-pelicula="+codigoPelicula;
 		 $.ajax({
 	 		url: "class/class-cargaPelicula.php?accion=3", 
 	 		data:parametros,
             method:"POST",
             success: function(result){
-            	//alert(result);
+  
             		$("#conte").html(result);
               }
           });
@@ -204,7 +205,6 @@
 		 		url: "class/class-cargaPelicula.php?accion=2", 
 	            method:"POST",
 	            success: function(result){
-	            		//$("#prueba1").html(result);
 	            		for (var i = 0; i <= result; i++) {
 				    		  $(".slider"+i).bxSlider({
 						  
@@ -223,13 +223,13 @@
 		
 							
 	$(document).ready(function(){
-		// build a variable to target the #menu div
+		
 		var menu = $('#menu')
 		var menu1 = $('#menu1')
-		// bind a click function to the menu-trigger
+
 		$('#menu-trigger').click(function(event){
 			event.preventDefault();
-			// if the menu is visible slide it up
+
 			if (menu1.is(":visible"))
 			{
 				menu1.slideUp(400);
@@ -241,7 +241,7 @@
 				menu.slideUp(400);
 				$(this).removeClass("open");
 			}
-			// otherwise, slide the menu down
+
 			else
 			{
 				menu.slideDown(400);
@@ -254,7 +254,7 @@
 
 		$('#menu-trigger1').click(function(event){
 			event.preventDefault();
-			// if the menu is visible slide it up
+
 			if (menu.is(":visible"))
 			{
 				menu.slideUp(400);
@@ -266,7 +266,7 @@
 				menu1.slideUp(400);
 				$(this).removeClass("open");
 			}
-			// otherwise, slide the menu down
+
 			else
 			{
 				menu1.slideDown(400);
@@ -301,35 +301,12 @@
 				$(this).removeClass("open");
 			}
 		});
-		
-	/* $.ajax({
-	 		url: "class/class-cargaPelicula.php?accion=1", 
-            method:"POST",
-            success: function(result){
-            		$("#romance1").html(result);
-              }
-          });
-	*/	
+
 	});
+
 	$("#btn-reproducir").click(function(){
 			location.href ="reproductores.html";
-		});
-	
-	
-
-	 /*function noamigos(){
-            parametros="txt-id-usuario="+$("#txt-id-usuario").val();
-            $.ajax({
-	            url: "class/class-cargar.php?accion=3", 
-	            data:parametros,
-	            method:"POST",
-	            success: function(result){
-	            	$("#dv-amigos").html(result);
-                }
-          });
-        }*/
-
-
+		});*/
 	</script>	
 	 
 
