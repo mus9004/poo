@@ -90,7 +90,7 @@ switch ($_GET["accion"]) {
 								          	echo '</div>';
 								           	echo '<div class="modal-footer">';
 								            	echo '<button type="button" class=" btn btn-success submit" data-dismiss="modal">Cerrar</span></button>';
-								            	 echo '<button type="button" class="btn btn-danger" id="btn-reproducir" data-loading-text="Abriendo..." >Ver Película</button>';
+								            	 echo '<a href="reproductores.php?accion='.$pel["codigo_contenido"].'"><button type="button" class="btn btn-danger" id="btn-reproducir" data-loading-text="Abriendo..." >Ver Película</button></a>';
 								          	echo '</div>		';
 					        			echo '</div>   ';
 					                echo '</td>';
