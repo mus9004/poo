@@ -25,6 +25,7 @@ $(document).ready(function(){
 					    }
 					  });
 				playerInstance = jwplayer("reproduce").setup({
+						base: 'jwplayer/',
 						file: resultado.url_contenido,
 						image: resultado.nombre_imagen,
 						title: resultado.nombre_contenido,

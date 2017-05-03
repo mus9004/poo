@@ -14,11 +14,11 @@ jwplayer.defaults = {
   "controls": true,
   "displaydescription": true,
   "displaytitle": true,
-  "flashplayer": "jwplayer/jwplayer.flash.swf",
+  "flashplayer": "//ssl.p.jwpcdn.com/player/v/7.10.7/jwplayer.flash.swf",
   "height": 270,
   "key": "HNRmx9FCitiMjQlYwlQ7l/qgGCJrcH6sYudl8oXhcsP9ZiNBec9+tcOUufY=",
   "logo": {
-    "file": "jwplayer/1SXlvrzy.png",
+    "file": "https://assets-jpcust.jwpsrv.com/watermarks/1SXlvrzy.png",
     "hide": true,
     "margin": "10",
     "position": "bottom-left"
@@ -27,8 +27,8 @@ jwplayer.defaults = {
   "ph": 1,
   "pid": "x9XVJGsW",
   "plugins": {
-    "jwplayer/ping.js": {
-      "pixel": "jwplayer/ping.gif"
+    "https://assets-jpcust.jwpsrv.com/player/6/6124956/ping.js": {
+      "pixel": "https://content.jwplatform.com/ping.gif"
     }
   },
   "preload": "none",

@@ -15,7 +15,9 @@
 	<script src="flowplayer/jquery-1.11.2.min.js"></script>
 	<script src="flowplayer/flowplayer.min.js"></script>
 
-	<script src="https://content.jwplatform.com/libraries/x9XVJGsW.js" ></script>
+	<!-- <script src="https://content.jwplatform.com/libraries/x9XVJGsW.js" ></script> -->
+	<script src="jwplayer/jwplayer.js" ></script>
+	<script>jwplayer.key="7jpJdYy8Xyb+z2gMyDX5MLJHdScsEYl+Jc9Fwg==";</script>
 
 	<link href="video-js/video-js.css" rel="stylesheet" type="text/css">
 	<link href="video-js/skin.css" rel="stylesheet" type="text/css">
