@@ -12,6 +12,9 @@ $(document).ready(function(){
 				    		src: resultado.url_contenido
 				    		}], {
 				    preload: false,
+				    plugins: {
+			            share: true
+			        },
 				    id: "codo"
 				}, "#my-play");
 				api= flowplayer("#player", {
