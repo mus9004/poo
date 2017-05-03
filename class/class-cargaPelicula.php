@@ -8,7 +8,7 @@ switch ($_GET["accion"]) {
 		$at="1";			
 		$categorias=$conexion->ejecutarInstruccion('SELECT codigo_categoria, nombre_categoria FROM tbl_categorias');	
 		while ( $cate=$conexion->obtenerRegistro($categorias)) {
-			echo '<h3 style="color: #fff" id="romance">Películas '.$cate["nombre_categoria"].'</h3>';
+			echo '<h3 style="color: #fff" id="'.$cate["nombre_categoria"].'">Películas '.$cate["nombre_categoria"].'</h3>';
 			echo '<div class="slider'.$at.'" >';
 			$peliculas=$conexion->ejecutarInstruccion('SELECT tbl_contenidos.codigo_contenido, tbl_contenidos.nombre_contenido, tbl_imagen.codigo_imagen, tbl_imagen.nombre_imagen, tbl_imagenes_x_contenido.codigo_imagen, tbl_imagenes_x_contenido.codigo_contenido, tbl_categorias.codigo_categoria, tbl_categorias.nombre_categoria, tbl_categorias_x_contenido.codigo_contenido, tbl_categorias_x_contenido.codigo_categoria, tbl_contenidos.calificacion_promedio, tbl_contenidos.duracion_contenido FROM tbl_contenidos LEFT JOIN tbl_categorias_x_contenido ON tbl_contenidos.codigo_contenido = tbl_categorias_x_contenido.codigo_contenido LEFT JOIN tbl_imagenes_x_contenido ON tbl_contenidos.codigo_contenido = tbl_imagenes_x_contenido.codigo_contenido LEFT JOIN tbl_categorias ON tbl_categorias_x_contenido.codigo_categoria = tbl_categorias.codigo_categoria LEFT JOIN tbl_imagen ON tbl_imagenes_x_contenido.codigo_imagen = tbl_imagen.codigo_imagen WHERE tbl_categorias.codigo_categoria='.$cate["codigo_categoria"]);
 			while ($fila = $conexion->obtenerRegistro($peliculas)) {
