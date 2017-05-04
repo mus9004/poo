@@ -9,11 +9,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/icon" href="images/netbit.ico" />
     <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="js/jquery.min.js" ></script>
+     <script type="text/javascript">
+      $.ajax({      
+      url:"acceso.php",
+      success:function(respuesta){
+        if (respuesta==1) {
+          location.href = "index.html";
+        } 
+      }
+    });
+   </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* 
     these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
+     
 </head>
 <body>
 <div style="background-color: #000000; border: 1px;size: 150px;border-style: solid;border-color: #6E6E6E; padding: 5px">

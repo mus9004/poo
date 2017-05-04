@@ -1,5 +1,4 @@
 <?php 
-session_start();
 include_once("../class/class-conexion.php");
 $conexion=new Conexion();
 $conexion->establecerConexion();
@@ -7,35 +6,31 @@ $conexion->establecerConexion();
 switch ($_GET["accion"]) {
 	case '1':
 	  $verificar=array();
-      $resultado = $conexion->ejecutarInstruccion(
-          sprintf("SELECT tbl_tipos_usuarios.codigo_tipo_usuario, tbl_tipos_usuarios.nombre_tipo_usuario, tbl_personas.codigo_tipo_usuario, tbl_personas.nombre_usuario, tbl_personas.contrasena, tbl_usuarios.codigo_usuario, tbl_usuarios.correo_electronico FROM tbl_tipos_usuarios LEFT JOIN tbl_personas ON tbl_tipos_usuarios.codigo_tipo_usuario = tbl_personas.codigo_tipo_usuario LEFT JOIN tbl_usuarios ON tbl_personas.codigo_persona = tbl_usuarios.codigo_usuario WHERE tbl_usuarios.correo_electronico = '%s' AND tbl_personas.contrasena = '%s'", stripslashes($_POST["inputEmail"]), stripslashes($_POST["inputPassword"])
-        ));
-
-      $respuesta = array();
-     
-      if($conexion->cantidadRegistros($resultado) >0){
-
-          $fila = $conexion->obtenerRegistro($resultado);
-           if ($fila["codigo_tipo_usuario"]==2) {
-            $respuesta["codigo_resultado"] =2;
-          } else  $respuesta["codigo_resultado"] = 1;
-          $respuesta["resultado"] = "Usuario Existe";
-          $respuesta["codigo_usuario"] = $fila["codigo_usuario"];
-          $respuesta["nombre_usuario"] = $fila["correo_electronico"];
-          $respuesta["codigo_tipo_usuario"] = $fila["codigo_tipo_usuario"];
-          $_SESSION["codigo_usuario"] = $respuesta["codigo_usuario"] ;
-          $_SESSION["nombre_usuario"] = $respuesta["nombre_usuario"];
-          $_SESSION["codigo_tipo_usuario"] = $respuesta["codigo_tipo_usuario"];
-         
-          echo json_encode($respuesta);
-         
+      $sql= sprintf("SELECT a.codigo_usuario, a.correo_electronico, b.contrasena,b.nombre_persona
+      FROM tbl_usuarios a
+      LEFT JOIN tbl_personas b
+      ON a.codigo_usuario=b.codigo_persona        
+      "); 
+        $resultado=$conexion->ejecutarInstruccion($sql);
+        $linea=$conexion->obtenerRegistro($resultado);
+       if ($conexion->cantidadRegistros($resultado)>0) {
+         if ($_POST["inputEmail"]=="Admin"||$_POST["inputEmail"]=="admin" ) {
+          $verificar["codigo_resultado"]=2;
         }
-        else {
-          $respuesta["codigo_resultado"] = 0;
-          $respuesta["resultado"] = "Usuario no Existe";
-          echo json_encode($respuesta);
-        }
+        else{
+          if ($linea["correo_electronico"]!= $_POST["inputEmail"] || $linea["contrasena"]!=$_POST["inputPassword"]) {
+
+            $verificar["codigo_resultado"]=0;
+             $verificar["mensaje"]="Usuario o Contraseña incorrecto"; 
+            }
+          else{
+             $verificar["codigo_resultado"]=1;
+          } 
+          } 
+       }
+      
         
+        echo json_encode($verificar);
 		break;
     case '2':
      

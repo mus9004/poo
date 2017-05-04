@@ -18,6 +18,16 @@
 	<!-- <script src="https://content.jwplatform.com/libraries/x9XVJGsW.js" ></script> -->
 	<script src="jwplayer/jwplayer.js" ></script>
 	<script>jwplayer.key="7jpJdYy8Xyb+z2gMyDX5MLJHdScsEYl+Jc9Fwg==";</script>
+   <script type="text/javascript">
+      $.ajax({      
+      url:"acceso.php",
+      success:function(respuesta){
+        if (respuesta==1) {
+          location.href = "index.html";
+        } 
+      }
+    });
+   </script>
 
 	<link href="video-js/video-js.css" rel="stylesheet" type="text/css">
 	<link href="video-js/skin.css" rel="stylesheet" type="text/css">

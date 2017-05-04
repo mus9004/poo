@@ -8,34 +8,33 @@ switch ($_GET["accion"]) {
 	case '1':
 	  $verificar=array();
       $resultado = $conexion->ejecutarInstruccion(
-          sprintf("SELECT tbl_tipos_usuarios.codigo_tipo_usuario, tbl_tipos_usuarios.nombre_tipo_usuario, tbl_personas.codigo_tipo_usuario, tbl_personas.nombre_usuario, tbl_personas.contrasena, tbl_usuarios.codigo_usuario, tbl_usuarios.correo_electronico FROM tbl_tipos_usuarios LEFT JOIN tbl_personas ON tbl_tipos_usuarios.codigo_tipo_usuario = tbl_personas.codigo_tipo_usuario LEFT JOIN tbl_usuarios ON tbl_personas.codigo_persona = tbl_usuarios.codigo_usuario WHERE tbl_usuarios.correo_electronico = '%s' AND tbl_personas.contrasena = '%s'", stripslashes($_POST["inputEmail"]), stripslashes($_POST["inputPassword"])
+          sprintf("SELECT tbl_personas.codigo_persona, tbl_personas.contrasena, tbl_personas.nombre_persona, tbl_usuarios.correo_electronico, tbl_usuarios.codigo_usuario
+          FROM tbl_personas
+          LEFT JOIN tbl_usuarios ON tbl_personas.codigo_persona = tbl_usuarios.codigo_usuario  
+          WHERE tbl_usuarios.correo_electronico = '%s'
+          AND ctbl_personas.contrasena = '%s'",
+          stripslashes($_POST["inputEmail"]),
+          stripslashes($_POST["inputPassword"])
         ));
-
+      //sha1('%s')"
       $respuesta = array();
      
       if($conexion->cantidadRegistros($resultado) >0){
-
-          $fila = $conexion->obtenerRegistro($resultado);
-           if ($fila["codigo_tipo_usuario"]==2) {
-            $respuesta["codigo_resultado"] =2;
-          } else  $respuesta["codigo_resultado"] = 1;
+          $fila = $conexion->obtenerFila($resultado);
+          $respuesta["codigo_resultado"] = 1;
           $respuesta["resultado"] = "Usuario Existe";
           $respuesta["codigo_usuario"] = $fila["codigo_usuario"];
-          $respuesta["nombre_usuario"] = $fila["correo_electronico"];
-          $respuesta["codigo_tipo_usuario"] = $fila["codigo_tipo_usuario"];
-          $_SESSION["codigo_usuario"] = $respuesta["codigo_usuario"] ;
-          $_SESSION["nombre_usuario"] = $respuesta["nombre_usuario"];
-          $_SESSION["codigo_tipo_usuario"] = $respuesta["codigo_tipo_usuario"];
-         
-          echo json_encode($respuesta);
-         
+          $respuesta["nombre_usuario"] = $fila["nombre_usuario"];
+         // $respuesta["codigo_tipo_usuario"] = $fila["codigo_tipo_usuario"];
         }
         else {
           $respuesta["codigo_resultado"] = 0;
           $respuesta["resultado"] = "Usuario no Existe";
-          echo json_encode($respuesta);
         }
-        
+        $_SESSION["codigo_usuario"] = $respuesta["codigo_usuario"];
+        $_SESSION["nombre_usuario"] = $respuesta["nombre_usuario"];
+        $_SESSION["codigo_tipo_usuario"] = $respuesta["codigo_tipo_usuario"];
+        echo json_encode($respuesta);
 		break;
     case '2':
      

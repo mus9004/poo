@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +17,17 @@
 
 	<link rel="stylesheet" type="text/css" href="css/menus.css">
 	<link rel="stylesheet" type="text/css" href="css/signin.css">
-	 
+	 <script type="text/javascript">
+	 		$.ajax({			
+			url:"acceso.php",
+			success:function(respuesta){
+				if (respuesta==1) {
+					location.href = "index.html";
+				}	
+			}
+		});
+	 </script>
+
 	<style>
 
 	   #mdialTamanio{
@@ -30,6 +42,7 @@
 	</style>
 </head>
 <body style="background-color: #000000;" id="todos">
+
  
 	<div style="background-color: rgba(216,216,216,0.2); border: 1px;size: 150px;border-style: solid;border-color: rgba(110,110,110,0.2); padding: 5px; font-size: 20px">
 		<div class="navbar-header">
@@ -178,7 +191,7 @@
          </div>
     </div>
 
-	<div id="prueba1"><input type="button" name="gg" onclick="ppp()" value="prueba"></div>     
+	    
     <script src="js/bootstrap.min.js"></script>
  	<script type="text/javascript" src="js/cartelera.js"></script>
 
