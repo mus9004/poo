@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-05-2017 a las 06:42:11
+-- Tiempo de generación: 04-05-2017 a las 10:54:03
 -- Versión del servidor: 5.7.14
 -- Versión de PHP: 5.6.25
 
@@ -642,15 +642,24 @@ CREATE TABLE `tbl_perfiles` (
 
 CREATE TABLE `tbl_personas` (
   `codigo_persona` int(11) NOT NULL COMMENT 'campo que identifica de forma unica el registro d euna persona. ',
-  `codigo_genero` int(11) NOT NULL COMMENT 'campo que identifica el genero al que pertenece la persona.',
-  `codigo_imagen` int(11) NOT NULL COMMENT 'Campo que identifica la imagen de perfil de la persona. ',
-  `codigo_tipo_usuario` int(11) NOT NULL COMMENT 'campo que hace referencia al tipo de usuario que es la persona. (administrador o usuario-cliennte)',
+  `codigo_genero` int(11) DEFAULT NULL COMMENT 'campo que identifica el genero al que pertenece la persona.',
+  `codigo_imagen` int(11) DEFAULT NULL COMMENT 'Campo que identifica la imagen de perfil de la persona. ',
+  `codigo_tipo_usuario` int(11) DEFAULT NULL COMMENT 'campo que hace referencia al tipo de usuario que es la persona. (administrador o usuario-cliennte)',
   `nombre_persona` varchar(45) NOT NULL COMMENT 'campo que guarda el nombre de una persona. ',
   `apellido_persona` varchar(45) NOT NULL COMMENT 'este campo almacena el apellido de una persona. ',
   `fecha_nacimiento` date NOT NULL COMMENT 'campo que almacena la fecha en que nacio la persona. ',
   `nombre_usuario` varchar(200) NOT NULL COMMENT 'campo que almacena el nombre de usuario de una persona. ',
   `contrasena` varchar(200) NOT NULL COMMENT 'campo que almacena la contraseña de un usuario. '
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tbl_personas`
+--
+
+INSERT INTO `tbl_personas` (`codigo_persona`, `codigo_genero`, `codigo_imagen`, `codigo_tipo_usuario`, `nombre_persona`, `apellido_persona`, `fecha_nacimiento`, `nombre_usuario`, `contrasena`) VALUES
+(1, NULL, NULL, 2, 'Ana iris', 'padilla', '2017-04-02', 'anapailla', 'asd.456'),
+(2, NULL, NULL, 1, 'Ana', 'Padilla', '2017-05-10', 'iris@padilla', '234567'),
+(3, NULL, NULL, 1, 'levi', 'morales', '2017-05-26', 'levyElTrabado', 'fre435');
 
 -- --------------------------------------------------------
 
@@ -740,7 +749,8 @@ CREATE TABLE `tbl_tipos_usuarios` (
 --
 
 INSERT INTO `tbl_tipos_usuarios` (`codigo_tipo_usuario`, `nombre_tipo_usuario`) VALUES
-(1, 'usuario prueba');
+(1, 'usuario'),
+(2, 'administrador');
 
 -- --------------------------------------------------------
 
@@ -803,12 +813,21 @@ CREATE TABLE `tbl_tipo_perfil` (
 
 CREATE TABLE `tbl_usuarios` (
   `codigo_usuario` int(11) NOT NULL COMMENT 'campo que hace referencia de forma unica a un usuario. ',
-  `codigo_membresia` int(11) NOT NULL COMMENT 'CAMPO QUE IDENTIFICA EL TIPO DE MEMBRESIA.',
-  `codigo_estado_cuenta` int(11) NOT NULL COMMENT 'codigo que identifica el estado de la cuenta. (activa o no activa)',
-  `codigo_lugares` int(11) NOT NULL COMMENT 'campo que almacena el codigo del lugar donde vive un usuario.',
+  `codigo_membresia` int(11) DEFAULT NULL COMMENT 'CAMPO QUE IDENTIFICA EL TIPO DE MEMBRESIA.',
+  `codigo_estado_cuenta` int(11) DEFAULT NULL COMMENT 'codigo que identifica el estado de la cuenta. (activa o no activa)',
+  `codigo_lugares` int(11) DEFAULT NULL COMMENT 'campo que almacena el codigo del lugar donde vive un usuario.',
   `correo_electronico` varchar(100) NOT NULL COMMENT 'campo que almacena el correo electronico de un usuairo. ',
   `fecha_suscripcion` date NOT NULL COMMENT 'campo que almacena la fecha de suscripcion del usuario en la plataforma netflix. '
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tbl_usuarios`
+--
+
+INSERT INTO `tbl_usuarios` (`codigo_usuario`, `codigo_membresia`, `codigo_estado_cuenta`, `codigo_lugares`, `correo_electronico`, `fecha_suscripcion`) VALUES
+(1, NULL, NULL, NULL, 'ana@gmail.com', '2017-04-05'),
+(2, NULL, NULL, NULL, 'prueba@gmail.com', '2017-03-22'),
+(3, NULL, NULL, NULL, 'prueba@gmail.com', '2017-04-26');
 
 --
 -- Índices para tablas volcadas
@@ -1188,7 +1207,7 @@ ALTER TABLE `tbl_perfiles`
 -- AUTO_INCREMENT de la tabla `tbl_personas`
 --
 ALTER TABLE `tbl_personas`
-  MODIFY `codigo_persona` int(11) NOT NULL AUTO_INCREMENT COMMENT 'campo que identifica de forma unica el registro d euna persona. ';
+  MODIFY `codigo_persona` int(11) NOT NULL AUTO_INCREMENT COMMENT 'campo que identifica de forma unica el registro d euna persona. ', AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `tbl_subtitulos`
 --
@@ -1218,7 +1237,7 @@ ALTER TABLE `tbl_tipos_lugares`
 -- AUTO_INCREMENT de la tabla `tbl_tipos_usuarios`
 --
 ALTER TABLE `tbl_tipos_usuarios`
-  MODIFY `codigo_tipo_usuario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'campo que identifica de forma unica un tipo de usuario (admin, cliente)', AUTO_INCREMENT=2;
+  MODIFY `codigo_tipo_usuario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'campo que identifica de forma unica un tipo de usuario (admin, cliente)', AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `tbl_tipo_colaborador`
 --
@@ -1238,7 +1257,7 @@ ALTER TABLE `tbl_tipo_perfil`
 -- AUTO_INCREMENT de la tabla `tbl_usuarios`
 --
 ALTER TABLE `tbl_usuarios`
-  MODIFY `codigo_usuario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'campo que hace referencia de forma unica a un usuario. ';
+  MODIFY `codigo_usuario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'campo que hace referencia de forma unica a un usuario. ', AUTO_INCREMENT=4;
 --
 -- Restricciones para tablas volcadas
 --
