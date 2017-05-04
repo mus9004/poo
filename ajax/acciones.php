@@ -36,15 +36,51 @@ switch ($_GET["accion"]) {
       ";
 
       $resultado=$conexion->ejecutarInstruccion($sql);
-      while ($usuario=$conexion->obtenerRegistro($resultado)) {
- ?>
-           <div class="col-md-8 col-lg-8"><?php echo  $usuario["nombre_usuario"]; ?></div> 
-            
- <?php       
-
-      }
+     $usuario=$conexion->obtenerRegistro($resultado);
+     
+      $resultado=array();
+      $resultado["usuario"]=utf8_encode($usuario["nombre_usuario"]);
+      $resultado["correo"]=utf8_encode($usuario["correo_electronico"]);
+      echo json_encode($resultado);      
+      
 
       break;
+      case '3':
+           // $_POST["txt-passwordNueva"];
+      $sql="SELECT codigo_persona, contrasena 
+      FROM tbl_personas 
+      WHERE codigo_persona";
+
+      $resultado=$conexion->ejecutarInstruccion($sql);
+      $usuario=$conexion->obtenerRegistro($resultado);
+      $arreglo=array();
+      if ($usuario["contrasena"]!=$_POST["txt-password"]) {
+            $arreglo["codigo"]=0;
+            $arreglo["mensaje"]="No Coinciden";
+           }
+     else{
+                $arreglo["codigo"]=1;
+                
+            $sql= sprintf("UPDATE tbl_personas 
+              SET contrasena='%s'  ",
+               $conexion->getEnlace()->real_escape_string(stripslashes($_POST["txt-passwordNueva"]))
+              
+            );
+            $resultado=$conexion->ejecutarInstruccion($sql);
+            $arreglo["mensaje"]="Guardado";
+           }
+           echo json_encode($arreglo);
+        
+
+
+        break;
+        case '4':
+          $sql=sprintf("UPDATE tbl_usuarios SET correo_electronico='%s'",
+          $conexion->getEnlace()->real_escape_string(stripslashes($_POST["txt-email"]))
+          );
+           $resultado=$conexion->ejecutarInstruccion($sql);
+           echo "Guardado";
+          break;
 }
 $conexion->cerrarConexion();
  ?>

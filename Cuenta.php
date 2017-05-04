@@ -39,6 +39,7 @@
 	<div style="margin-left: 100px;margin-right: 100px;">
 	<h1>Mi cuenta</h1>
 	<table style="border-collapse: collapse;width: 100%;">
+		
 		<tr style="border-bottom: 3px solid #ddd;">
 		
 			<td><div style="float: left;"><h3>Membresia</h3></div> </td>
@@ -46,24 +47,35 @@
 		<tr>
 			<td>
 				<div class="col-md-1  col-lg-1"></div>
-				 <div id ="resultado"></div>
+				<div class="col-md-8 col-lg-8">
+				 <div id="nombreUsuario" style="margin-top: 15px;margin-left: 150px;"></div>
+				</div> 
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<div class="col-md-1  col-lg-1"></div> 
-				<div class="col-md-7 col-lg-7">Correo@yahoo.com</div> 
-				<div class="col-md-1 col-lg-1"><span style="color: #4286f4"><label id="Ccorreo"><a>cambiar</a></label> </span></div>
-				<div class="col-md-3 col-lg-3"><input type="email" name="txt-email" id="txt-email" class="form-control"  style="size: 20%"></div>
+				<div class="col-md-7 col-lg-7">
+					<div id="correo" style="margin-left: 150px;" ></div>
+				</div> 
+				<div class="col-md-1 col-lg-1"><span style="color: #4286f4"><label id="Ccorreo">
+				<a id="a-correo" >cambiar</a></label> </span></div>
+				<div class="col-md-3 col-lg-3"><input type="email" name="txt-email" id="txt-email" class="form-control"  style="size: 20%" placeholder="Nuevo corre electronico"></div>
+				<div id="resultadoCorreo" style="margin-left: 863px;"></div>
 			</td>
 			
 		</tr>
 		<tr>
 			<td>
 				<div class="col-md-1  col-lg-1"></div> 
-				<div class="col-md-7 col-lg-7">Contraseña ********</div> 
+				<div class="col-md-7 col-lg-7">
+				<div style="margin-left: 150px;">Contraseña *_*_*_*_*_*_*_*</div>
+				</div> 
 				<div class="col-md-1 col-lg-1  "><span style="color: #4286f4"><label id="contrasena"><a>cambiar</a></label> </span></div>
-				<div class="col-md-3 col-lg-3"><input type="password" name="txt-password" id="txt-password" class="form-control"  style="size: 20%"></div>
+				<div class="col-md-3 col-lg-3"><input type="password" name="txt-password" id="txt-password" class="form-control"  style="size: 20%" placeholder="contraseña antigua"></div><div id ="resultado" style="margin-left: 863px;"></div>
+				<div class="col-md-3 col-lg-3"><input type="password" name="txt-password" id="txt-passwordNueva" class="form-control"  style="size: 20%  margin-top: 15px;
+    			margin-left: 863px;" placeholder="Nueva contraseña"></div>
+    			<div id="resultadoActualizado" style="margin-left: 863px;margin-top: 70px"></div>
 			</td>
 		</tr>
 		
@@ -73,7 +85,9 @@
 		<tr>
 			<td>
 				<div class="col-md-1  col-lg-1"></div> 
-				<div class="col-md-7  col-lg-7"><h4>Ultra HD</h4> </div> 
+				<div class="col-md-7  col-lg-7">
+					<div id="planes" style="margin-top: 15px;margin-left: 150px;margin-top: 15px;" >Utra HD</div>
+				</div> 
 				<div lass="col-md-1  col-lg-1"><span style="color: #4286f4"><label id="plan"><a>cambiar</a></label> </span></div>
 				<div class="col-md-3 col-lg-3">
 					<label id="hd"><input type="radio" name="txt-plan" id="txt-hd"   style="size: 20%">HD</label>
@@ -101,13 +115,14 @@
 		<tr>
 			<td>
 				<div class="col-md-1  col-lg-1"></div> 
-				<div class="col-md-7 col-lg-7">	<a id="control"> Control Parental</a></div> 
+				<div class="col-md-7 col-lg-7">	<a id="control" style="margin-left: 150px;margin-top: 15px;"> Control Parental</a></div> 
 				<div class="col-md-1 col-lg-1">	<a id="activar"> Activar</a></div> 
 				
 			</td>
 		</tr>
 	</table>
 		<br><br><br>
+		<input type="button" name="btn-continuar" id="btn-guardar" class="btn btn-success" value="Guardar" style="font-size: 140%">
 		<input type="button" name="btn-continuar" id="btn-continuar" class="btn btn-success" value="Continuar" style="font-size: 140%">
 		
 	</div>

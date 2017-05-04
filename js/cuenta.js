@@ -13,12 +13,14 @@ $(document).ready(function(){
 
 		
 		$.ajax({
+
 			url:"ajax/acciones.php?accion=2",
 			method: "POST",
+			dataType:"json",
 			success:function(resultado){
-				$("#resultado").html(resultado);
-				
-			    
+				$("#nombreUsuario").html(resultado.usuario);
+				$("#correo").html(resultado.correo);
+			  
 			},
 			error:function(){
 				alert("algo esta mal");
@@ -29,6 +31,46 @@ $(document).ready(function(){
 	
 
 });
+$("#btn-guardar").click(function(){
+ var parametros="txt-email="+$("#txt-email").val()+"&"+"txt-password="+$("#txt-password").val()+"&"+
+ "txt-passwordNueva="+$("#txt-passwordNueva").val();
+
+ $.ajax({
+
+			url:"ajax/acciones.php?accion=3",
+			data: parametros,
+			method: "POST",
+			dataType:"json",
+			success:function(resultado){
+				if (resultado.codigo==0) 
+				$("#resultado").html("<div ><i class='fa fa-close' style='color:#CC0000' aria-hidden='true'>"+resultado.mensaje+"</i></div>");
+				if (resultado.codigo==1)
+                $("#resultadoActualizado").html("<div ><i class='fa fa-close' style='color:#436b04' aria-hidden='true'>"+resultado.mensaje+"</i></div>");
+
+			  
+			},
+			error:function(){
+				alert("algo esta mal");
+
+			}
+		});	
+  $.ajax({
+
+			url:"ajax/acciones.php?accion=4",
+			data: parametros,
+			method: "POST",
+			success:function(resultado){
+				$("#resultadoCorreo").html(resultado);
+
+			  
+			},
+			error:function(){
+				alert("algo esta mal");
+
+			}
+		});	
+});
+
 
 
 $("#Ccorreo").click(function(){
@@ -51,21 +93,15 @@ $("#Ccorreo").click(function(){
     	$("#control").click(function(){
     		$("#activar").show("swing");
     	});
-// $("#btn-continuar").click(function(){
 
-// 			var parametros={
-// 		        "txt-email" :$("#txt-email").val(),
-// 		        "txt-password" :$("#txt-password").val(),
-		        
-		        
-// 				};
-// 			$.ajax({
-// 	        url: "class/class-procesar.php", 
-// 		        method:"POST",
-// 		        success: function(result){
-// 		              location.href ="cartelera.html";
-// 	          }
-// 	      	});
+$("#btn-continuar").click(function(){
+			$.ajax({
+	        url: "class/class-procesar.php", 
+		        method:"POST",
+		        success: function(result){
+		              location.href ="cartelera.html";
+	          }
+	      	});
 
-//     		location.href ="cartelera.html";
-//     	});
+    		location.href ="cartelera.html";
+    	});
