@@ -13,10 +13,6 @@
 
     <title>Netblit</title>
      <link href="css/bootstrap.min.css" rel="stylesheet">
-     <script type="text/javascript" src="js/jquery.min.js" ></script>
-      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-      <script type="text/javascript" src="js/bootstrap.min.js" ></script>
-      <script type="text/javascript" src="js/jquery.min.js" ></script>
      <link href="css/normalize-card.min.css" type="text/css" rel="stylesheet">
     
 </head>
@@ -52,43 +48,43 @@
                                </div>
                                <div class="radForm">
                                   <label class="floating-label unfocused firstName ui-label ui-input-label">
-                                         <input data-testid="firstName" placeholder="Nombre" class="ui-text-input medium" >
+                                         <input data-testid="firstName" placeholder="Nombre" class="ui-text-input medium" id="ipt-nombre" >
                                    </label>
                                    <label class="floating-label unfocused lastName ui-label ui-input-label">
-                                       <input data-testid="lastName" placeholder="Apellidos" class="ui-text-input medium">
+                                       <input data-testid="lastName" placeholder="Apellidos" class="ui-text-input medium" id="ipt-apellido">
                                     </label>
                                     <div class="cardNumberContainer">
                                         <label class="floating-label unfocused creditCardNumber ui-label ui-input-label">
-                                           <input type="tel" placeholder="Número de tarjeta" class="ui-text-input medium" >
+                                           <input type="tel" placeholder="Número de tarjeta" class="ui-text-input medium" id="ipt-numTarjet" >
                                         </label>
                                      </div>
                                      <label class="floating-label unfocused creditExpirationMonth ui-label ui-input-label">
-                                        <input type="tel" class="ui-text-input medium" placeholder="Fecha de vencimiento (MM/AA)" value="" >
+                                        <input type="tel" class="ui-text-input medium" placeholder="Fecha de vencimiento (MM/AA)" value="" id="ipt-fechaV">
                                       </label>
                                       <label class="floating-label unfocused creditCardSecurityCode ui-label ui-input-label">
-                                          <input type="tel" data-testid="creditCardSecurityCode" class="ui-text-input medium" placeholder="Código de seguridad (CVV)">
+                                          <input type="tel" data-testid="creditCardSecurityCode" class="ui-text-input medium" placeholder="Código de seguridad (CVV)" id="ipt-codigoV">
                                        </label>
                                 </div>
                                 <div class="changePlanContainer">
                                    <div class="changePlanTitle">TU PLAN</div>
-                                   <div class="planDesc" id="info-plan">Información de tu plan "este campo debe ser programado su id es (info-plan)"</div>
-                                   <a class="changePlanLink pointer">Cambiar</a>
+                                   <div class="planDesc" id="info-plan"></div>
+                                   <a class="changePlanLink pointer" onclick="cambiarPlan()">Cambiar</a>
                                  </div>
                                  <div class="radForm">
                                    <div class="signupTerms" id="inicio-gratis">
                                        <span>
                                          <p>Al hacer click en el botón "Iniciar suscripción" a continuación, aceptas nuestros<a target="blank" href="">Términos de uso</a>, nuestra <a target="blank" href="">Declaración de privacidad</a> y que ya has cumplido los 18. Puedes cancelar la suscripción cuando quieras durante la prueba gratuita y no se te cobrará nada. Para cancelarla, ve a la página web de tu cuenta y haz clic en "Cancelar suscripción".</p>
                                          <p>
-                                           <b>Si no la cancelas, cuando termine tu periodo gratuito de prueba Netbit dará por hecho automáticamente que tu suscripción sigue en vigor y te cobrará la tarifa correspondiente (tarifa actual <span id="tarifa">"Campo por programar (id="tarifa")"</span>) a través de tu forma de pago cada mes.</b> No recibirás reembolsos ni créditos por los meses parciales.</p>
+                                           <b>Si no la cancelas, cuando termine tu periodo gratuito de prueba Netbit dará por hecho automáticamente que tu suscripción sigue en vigor y te cobrará la tarifa correspondiente (tarifa actual <span id="tarifa"></span>) a través de tu forma de pago cada mes.</b> No recibirás reembolsos ni créditos por los meses parciales.</p>
                                        </span>
                                    </div>
                                  </div>
                             </div>
                         </div>
                         <div class="submitBtnContainer">
-                          <a class="Tappable-inactive btn simplicity btn-red btn-large" href="quienUsaraNetflix.html" type="submit" id="comenzarpago" style="text-decoration:none;-webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; cursor: pointer;">
-                               <span>Iniciar suscripción</span>
-                            </a>
+                          <button class="Tappable-inactive btn simplicity btn-red btn-large" data-loading-text="<img src='images/ringloader_white_57x57_tail_red.gif' style='width: 25px; height: 25px;'>"  href="quienUsaraNetflix.html" type="submit" id="comenzarpago" style="text-decoration:none;-webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; cursor: pointer;">
+                               <span id="sp-text1">Iniciar suscripción</span>
+                            </button>
                         </div>
                      </form>
                  </div>
@@ -129,7 +125,7 @@
                    </div>
                    <div class="narrowContainer">
                        <div class="contextRow contextRowFirst">
-                              Cancela antes del <b>"fecha por programar" y no se te cobrará ningún cargo, hasta que finalice tu periodo de prueba.</b>
+                              Cancela antes del <b><span id="txt-fecha"></span> y no se te cobrará ningún cargo, hasta que finalice tu periodo de prueba.</b>
                        </div>
                        <div class="contextRow">
                                 Como recordatorio, <b>te enviaremos un email 3 días antes.</b>
@@ -159,7 +155,7 @@
                            <img src="images/chevron.svg" width="40" height="25" > </span>
                         </label>
 
-                        <label class="ui-tab-radio ui-tab-radio--active paymentPicker standardHeight" data-toggle="modal" data-target="#modal-sinopsis"><!-- id="tarjet2"-->
+                        <label class="ui-tab-radio ui-tab-radio--active paymentPicker standardHeight" data-toggle="modal" data-target="#modal-sinopsis " id="tarjet2"><!-- -->
                              <div class="mopNameAndLogos" >
                                 <span class="ui-tab-radio--text card-type-text paymentActive" >PayPal</span>
                                 <div class="logosContainer">
@@ -229,32 +225,14 @@
            
         </div>
       </div>
-      <script type="text/javascript">
-        $("#Tajeta1").click(function(){
-           var tarjeta="tipo1"
-          location.href ="opcionescredito.html";
-
-        });
-         $("#tarjet2").click(function(){
-          var tarjeta="tipo1"
-          location.href ="registrousuarios.html";
-        });
-        $("#btn-enviar").click(function(){
-          var parametros={
-            "txt-tipo" :tarjeta
-            
-        };
-        $.ajax({
-          url: "class/class-procesar.php", 
-            data:parametros,
-            method:"POST",
-            success: function(result){
-                  location.href ="registrotarjeta.html";
-            }
-          });
-
-        }); 
-        
-      </script>
+    <script type="text/javascript" src="js/jquery.min.js" ></script>
+    <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="js/inscripcion.js"></script>
+    <script type="text/javascript">
+                  
+            $(document).ready(function(){
+                cargardatos();
+            });
+    </script>
 </body>
 </html>
