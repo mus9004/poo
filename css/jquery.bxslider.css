@@ -1,4 +1,4 @@
-/** VARIABLES
+/** VARIABLES 
 ===================================*/
 /** RESET AND LAYOUT
 ===================================*/
@@ -12,7 +12,7 @@
 }
 .bx-wrapper img {
   height: 175px;
-  max-width: 100%;
+  max-width: 100px;
   display: block;
   -moz-box-shadow: 3px 3px 5px black;
   -webkit-box-shadow: 3px 3px 5px black;
