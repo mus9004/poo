@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tipo Usuario</title>
+	<link rel="icon" type="image/icon" href="images/netbit.ico"/>
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+ <input type="radio" name="options" id="option1" autocomplete="on" value="0" style="display:none;" checked="true">
+<div style="background-color: #000000; border: 1px;size: 150px;border-style: solid;border-color: #6E6E6E; padding: 5px">
+      <div style="height: 0px; color:black" id="price"></div>
+      <div class="navbar-header">
+       <a href="index.html" style="text-decoration: none"><h1 class=" signupBasicHeader" style="color: #E50914;font-weight: 900;font-size: 370%;font-style: oblique;margin-bottom: 0px;border-top-width:10px;padding-top: 19px;margin-top: 0px;padding-left: 15px;">NETBIT</h1></a>
+       
+   </div> 
+    <!--<div class="navbar-collapse collapse">
+      <input type="button" name="btn-inicioSesion" class="btn btn-warning" >
+     </div>-->
+    <div id="navbar" class="navbar-collapse collapse" style="padding-top: 20px">
+          <form class="navbar-form navbar-right">  
+            <button type="button" id="iniciarsesion" class="btn btn-success">Iniciar Sesion</button>
+          </form>
+        </div>
+ </div>
+	<div style="margin-left: 60px;margin-right: 60px;">
+		<h1>Selecciona el plan ideal para ti</h1>
+
+		<table style="font-size: 150%;" class="table table-striped" >
+			<tr>
+				<td></td>
+				<td colspan="3">
+					<div class="btn-group" data-toggle="buttons">
+					  		<label class="btn btn-success " style="padding: 15px 32px;text-align: center;font-size: 18px;color: white;">
+					   			 <input type="radio" name="options" id="option1" autocomplete="off" value="1">Basico
+					 		</label>
+					 	
+					  		<label class="btn btn-success" style="padding: 15px 32px;text-align: center;font-size: 18px;color: white;">
+					   			 <input type="radio" name="options" id="option2" autocomplete="off" value="2"> Estandar
+					  		</label>
+					  	
+					  		<label class="btn btn-success" style="padding: 15px 32px;text-align: center;font-size: 18px;color: white;">
+					    		<input type="radio" name="options" id="option3" autocomplete="off" value="3" > Premium
+					  		</label>
+					</div>
+				</td>	
+			</tr>
+			<!--<td>
+			<button type="button" class="btn btn-success" style="background-color: #4CAF50; 
+	    	border: none; color: white;	padding: 15px 32px;	text-align: center; 	text-decoration: none; display: inline-block; font-size: 18px;">Basico
+	    	</button></td>
+			<td>
+			<button type="button" class="btn btn-success" style="background-color: #4CAF50; 
+	    	border: none; color: white;	padding: 15px 32px;	text-align: center; 	text-decoration: none; display: inline-block; font-size: 18px;">Estandar</button></td>
+			<td>
+			<button type="button" class="btn btn-success" style="background-color: #4CAF50; 
+	    	border: none; color: white;	padding: 15px 32px;	text-align: center; text-decoration: none; display: inline-block; font-size: 18px;">Premium
+	    	</button></td>
+			</tr>-->
+
+			<tr>
+			
+				<td>El precio mensual después de que termina el mes gratis el <span id="fecha"></span></td>
+				<td>USD7.99</td>
+				<td>USD9.99</td>
+				<td>USD11.99</td>
+			</tr>
+			<tr>
+				<td>HD disponible</td>
+				<td style="text-align: center; ">X</td>
+				<td style="text-align: center; ">●</td>
+				<td style="text-align: center; ">●</td>
+			</tr>
+			<tr>
+				<td>Ultra HD disponible</td>
+				<td style="text-align: center; ">X</td>
+				<td style="text-align: center; ">X</td>
+				<td style="text-align: center; ">●</td>
+			</tr>
+			<tr>
+				<td>Pantallas en las que puedes ver al mismo tiempo</td>
+				<td style="text-align: center; ">1</td>
+				<td style="text-align: center; ">2</td>
+				<td style="text-align: center; ">4</td>
+			</tr>
+			<tr>
+				<td>Ve en tu laptop, TV, teléfono y tableta</td>
+				<td style="text-align: center; ">●</td>
+				<td style="text-align: center; ">●</td>
+				<td style="text-align: center; ">●</td>
+			</tr>
+			<tr>
+				<td>Películas y series ilimitadas</td>
+				<td style="text-align: center; ">●</td>
+				<td style="text-align: center; ">●</td>
+				<td style="text-align: center; ">●</td>
+			</tr>
+			<tr>
+				<td>Cancela en cualquier momento</td>
+				<td style="text-align: center; ">●</td>
+				<td style="text-align: center; ">●</td>
+				<td style="text-align: center; ">●</td>
+			</tr>
+			<tr>
+				<td>El primer mes es gratis</td>
+				<td style="text-align: center; ">●</td>
+				<td style="text-align: center; ">●</td>
+				<td style="text-align: center; ">●</td>
+			</tr>
+
+		</table>
+		<div >
+		   <button type="button" id="btn-cambiar" class="btn btn-success" style="font-size: 27px">Continuar</button>
+		 </div>
+          
+	</div>
+   <div > 
+       <div style=" margin-left: 100px; margin-right: 100px; margin-right: 100px">
+             <div class="footer-top" style="margin: 30px auto 0;width: 1050px;">
+                  <div class="site-footer">
+                       <p class="footer-top">¿Tienes problemas? llama al &nbsp;<a  style="text-decoration: none" class="footer-top-a" href=" +(504) 9206-0911 (HND)"> +(504) 9206-0911 (HND)</a>
+                         </p>
+                 
+                           <table class="site-footer" style="border-color: #999797; border: 0px; width: 1100px;">
+                            <tr >
+                              <td style="color: #999797"><a href="PreguntasFrecuentes.html" style="text-decoration: none">Preguntas frecuentes</a></td>
+                              <td style="color: #999797"><a href="Ayuda.html" style="text-decoration: none">Centro de ayuda</a></td>
+                              <td style="color: #999797"><a href="Cuenta.php"  style="text-decoration: none">Cuenta</td>
+                              <td style="color: #999797"><a href="#"  style="text-decoration: none">Prensa</a></td>
+                            </tr>
+
+                            <tr>
+                              <td style="color: #999797"><a href="#"  style="text-decoration: none">Relaciones con inversionistas</a></td>
+                              <td style="color: #999797"><a href="#"  style="text-decoration: none">Empleo</a></td>
+                              <td style="color: #999797"><a href="#"  style="text-decoration: none">Formas de ver</a></td>
+                              <td style="color: #999797"><a href="TerminosdeUso.html"  style="text-decoration: none">Términos de uso</a></td>
+                            </tr>
+                            <tr>
+                              <td style="color: #999797"><a href="Privacidad.html"  style="text-decoration: none">Privacidad</a></td>
+                              <td style="color: #999797"><a href="Preferenciasdecookies.html"  style="text-decoration: none">Preferencias de cookies</a></td>
+                              <td style="color: #999797"><a href="Velocidad.html"  style="text-decoration: none">Prueba de velocidad</a></td>
+                              <td style="color: #999797"><a href="originales.html"  style="text-decoration: none">Originales de NetBit</a></td>
+                            </tr>         
+                           </table><br><br>
+                  <div>
+                      <div class="glyphicon icon-globe"> 
+                      </div>
+                      <div>
+                           <select class="form-control" style="padding-right: 0px; width: 134px;">
+                               <option value="1">ESPAÑOL</option>
+                               <option value="2">INGLES</option>
+                           </select>
+                      </div>
+                 </div>
+                <p style="margin-top: 20px; color: #999797; padding-top: 20px;">Netbit Honduras</p>
+         </div>
+      </div>
+    </div>
+  </div>
+    <script type="text/javascript" src="js/jquery.min.js" ></script>
+    <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+ 	<script type="text/javascript" src="js/inscripcion.js"></script>
+</body>
+</html>
