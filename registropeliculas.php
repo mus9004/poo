@@ -273,7 +273,7 @@ session_start();
    
   <script type="text/javascript">
     $("#btn-administrar-usuarios").click(function(){
-      location.href ="quienEstaViendo.html";
+      location.href ="quienEstaViendo.php";
     });
 
   </script>

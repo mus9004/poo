@@ -1,3 +1,11 @@
+<?php
+  include_once("class/class-conexion.php");
+  $conexion = new Conexion();
+  $conexion->establecerConexion();
+  $resultadoUsuarios = $conexion->ejecutarInstruccion("SELECT codigo_persona, codigo_genero, codigo_imagen, codigo_tipo_usuario, nombre_persona, apellido_persona, fecha_nacimiento, nombre_usuario, contrasena FROM tbl_personas");
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,38 +50,29 @@
           </form>
         </div>
   </div>
-        
-    <div class="container">
+
+   <div class="container">
       <div class="diseno" style="margin-left: 350px">
-              <h1>¿Quien Esta Viendo Ahora?</h1>
+              <h1>Usuarios Registrados</h1>
             </div>
           <table class="table">
           <tr>
-            <td>
-              <a href="https://www.google.hn"><img src="img/usuario.png" style="width: 200px;height: 200px"></a>
+            <td style="align-content: center;">
+              <Strong><h3>Informacion del Usuario</h3></Strong>
             </td>
-            <td>
-             <a href="https://www.google.hn"><img src="img/usuario.png" style="width: 200px;height: 200px"></a>
-            </td>
-            <td>
-              <a href="https://www.google.hn"><img src="img/usuario.png" style="width: 200px;height: 200px"></a>
-            </td>
-            <td>
-              <a href="https://www.google.hn"><img src="img/usuario.png" style="width: 200px;height: 200px"></a>
-            </td>
-            <td>
-              <a href="https://www.google.hn"><img src="img/add_user_256.png" style="padding-top: 60px"></a>
+            <td style="align-content: center;">
+             <Strong><h3>Imagen</h3></Strong>
             </td>
           </tr>
-          <tr>
-            <td>Usuario1</td>
-            <td>Usuario2</td>
-            <td>Usuario3</td>
-            <td>Usuario4</td>
-            <td>Agregar Perfil</td>
-          </tr>
+          <?php 
+
+          while($fila=$conexion->obtenerRegistro($resultadoUsuarios)){
+              echo '<tr><td>'.$fila["nombre_persona"].' '.$fila["apellido_persona"].' <br>'.$fila["nombre_usuario"].'</td><td><img src="img/user.png" style="width: 100px;height: 100px"></td></tr>';
+            }
+          ?>
         </table><br>
-</div>
+    </div>
+        
  <div class="container">
        <button type="button" id="btn-admin-perfiles" class="btn btn-primary btn-lg btn-block texto disenoBoton" style="margin-left: 300px">Administrar Perfiles</button>  <br><br><br><br>
  </div>
