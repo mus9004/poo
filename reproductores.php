@@ -53,7 +53,7 @@
                     </div>
                 <!-- icono de netbit -->
                        <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6"> 
-                            <a href="index.html" style="text-decoration: none; color: #E50914;" class="authLinks signupBasicHeader" >Cerrar sesión</a>
+                            <a href="cerrar_sesion.php" style="text-decoration: none; color: #E50914;" class="authLinks signupBasicHeader" >Cerrar sesión</a>
                       </div>
                  </div>
                </div>
