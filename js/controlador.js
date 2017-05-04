@@ -10,8 +10,13 @@ $.ajax({
 			success:function(respuesta){
 				if (respuesta.codigo_resultado==0) 
 					$("#resultado").html('<div style="color: red"> '+respuesta.mensaje+"</div>");
-				if (respuesta.codigo_resultado==1) 
-					location.href="cartelera.html";
+				    if (respuesta.codigo_resultado==1) 	
+					 location.href ="cartelera.html";
+					if (respuesta.codigo_resultado==2) 
+					location.href ="registropeliculas.php";	
+				     
+				      
+				
 				$("#btn-login").button("reset");
 		
 			},
