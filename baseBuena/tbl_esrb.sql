@@ -1,20 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.4
+-- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 03-05-2017 a las 21:16:45
--- Versión del servidor: 5.5.24-log
--- Versión de PHP: 5.4.3
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 04-05-2017 a las 04:27:04
+-- Versión del servidor: 5.7.14
+-- Versión de PHP: 5.6.25
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de datos: `netflix_bd`
@@ -26,25 +26,43 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `tbl_esrb`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_esrb` (
-  `codigo_esrb` int(11) NOT NULL AUTO_INCREMENT COMMENT 'CAMPO QUE SIRVE COMO IDENTIFICADOR PARA EL CODIGO DE LA CLASIFICACION.',
-  `codigo_imagen` int(11) NOT NULL COMMENT 'campo que identifica la imagen que hace referencia al esrb.',
-  `nombre_esrb` varchar(45) NOT NULL COMMENT 'campo que almacena el nombre del esrb. (esrb nos indica el publico al que esta dirigido un contenido, por ejemplo, mayores de 12 años, mayores de 21 años, todo publico, etc...)',
-  PRIMARY KEY (`codigo_esrb`),
-  KEY `fk_tbl_esrb_tbl_imagen1_idx` (`codigo_imagen`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+CREATE TABLE `tbl_esrb` (
+  `codigo_esrb` int(11) NOT NULL COMMENT 'CAMPO QUE SIRVE COMO IDENTIFICADOR PARA EL CODIGO DE LA CLASIFICACION.',
+  `codigo_imagen` int(11) DEFAULT NULL COMMENT 'campo que identifica la imagen que hace referencia al esrb.',
+  `nombre_esrb` varchar(45) NOT NULL COMMENT 'campo que almacena el nombre del esrb. (esrb nos indica el publico al que esta dirigido un contenido, por ejemplo, mayores de 12 años, mayores de 21 años, todo publico, etc...)'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbl_esrb`
 --
 
 INSERT INTO `tbl_esrb` (`codigo_esrb`, `codigo_imagen`, `nombre_esrb`) VALUES
-(1, 1, 'G'),
-(2, 2, 'PG'),
-(3, 3, 'PG-13'),
-(4, 4, 'R'),
-(5, 5, 'NC-17');
+(1, NULL, 'G'),
+(2, NULL, 'PG'),
+(3, NULL, 'PG-13'),
+(4, NULL, 'R'),
+(5, NULL, 'NC-17');
 
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `tbl_esrb`
+--
+ALTER TABLE `tbl_esrb`
+  ADD PRIMARY KEY (`codigo_esrb`),
+  ADD KEY `fk_tbl_esrb_tbl_imagen1_idx` (`codigo_imagen`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `tbl_esrb`
+--
+ALTER TABLE `tbl_esrb`
+  MODIFY `codigo_esrb` int(11) NOT NULL AUTO_INCREMENT COMMENT 'CAMPO QUE SIRVE COMO IDENTIFICADOR PARA EL CODIGO DE LA CLASIFICACION.', AUTO_INCREMENT=6;
 --
 -- Restricciones para tablas volcadas
 --
