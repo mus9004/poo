@@ -50,7 +50,7 @@
 
       <script>
      $(function(){
-        $("input[name='filev']").on("change", function(){
+        $("input[name='fileV']").on("change", function(){
             var formData = new FormData($("#formulario1")[0]);
             var ruta = "ajax-video.php";
             $.ajax({
@@ -61,7 +61,7 @@
                 processData: false,
                 success: function(datos)
                 {
-                    $("#respuesta").html(datos);
+                    $("#respuesta2").html(datos);
                 }
             });
         });
@@ -209,7 +209,7 @@
 					 <form method="post" id="formulario1" enctype="multipart/form-data">
 					    Subir Video: <input type="file" name="fileV">
 					 </form>
-					  <div id="respuesta"></div>
+					  <div id="respuesta2"></div>
 					</td>
 				</tr>
 			</table><br><br><br><br><br>
