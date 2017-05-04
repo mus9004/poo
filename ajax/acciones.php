@@ -6,21 +6,35 @@ $conexion->establecerConexion();
 switch ($_GET["accion"]) {
 	case '1':
 	  $verificar=array();
-      $sql= sprintf("SELECT a.codigo_usuario, a.correo_electronico, b.contrasena
+      $sql= sprintf("SELECT a.codigo_usuario, a.correo_electronico, b.contrasena,b.nombre_persona
       FROM tbl_usuarios a
       LEFT JOIN tbl_personas b
       ON a.codigo_usuario=b.codigo_persona        
       "); 
         $resultado=$conexion->ejecutarInstruccion($sql);
-        while($linea=$conexion->obtenerRegistro($resultado)){
+        $linea=$conexion->obtenerRegistro($resultado);
+
+        // if($conexion->cantidadRegistros($resultado) >0){
+        //   $fila = $conexion->obtenerFila($resultado);
+        //   $respuesta["codigo_resultado"] = 1;
+        //   $respuesta["resultado"] = "Usuario Existe";
+        //   $respuesta["codigo_usuario"] = $fila["codigo_usuario"];
+        //   $respuesta["nombre_usuario"] = $fila["nombre_usuario"];
+        //   $respuesta["codigo_tipo_usuario"] = $fila["codigo_tipo_usuario"];
+        // }
+        // else {
+        //   $respuesta["codigo_resultado"] = 0;
+        //   $respuesta["resultado"] = "Usuario no Existe";
+        // }
         	if ($linea["correo_electronico"]!= $_POST["inputEmail"] || $linea["contrasena"]!=$_POST["inputPassword"]) {
         		$verificar["codigo_resultado"]=0;
         	     $verificar["mensaje"]="Usuario o Contraseña incorrecto";	
         		}
         	else{
         		 $verificar["codigo_resultado"]=1;
-        	}  	
-        }
+        	} 
+
+        
         echo json_encode($verificar);
 		break;
     case '2':
@@ -59,7 +73,7 @@ switch ($_GET["accion"]) {
             $arreglo["mensaje"]="No Coinciden";
            }
      else{
-                $arreglo["codigo"]=1;
+               
                 
             $sql= sprintf("UPDATE tbl_personas 
               SET contrasena='%s'  ",
@@ -67,8 +81,7 @@ switch ($_GET["accion"]) {
               
             );
             $resultado=$conexion->ejecutarInstruccion($sql);
-            $arreglo["mensaje"]="Guardado";
-           }
+             }
            echo json_encode($arreglo);
         
 

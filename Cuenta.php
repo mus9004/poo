@@ -79,36 +79,7 @@
 			</td>
 		</tr>
 		
-		<tr style="border-bottom: 3px solid #ddd;">
-			<td><div style="float: left;"><h3>Planes</h3></div> </td>
-		</tr>
-		<tr>
-			<td>
-				<div class="col-md-1  col-lg-1"></div> 
-				<div class="col-md-7  col-lg-7">
-					<div id="planes" style="margin-top: 15px;margin-left: 150px;margin-top: 15px;" >Utra HD</div>
-				</div> 
-				<div lass="col-md-1  col-lg-1"><span style="color: #4286f4"><label id="plan"><a>cambiar</a></label> </span></div>
-				<div class="col-md-3 col-lg-3">
-					<label id="hd"><input type="radio" name="txt-plan" id="txt-hd"   style="size: 20%">HD</label>
-					<label id="dvd"><input type="radio" name="txt-plan" id="txt-dvd"   style="size: 20%">DVD</label>
-					<label id="ultra"><input type="radio" name="txt-plan" id="txt-ultra"  style="size: 20%">ultra HD</label>
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<div class="col-md-1  col-lg-1"></div> 
-				<div class="col-md-7  col-lg-7"><h4></h4>. </div> 
-				<div lass="col-md-1  col-lg-1"><span style="color: #4286f4"><label  id="Agregar"><a>cambiar</a> </label> </span></div>
-				<div class="col-md-3 col-lg-3">
-					<label id="hd1"><input type="radio" name="txt-plan" id="txt-hd1"   style="size: 20%">HD</label>
-					<label id="dvd1"><input type="radio" name="txt-plan" id="txt-dvd1"   style="size: 20%">DVD</label>
-					<label id="ultra1"><input type="radio" name="txt-plan" id="txt-ultra1"  style="size: 20%">ultra HD</label>
-				</div>
-				
-			</td>
-		</tr>
+		
 		<tr style="border-bottom: 3px solid #ddd;">
 			<td><div style="float: left;"><h3>Configuracion</h3></div> </td>
 		</tr>

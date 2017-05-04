@@ -44,8 +44,8 @@ $("#btn-guardar").click(function(){
 			success:function(resultado){
 				if (resultado.codigo==0) 
 				$("#resultado").html("<div ><i class='fa fa-close' style='color:#CC0000' aria-hidden='true'>"+resultado.mensaje+"</i></div>");
-				if (resultado.codigo==1)
-                $("#resultadoActualizado").html("<div ><i class='fa fa-close' style='color:#436b04' aria-hidden='true'>"+resultado.mensaje+"</i></div>");
+				
+                
 
 			  
 			},
@@ -60,7 +60,7 @@ $("#btn-guardar").click(function(){
 			data: parametros,
 			method: "POST",
 			success:function(resultado){
-				$("#resultadoCorreo").html(resultado);
+				// $("#resultadoCorreo").html(resultado);
 
 			  
 			},
