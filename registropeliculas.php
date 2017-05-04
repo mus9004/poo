@@ -1,3 +1,18 @@
+<?php
+	include_once("class/class-conexion.php");
+	$conexion = new Conexion();
+	$conexion->establecerConexion();
+	$resultadoCategorias = $conexion->ejecutarInstruccion("SELECT codigo_categoria, nombre_categoria FROM tbl_categorias");
+
+	$resultadoSubtitulos = $conexion->ejecutarInstruccion("SELECT codigo_subtitulo, nombre_subtitulo, tbl_idiomas_codigo_idioma FROM tbl_subtitulos");
+
+	$resultadoClasificacion = $conexion->ejecutarInstruccion("SELECT codigo_esrb, codigo_imagen, nombre_esrb FROM tbl_esrb");
+
+
+	$resultadoTipoContenido = $conexion->ejecutarInstruccion("SELECT codigo_tipo_contenido, nombre_tipo_contenido FROM tbl_tipo_contenido");
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,65 +37,82 @@
 	        </div>
 	  </div>
 	<div style="margin-left: 100px;margin-right: 100px;margin-top: 80px;">
-	<h1><strong>Registro de peliculas</strong> </h1>
+	<h1><strong>Registro de Archivos</strong> </h1>
 		<h4>
 		<div class="col-md-6  col-lg-6">
-			<table>
+			<table class="table ">
 				<tr>
 					<td>
-						Titulo:
+						Nombre Archivo:
 					</td>
-					<td><input type="text" name="txt-titulo" class="form-control"></td>
+					<td><input type="text" id="txt-nombre" name="txt-nombre" required class="form-control"></td>
 				</tr>
 				<tr>
 					<td>
-						Artistas:
-					</td>
-					<td><input type="text" name="txt-artistas" class="form-control"></td>
+						Descripcion:
+					</td> 
+					<td><input type="text" id="txt-descripcion" required class="form-control"></td>
 				</tr>
 				<tr>
 					<td>
-						Idioma:
-					</td>
+						Fecha de lanzamiento:
+					</td> 
+					<td><input type="date" id="dt-fecha" required class="form-control"></td>
 				</tr>
-				<tr>	
-				<td></td>
+				<tr>
 					<td>
-					<label><input type="checkbox" name="txt-titulo" >Ingles</label><br>
-					<label><input type="checkbox" name="txt-titulo" >Español Latino</label><br>
-					<label><input type="checkbox" name="txt-titulo" >Español Castellano</label><br>
-					<label><input type="checkbox" name="txt-titulo" >Frances</label><br>
-					<label><input type="checkbox" name="txt-titulo" >Portugues</label><br>
-					<label><input type="checkbox" name="txt-titulo" >Italiano</label><br>
+						Duracion Del archivo:
+					</td> 
+					<td><input type="text" id="txt-duracion" required class="form-control"></td>
+				</tr>
+				<tr>
+					<td>
+						Calificacion:
+					</td> 
+					<td><input type="text" id="txt-calificacion" required class="form-control"></td>
+				</tr>
+				<tr>
+					<td>
+						Tipo de contenido:
+					</td>
+					<td>
+					<?php
+						while($fila=$conexion->obtenerRegistro($resultadoTipoContenido)){
+							echo '<label><input type="radio" name="rbt-tipo-contenido" id="rbt-tipo-contenido" 
+								value="'.$fila["codigo_tipo_contenido"].'">'.$fila["nombre_tipo_contenido"].'</label><br>';
+						}
+					?>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						Pais:
+						Clasificacion:
 					</td>
-					<td><input type="text" name="txt-pais" class="form-control"></td>
-				</tr>
-				<tr>
 					<td>
-						Clasificacion :
-					</td>
-					
-				
-					<td>
-					<label><input type="radio" name="txt-clase" >G</label>
-					<label><input type="radio" name="txt-clase" >PG</label>
-					<label><input type="radio" name="txt-clase" >PG-13</label>
-					<label><input type="radio" name="txt-clase" >R</label>
-					<label><input type="radio" name="txt-clase" >NC-17</label>
-					<label><input type="radio" name="txt-clase" >UNRATED</label>
+					<?php
+						while($fila=$conexion->obtenerRegistro($resultadoClasificacion)){
+							echo '<label><input type="radio" name="rbt-clasificacion" id="rbt-clasificacion" 
+								value="'.$fila["codigo_esrb"].'">'.$fila["nombre_esrb"].'</label><br>';
+						}
+					?>
 					</td>
 				</tr>
 				<tr>
 					<td>
 						Url:
 					</td>
-					<td><input type="text" name="txt-url" class="form-control"></td>
+					<td><input type="text" id="txt-url" name="txt-url" class="form-control"></td>
 				</tr>
+				<tr>
+					<td colspan="2">
+					<button id="btn-guardar" class="btn btn-danger">
+						Guardar
+					</button>
+					<button id="btn-actualizar" class="btn btn-success" style="display: none;">
+						Actualizar
+					</button>
+					</td>
+					</tr>
 
 			</table>
 		</div>
@@ -94,12 +126,12 @@
 				<tr>	
 				<td></td>
 					<td>
-					<label><input type="checkbox" name="chk-categoria[]" >Drama</label><br>
-					<label><input type="checkbox" name="chk-categoria[]" >Terror</label><br>
-					<label><input type="checkbox" name="chk-categoria[]" >Comedia</label><br>
-					<label><input type="checkbox" name="chk-categoria[]" >Accion</label><br>
-					<label><input type="checkbox" name="chk-categoria[]" >Animada</label><br>
-					<label><input type="checkbox" name="chk-categoria[]" >Ciencia Ficcion</label><br>
+					<?php
+						while($fila=$conexion->obtenerRegistro($resultadoCategorias)){
+							echo '<label><input type="checkbox" class="ckeckbox" name="chk-categorias[]" id="chk-categorias[]" 
+								value="'.$fila["codigo_categoria"].'">'.utf8_encode($fila["nombre_categoria"]).'</label><br>';
+						}
+					?>
 					</td>
 				</tr>
 				<tr>
@@ -110,24 +142,31 @@
 				<tr>	
 				<td></td>
 					<td>
-					<label><input type="checkbox" name="txt-subtitulo[]" >Ingles</label><br>
-					<label><input type="checkbox" name="txt-subtitulo[]" >Español Latino</label><br>
-					<label><input type="checkbox" name="txt-subtitulo[]" >Español Castellano</label><br>
-					<label><input type="checkbox" name="txt-subtitulo[]" >Frances</label><br>
-					<label><input type="checkbox" name="txt-subtitulo[]" >Portugues</label><br>
-					<label><input type="checkbox" name="txt-subtitulo[]" >Italiano</label><br>
+					<?php
+						while($fila=$conexion->obtenerRegistro($resultadoSubtitulos)){
+							echo '<label><input type="checkbox" name="chk-sub-titulos[]" id="chk-sub-titulos[]" 
+								value="'.$fila["codigo_subtitulo"].'">'.utf8_encode($fila["nombre_subtitulo"]).'</label><br>';
+						}
+					?>
 					</td>
+				</tr>
+				<tr>
+					<td>
+						Nombre de <br> la Imagen:
+					</td>
+					<td><input type="text" id="txt-imagen" name="txt-imagen" placeholder="img/img/001.jpg" required class="form-control"></td>
 				</tr>
 			</table><br><br><br><br><br>
 		</div>  
 		</h4>
-		<div>
+		<div id="guardar">
 			
 		</div>
 
 
 	</div>
-	   <div > 
+	<br><br><br><br>
+	  <div class="col-md-12 col-lg-12" > 
        <div style=" margin-left: 100px; margin-right: 100px; margin-right: 100px">
              <div class="footer-top" style="margin: 30px auto 0;width: 1050px;">
                   <div class="site-footer">
@@ -173,6 +212,7 @@
 
 	 <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
+   <script src="js/controlador-peliculas.js"></script>
    
   <script type="text/javascript">
     $("#btn-administrar-usuarios").click(function(){

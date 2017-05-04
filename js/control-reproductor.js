@@ -6,14 +6,17 @@ $(document).ready(function(){
 			data:parametros,
 			dataType:"json",
 			success:function(resultado){
-				player = CodoPlayer([{
+				/*player = CodoPlayer([{
 				    		title: resultado.nombre_contenido,
 				    		poster: resultado.nombre_imagen,
 				    		src: resultado.url_contenido
 				    		}], {
 				    preload: false,
+				    plugins: {
+			            share: true
+			        },
 				    id: "codo"
-				}, "#my-play");
+				}, "#my-play");*/
 				api= flowplayer("#player", {
 						poster: resultado.nombre_imagen,
 					    clip: {
@@ -33,7 +36,7 @@ $(document).ready(function(){
 				    	sharing: {
     					sites: ["facebook","twitter","email","googleplus"]}
 				    });
-				playerJs = videojs('my-player',{
+				/*playerJs = videojs('my-player',{
 							sources: [{
 								src: resultado.url_contenido
 							}],
@@ -43,18 +46,18 @@ $(document).ready(function(){
 						  	controls: true,
 						  	autoplay: false,
 						  	preload: 'auto'
-						});
+						});*/
 			},
 			error:function(){
 				alert("Something...");
 			}
 		});
-	$("#videoJs").hide();
-	$("#JWPlayer").hide();
+	//$("#videoJs").hide();
+	$("#JWPlayer").show();
 	$("#flowPlayer").hide();
-	$("#codoPlayer").show();
+	//$("#codoPlayer").show();
 
-	$("#btn-codoPlayer").click(function(){
+	/*$("#btn-codoPlayer").click(function(){
 		api.pause();
 		playerInstance.pause(true);
 		playerJs.pause();
@@ -62,33 +65,33 @@ $(document).ready(function(){
 		$("#flowPlayer").hide();
 		$("#JWPlayer").hide();
 		$("#codoPlayer").show();
-	});
+	});*/
 
 	$("#btn-flowPlayer").click(function(){
-		player.pause();
+		//player.pause();
 		playerInstance.pause(true);
-		playerJs.pause();
+		//playerJs.pause();
 		$("#videoJs").hide();
 		$("#JWPlayer").hide();
 		$("#flowPlayer").show();
 		$("#codoPlayer").hide();
 	});
 	$("#btn-JWPlayer").click(function(){
-		player.pause();
+		//player.pause();
 		api.pause();
-		playerJs.pause();
+		//playerJs.pause();
 		$("#flowPlayer").hide();
 		$("#videoJs").hide();
 		$("#JWPlayer").show();
 		$("#codoPlayer").hide();
 	});
-	$("#btn-videoJs").click(function(){
-		player.pause();
+	/*$("#btn-videoJs").click(function(){
+		//player.pause();
 		api.pause();
 		playerInstance.pause(true);
 		$("#flowPlayer").hide();
 		$("#JWPlayer").hide();
 		$("#videoJs").show();
 		$("#codoPlayer").hide();
-	});
+	});*/
 });

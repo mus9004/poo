@@ -16,7 +16,7 @@ jwplayer.defaults = {
   "displaytitle": true,
   "flashplayer": "jwplayer/jwplayer.flash.swf",
   "height": 270,
-  "key": "HNRmx9FCitiMjQlYwlQ7l/qgGCJrcH6sYudl8oXhcsP9ZiNBec9+tcOUufY=",
+  "key": "7jpJdYy8Xyb+z2gMyDX5MLJHdScsEYl+Jc9Fwg==",
   "logo": {
     "file": "jwplayer/1SXlvrzy.png",
     "hide": true,

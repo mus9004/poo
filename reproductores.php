@@ -21,9 +21,9 @@
 
 	<link href="video-js/video-js.css" rel="stylesheet" type="text/css">
 	<link href="video-js/skin.css" rel="stylesheet" type="text/css">
-  	<script src="video-js/video.js"></script>
+  	<!-- <script src="video-js/video.js"></script>
   	<script src="video-js/lang/es.js"></script>
-  	<script src="videojs-playlist/dist/videojs-playlist.js"></script>
+  	<script src="videojs-playlist/dist/videojs-playlist.js"></script> -->
      <link href="css/normalize-card.min.css" type="text/css" rel="stylesheet">
   	<script>
   		var title = "METRO (Cortometraje)";
@@ -53,25 +53,25 @@
 	<div class="margen">
 		<div>
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center; margin-top:35px">
-				<button type="button"  id="btn-codoPlayer" class="btn simplicity btn-submit btn-large" style="padding-left: 10px; width:137px ">Codo Player</button>
+				<!-- <button type="button"  id="btn-codoPlayer" class="btn simplicity btn-submit btn-large" style="padding-left: 10px; width:137px ">Codo Player</button> -->
 				<button type="button" class="btn simplicity btn-submit btn-large" style="padding-left: 10px; width:137px " id="btn-flowPlayer">&nbsp;Flowplayer</button>
 				<button type="button" class="btn simplicity btn-submit btn-large" style="padding-left: 10px; width:137px " id="btn-JWPlayer">&nbsp;&nbsp;JW Player</button>
-				<button type="button" class="btn simplicity btn-submit btn-large" style="padding-left: 10px; width:137px " id="btn-videoJs">&nbsp;&nbsp;&nbsp;Video JS</button>
+				<!-- <button type="button" class="btn simplicity btn-submit btn-large" style="padding-left: 10px; width:137px " id="btn-videoJs">&nbsp;&nbsp;&nbsp;Video JS</button> -->
 			</div>
 			<input type="hidden" id = "obtenerVideo" value="<?php echo $_GET["accion"];?>">
 			<div id="resultado"></div>
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="reproductor">
-				<div id="codoPlayer" class="separar-arriba">
+				<!-- <div id="codoPlayer" class="separar-arriba">
 					<div id="my-play"></div>
-				</div>
+				</div> -->
 				<div id="flowPlayer" class="separar-arriba">
 					<div id="player" class="fp-full fp-edgy fp-outlined"></div>
 				</div>
 				<div id="JWPlayer" class="separar-arriba">
 				<div id="reproduce"></div>
 				</div>
-				<div id="videoJs" class="separar-arriba">
-				<video id="my-player" class="video-js vjs-default-skin" ></video>
+				<!-- <div id="videoJs" class="separar-arriba">
+				<video id="my-player" class="video-js vjs-default-skin" ></video> -->
 				</div>
             </div>
          </div>
