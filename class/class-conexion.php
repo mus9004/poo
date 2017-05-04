@@ -37,6 +37,9 @@
 		public function obtenerRegistro($resultado){
 			return mysqli_fetch_assoc($resultado);
 		}
+		public function cantidadRegistros($resultado){
+			return mysqli_num_rows($resultado);
+		}
 
 		public function getHost(){
 			return $this->host;

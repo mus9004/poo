@@ -13,20 +13,22 @@ switch ($_GET["accion"]) {
       "); 
         $resultado=$conexion->ejecutarInstruccion($sql);
         $linea=$conexion->obtenerRegistro($resultado);
-       
-       if ($_POST["inputEmail"]=="Admin"||$_POST["inputEmail"]=="admin" ) {
+       if ($conexion->cantidadRegistros($resultado)>0) {
+         if ($_POST["inputEmail"]=="Admin"||$_POST["inputEmail"]=="admin" ) {
           $verificar["codigo_resultado"]=2;
         }
         else{
-        	if ($linea["correo_electronico"]!= $_POST["inputEmail"] || $linea["contrasena"]!=$_POST["inputPassword"]) {
+          if ($linea["correo_electronico"]!= $_POST["inputEmail"] || $linea["contrasena"]!=$_POST["inputPassword"]) {
 
-        		$verificar["codigo_resultado"]=0;
-        	   $verificar["mensaje"]="Usuario o Contraseña incorrecto";	
-        		}
-        	else{
-        		 $verificar["codigo_resultado"]=1;
-        	} 
+            $verificar["codigo_resultado"]=0;
+             $verificar["mensaje"]="Usuario o Contraseña incorrecto"; 
+            }
+          else{
+             $verificar["codigo_resultado"]=1;
           } 
+          } 
+       }
+      
         
         echo json_encode($verificar);
 		break;
