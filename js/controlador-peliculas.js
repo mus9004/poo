@@ -39,36 +39,46 @@ $(document).ready(function(){
 				}*/
 			//$("#guardar").html(resultado);
 			alert("ingreso Exitoso");
+			limpiar();
 			},
 			error:function(){
 
 			}
 		});
+		
 	});
 
-	/*$("#btn-guardar").click(function(){
-		var arr= new Array();
-		 $("input:checkbox:checked").each(function() {
-             arr.push($(this).val());
-        });
-		var parametros ="txt-nombre=" + $("#txt-nombre").val() +"&" +
-		"chk-categorias="+arr;
-		alert(parametros);
-		$.ajax({
-			url:"ajax/procesar-peliculas.php?accion=2",
-			method: "POST",
-			data: parametros,
-			//dataType:"json",
-			success:function(resultado){
-			$("#guardar").html(resultado);
-			},
-			error:function(){
 
-			}
+
+	/*$("#btn-limpiar").click(function(){
+		$("#txt-nombre").val(" ");
+		$("#txt-descripcion").val(" ");
+		$("#dt-fecha").val(" ");
+		$("#txt-duracion").val(" ");
+		$("#txt-calificacion").val(" ");
+		$("#txt-url").val(" ");
+		$("#txt-imagen").val(" ");
+		$(".check").each(function(){
+			if($(this).prop("checked"))
+			$(this).prop("checked", false);
+
 		});
 
 	});*/
 
-
-	
 });
+
+function limpiar(){
+		$("#txt-nombre").val(" ");
+		$("#txt-descripcion").val(" ");
+		$("#dt-fecha").val(" ");
+		$("#txt-duracion").val(" ");
+		$("#txt-calificacion").val(" ");
+		$("#txt-url").val(" ");
+		$("#txt-imagen").val(" ");
+		$(".check").each(function(){
+			if($(this).prop("checked"))
+			$(this).prop("checked", false);
+
+		});
+}

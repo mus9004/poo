@@ -1,3 +1,7 @@
+<?php session_start(); 
+	if(isset($_SESSION['codigo_usuario']))
+		header("Location: index.html");
+?>
 <?php
 	include_once("class/class-conexion.php");
 	$conexion = new Conexion();
@@ -13,6 +17,8 @@
 ?>
 
 
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +26,47 @@
 	<title>Netbit</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	 <link rel="icon" type="image/icon" href="images/netbit.ico" />
+
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+   <script>
+     $(function(){
+        $("input[name='file']").on("change", function(){
+            var formData = new FormData($("#formulario")[0]);
+            var ruta = "ajax-imagen.php";
+            $.ajax({
+                url: ruta,
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(datos)
+                {
+                    $("#respuesta").html(datos);
+                }
+            });
+        });
+     });
+    </script>
+
+      <script>
+     $(function(){
+        $("input[name='filev']").on("change", function(){
+            var formData = new FormData($("#formulario1")[0]);
+            var ruta = "ajax-video.php";
+            $.ajax({
+                url: ruta,
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(datos)
+                {
+                    $("#respuesta").html(datos);
+                }
+            });
+        });
+     });
+    </script>
 
 </head>
 <body>
@@ -31,7 +78,8 @@
 	      <input type="button" name="btn-inicioSesion" class="btn btn-warning" >
 	     </div>-->
 	    <div id="navbar" class="navbar-collapse collapse" style="padding-top: 20px">
-	          <form class="navbar-form navbar-right">  
+	          <form class="navbar-form navbar-right">
+	          	<a href="cerrar_sesion.php" class="btn btn-success">Cerrar Sesión</a>  
 	            <button type="button" id="btn-administrar-usuarios" class="btn btn-success">Ver Usuarios</button>
 	          </form>
 	        </div>
@@ -57,7 +105,7 @@
 					<td>
 						Fecha de lanzamiento:
 					</td> 
-					<td><input type="date" id="dt-fecha" required class="form-control"></td>
+					<td><input type="date" id="dt-fecha"  class="form-control"></td>
 				</tr>
 				<tr>
 					<td>
@@ -78,7 +126,7 @@
 					<td>
 					<?php
 						while($fila=$conexion->obtenerRegistro($resultadoTipoContenido)){
-							echo '<label><input type="radio" name="rbt-tipo-contenido" id="rbt-tipo-contenido" 
+							echo '<label><input type="radio" class="check" name="rbt-tipo-contenido" id="rbt-tipo-contenido" 
 								value="'.$fila["codigo_tipo_contenido"].'">'.$fila["nombre_tipo_contenido"].'</label><br>';
 						}
 					?>
@@ -91,7 +139,7 @@
 					<td>
 					<?php
 						while($fila=$conexion->obtenerRegistro($resultadoClasificacion)){
-							echo '<label><input type="radio" name="rbt-clasificacion" id="rbt-clasificacion" 
+							echo '<label><input type="radio" class="check" name="rbt-clasificacion" id="rbt-clasificacion" 
 								value="'.$fila["codigo_esrb"].'">'.$fila["nombre_esrb"].'</label><br>';
 						}
 					?>
@@ -108,53 +156,61 @@
 					<button id="btn-guardar" class="btn btn-danger">
 						Guardar
 					</button>
-					<button id="btn-actualizar" class="btn btn-success" style="display: none;">
-						Actualizar
-					</button>
+					<!--<button id="btn-limpiar" class="btn btn-success">
+						Limpiar
+					</button>-->
 					</td>
 					</tr>
 
 			</table>
 		</div>
 		<div class="col-md-6 col-lg-6">
-			<table>
-				<tr>
-					<td>
-						Categoria:
-					</td>
-				</tr>
+			<table class="table">
 				<tr>	
-				<td></td>
+				<td>Categoria:</td>
 					<td>
 					<?php
 						while($fila=$conexion->obtenerRegistro($resultadoCategorias)){
-							echo '<label><input type="checkbox" class="ckeckbox" name="chk-categorias[]" id="chk-categorias[]" 
+							echo '<label><input type="checkbox" class="check" name="chk-categorias[]" id="chk-categorias[]" 
 								value="'.$fila["codigo_categoria"].'">'.utf8_encode($fila["nombre_categoria"]).'</label><br>';
 						}
 					?>
 					</td>
 				</tr>
-				<tr>
-					<td>
-						Subtitulos:
-					</td>
-				</tr>
 				<tr>	
-				<td></td>
+				<td width="30%" >Subtitulos:</td>
 					<td>
 					<?php
 						while($fila=$conexion->obtenerRegistro($resultadoSubtitulos)){
-							echo '<label><input type="checkbox" name="chk-sub-titulos[]" id="chk-sub-titulos[]" 
+							echo '<label><input type="checkbox"  class="check" name="chk-sub-titulos[]" id="chk-sub-titulos[]" 
 								value="'.$fila["codigo_subtitulo"].'">'.utf8_encode($fila["nombre_subtitulo"]).'</label><br>';
 						}
 					?>
 					</td>
 				</tr>
 				<tr>
-					<td>
-						Nombre de <br> la Imagen:
+					<td >
+						Nombre de la <br> Imagen:
 					</td>
 					<td><input type="text" id="txt-imagen" name="txt-imagen" placeholder="img/img/001.jpg" required class="form-control"></td>
+				</tr>
+
+				<tr>
+					<td colspan="2">
+					 <form method="post" id="formulario" enctype="multipart/form-data">
+					    Subir imagen: <input type="file" name="file">
+					 </form>
+					  <div id="respuesta"></div>
+					</td>
+				</tr>
+
+				<tr>
+					<td colspan="2">
+					 <form method="post" id="formulario1" enctype="multipart/form-data">
+					    Subir Video: <input type="file" name="fileV">
+					 </form>
+					  <div id="respuesta"></div>
+					</td>
 				</tr>
 			</table><br><br><br><br><br>
 		</div>  

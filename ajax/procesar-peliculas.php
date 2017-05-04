@@ -127,32 +127,6 @@
 			}
 			echo json_encode($resultado);*/
 			break;
-
-		case '2':
-			$idImg="";
-			$sql1 = sprintf(
-				"INSERT INTO tbl_imagen ( 
-					nombre_imagen, 
-					ancho_imagen, 
-					alto_imagen
-				) VALUES (
-						'%s','%s','%s'
-				)",
-				$conexion->getEnlace()->real_escape_string(stripslashes( $_POST["txt-imagen"] )),
-				$conexion->getEnlace()->real_escape_string(stripslashes( 512 )),
-				$conexion->getEnlace()->real_escape_string(stripslashes( 512))
-			);
-
-			$insertImagen= $conexion->ejecutarInstruccion($sql1);
-			if ($insertImagen === TRUE) {
-				$query2= $conexion->ejecutarInstruccion("SELECT @@identity AS id");
-					 if ($row2 = mysqli_fetch_row($query2)) 
-					 {
-					   $idImg = trim($row2[0]);
-					 }
-			}
-
-			break;
 		default:
 			break;
 	}
