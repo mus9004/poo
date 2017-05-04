@@ -99,9 +99,9 @@ $("#btn-continuar").click(function(){
 	        url: "class/class-procesar.php", 
 		        method:"POST",
 		        success: function(result){
-		              location.href ="cartelera.html";
+		              location.href ="quienEstaViendo.html";
 	          }
 	      	});
 
-    		location.href ="cartelera.html";
+    		location.href ="quienEstaViendo.html";
     	});

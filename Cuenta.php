@@ -32,7 +32,7 @@
 	              <!-- icono de netbit -->
 	            <div id="navbar" class="col-xs-6 col-md-6 col-sm-6 col-lg-6 " style="padding-top: 20px; padding-right: 0px;">
                     <form class="navbar-form navbar-right" style="padding-right: 0px">  
-                       <a type="button" class="btn btn-danger submit" href="index.html">Cerrar Sesion</a>
+                       <a type="button" class="btn btn-danger submit" id="cerrarc">Cerrar Sesion</a>
                     </form>
                 </div>
 	         </div>
@@ -207,6 +207,11 @@
    //  		$("#activar").show("swing");
    //  	}); -->
    <script type="text/javascript" src="js/cuenta.js"></script>
+   <script type="text/javascript">
+   	$("#cerrarc").click(function(){
+      location.href ="cerrar_sesion.php";
+    });
+   </script>
     
 
 </body>
