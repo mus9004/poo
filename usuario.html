@@ -3,18 +3,19 @@
 <head>
 	<meta charset="utf-8">
 	<title>Tipo Usuario</title>
-	<script type="text/javascript" src="js/jquery.min.js" ></script>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/estilos.css">
-	<script type="text/javascript" src="js/bootstrap.min.js" ></script>
-	<script type="text/javascript" src="js/jquery.min.js" ></script>
 	<link rel="icon" type="image/icon" href="images/netbit.ico"/>
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
 
 </head>
 <body>
+ <input type="radio" name="options" id="option1" autocomplete="on" value="0" style="display:none;" checked="true">
 <div style="background-color: #000000; border: 1px;size: 150px;border-style: solid;border-color: #6E6E6E; padding: 5px">
+      <div style="height: 0px; color:black" id="price"></div>
       <div class="navbar-header">
        <a href="index.html" style="text-decoration: none"><h1 class=" signupBasicHeader" style="color: #E50914;font-weight: 900;font-size: 370%;font-style: oblique;margin-bottom: 0px;border-top-width:10px;padding-top: 19px;margin-top: 0px;padding-left: 15px;">NETBIT</h1></a>
+       
    </div> 
     <!--<div class="navbar-collapse collapse">
       <input type="button" name="btn-inicioSesion" class="btn btn-warning" >
@@ -24,35 +25,26 @@
             <button type="button" id="iniciarsesion" class="btn btn-success">Iniciar Sesion</button>
           </form>
         </div>
-  </div>
-
-	
-	<script src="http://code.jquery.com/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js" >
-
-	</script>
-
-	<div style="margin-left: 100px;margin-right: 100px;">
+ </div>
+	<div style="margin-left: 60px;margin-right: 60px;">
 		<h1>Selecciona el plan ideal para ti</h1>
 
-		<table style="font-size: 150%;" class="table table-striped">
+		<table style="font-size: 150%;" class="table table-striped" >
 			<tr>
 				<td></td>
 				<td colspan="3">
 					<div class="btn-group" data-toggle="buttons">
-						
 					  		<label class="btn btn-success " style="padding: 15px 32px;text-align: center;font-size: 18px;color: white;">
-					   			 <input type="radio" name="options" id="option1" autocomplete="off" >Basico
+					   			 <input type="radio" name="options" id="option1" autocomplete="off" value="1">Basico
 					 		</label>
 					 	
 					  		<label class="btn btn-success" style="padding: 15px 32px;text-align: center;font-size: 18px;color: white;">
-					   			 <input type="radio" name="options" id="option2" autocomplete="off"> Estandar
+					   			 <input type="radio" name="options" id="option2" autocomplete="off" value="2"> Estandar
 					  		</label>
 					  	
 					  		<label class="btn btn-success" style="padding: 15px 32px;text-align: center;font-size: 18px;color: white;">
-					    		<input type="radio" name="options" id="option3" autocomplete="off" > Premium
+					    		<input type="radio" name="options" id="option3" autocomplete="off" value="3" > Premium
 					  		</label>
-					  		
 					</div>
 				</td>	
 			</tr>
@@ -71,7 +63,7 @@
 
 			<tr>
 			
-				<td>El precio mensual después de que termina el mes gratis el 03-28-17</td>
+				<td>El precio mensual después de que termina el mes gratis el <span id="fecha"></span></td>
 				<td>USD7.99</td>
 				<td>USD9.99</td>
 				<td>USD11.99</td>
@@ -123,21 +115,27 @@
 		<div id="dv-continuar">
 			<h5>La disponibilidad del contenido HD y Ultra HD depende de tu proveedor de servicios de Internet y del dispositivo en uso. No todo el contenido está disponible en HD o Ultra HD. Consulta los Términos de uso para obtener más información.</h5>
 			<button type="button" class="btn btn-success" style="font-size: 27px" onclick="ocultar()">Continuar</button>
-		</div>	
 
-		<div id="dv-registrar">
-			<h2>Suscríbete para que comiences tu mes gratis</h2><br><br>
+		</div>	
+	      
+		<form id="dv-registrar">
+			<h2>Suscríbete para que comiences tu mes gratis</h2><br>
 			<h4>Crea tu cuenta:</h4>
-			<input type="text" name="txt-name" id="txt-name" class="form-control" style="width: 50%;" placeholder="Email"><br>
-			<input type="password" name="txt-contrasena" id="txt-contrasena" class="form-control" style="width: 50%;" placeholder="Crea una contraseña de (4-50 caracteres)"><br>
-			<button type="button" id="btn-enviar" class="btn btn-primary" style="font-size: 27px">Registrar</button>
+			<input type="email" class="form-control" name="txt-correo" id="txt-correo" style="width: 50%;" placeholder="Email" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required="true" >
+
+			 <br>
+			<input type="password" name="txt-contrasena" id="txt-contrasena" class="form-control" style="width: 50%;" placeholder="Crea una contraseña de (4-50 caracteres)" required>
+			 <br>
+			<input type="password" name="txt-confirmar-contrasena" id="txt-confirmar-contrasena" class="form-control" style="width: 50%;" placeholder="Confirmar contraseña">
+			 <br>
+			<button type="button" id="btn-registrar" class="btn btn-primary" data-loading-text="Registrando..." style="font-size: 27px">Registrar</button>
 			<div>
 			<p><h1>
 				!Dos pasos mas y listo!<br> Tampoco nos gustan los tramites
 			</h1></p>
 		    </div>
-
-		</div>
+             <div id="resultado"></div>
+		</form>
 		
 	</div>
    <div > 
@@ -183,37 +181,8 @@
       </div>
     </div>
   </div>
-
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$("#dv-registrar").hide();
-		});
-
-		function ocultar(){
-			$("#dv-continuar").hide();
-			$("#dv-registrar").show();	
-		};
-		
-		$("#btn-enviar").click(function(){
-			location.href ="registrotarjeta-modal.html";
-			var parametros={
-		        "txt-name" :$("#txt-name").val(),
-		        "btn-enviar" :$("#btn-enviar").val()
-				};
-			$.ajax({
-	        url: "class/class-procesar.php", 
-		        data:parametros,
-		        method:"POST",
-		        success: function(result){
-		              location.href ="registrotarjeta-modal.html";
-	          }
-	      });
-
-   		 });
-		$("#iniciarsesion").click(function(){
-			location.href ="login.html";
-		})
-		
-	</script>
+    <script type="text/javascript" src="js/jquery.min.js" ></script>
+    <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+ 	<script type="text/javascript" src="js/inscripcion.js"></script>
 </body>
 </html>
