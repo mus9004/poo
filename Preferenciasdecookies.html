@@ -5,6 +5,20 @@
 	 <link rel="icon" type="image/icon" href="images/netbit.ico" />
 	<title>Preferencias</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+		$.ajax({			
+			url:"acceso.php",
+			success:function(respuesta){
+				if (respuesta==1) {
+					$("#cierre").hide();
+				}
+				else {
+					$("#inicio").hide();
+				}
+			}
+	});
+	</script>
 
 </head>
 <body>
@@ -17,7 +31,8 @@
 		 </div>-->
 		<div id="navbar" class="navbar-collapse collapse" style="padding-top: 20px">
           <form class="navbar-form navbar-right">  
-            <a href="micuenta.html"> Acceso a miembros</a> <button type="button"  id="btn-gratis" class="btn btn-primary">Comienza tu mes gratis</button>
+            <a type="button" id="inicio" class="btn btn-danger submit" href="login.html">Iniciar Sesion</a>
+			<a type="button" id="cierre" class="btn btn-danger submit" href="cerrar_sesion.php">Cerrar Sesion</a>
           </form>
         </div>
 	</div>
@@ -26,7 +41,7 @@
 			<h2>Preferencias de cookies</h2>
 		</div>
 		<div class="col-md-2  col-lg-2" style="text-align: right;">
-			<br><img src="img/icon_print_27x27.png">
+			<br>
 		</div><br><br>
 
 		<section>
@@ -75,25 +90,25 @@
                        <p class="footer-top">¿Tienes problemas? llama al &nbsp;<a  style="text-decoration: none" class="footer-top-a" href=" +(504) 9206-0911 (HND)"> +(504) 9206-0911 (HND)</a>
                          </p>
                  
-                           <table class="site-footer" style="border-color: #999797; border: 0px; width: 980px;">
+                           <table class="site-footer" style="border-color: #0080ff; border: 0px; width: 980px;">
                             <tr >
-                              <td style="color: #999797"><a href="PreguntasFrecuentes.html" style="text-decoration: none">Preguntas frecuentes</a></td>
-                              <td style="color: #999797"><a href="Ayuda.html" style="text-decoration: none">Centro de ayuda</a></td>
-                              <td style="color: #999797"><a href="Cuenta.php"  style="text-decoration: none">Cuenta</td>
-                              <td style="color: #999797"><a href="#"  style="text-decoration: none">Prensa</a></td>
+                              <td style="color: #0080ff"><a href="PreguntasFrecuentes.html" style="text-decoration: none">Preguntas frecuentes</a></td>
+                              <td style="color: #0080ff"><a href="Ayuda.html" style="text-decoration: none">Centro de ayuda</a></td>
+                              <td style="color: #0080ff"><a href="Cuenta.php"  style="text-decoration: none">Cuenta</td>
+                              <td style="color: #0080ff"><a href="#"  style="text-decoration: none">Prensa</a></td>
                             </tr>
 
                             <tr>
-                              <td style="color: #999797"><a href="#"  style="text-decoration: none">Relaciones con inversionistas</a></td>
-                              <td style="color: #999797"><a href="#"  style="text-decoration: none">Empleo</a></td>
-                              <td style="color: #999797"><a href="#"  style="text-decoration: none">Formas de ver</a></td>
-                              <td style="color: #999797"><a href="TerminosdeUso.html"  style="text-decoration: none">Términos de uso</a></td>
+                              <td style="color: #0080ff"><a href="#"  style="text-decoration: none">Relaciones con inversionistas</a></td>
+                              <td style="color: #0080ff"><a href="#"  style="text-decoration: none">Empleo</a></td>
+                              <td style="color: #0080ff"><a href="#"  style="text-decoration: none">Formas de ver</a></td>
+                              <td style="color: #0080ff"><a href="TerminosdeUso.html"  style="text-decoration: none">Términos de uso</a></td>
                             </tr>
                             <tr>
-                              <td style="color: #999797"><a href="Privacidad.html"  style="text-decoration: none">Privacidad</a></td>
-                              <td style="color: #999797"><a href="Preferenciasdecookies.html"  style="text-decoration: none">Preferencias de cookies</a></td>
-                              <td style="color: #999797"><a href="Velocidad.html"  style="text-decoration: none">Prueba de velocidad</a></td>
-                              <td style="color: #999797"><a href="originales.html"  style="text-decoration: none">Originales de NetBit</a></td>
+                              <td style="color: #0080ff"><a href="Privacidad.html"  style="text-decoration: none">Privacidad</a></td>
+                              <td style="color: #0080ff"><a href="Preferenciasdecookies.html"  style="text-decoration: none">Preferencias de cookies</a></td>
+                              <td style="color: #0080ff"><a href="Velocidad.html"  style="text-decoration: none">Prueba de velocidad</a></td>
+                              <td style="color: #0080ff"><a href="originales.html"  style="text-decoration: none">Originales de NetBit</a></td>
                             </tr>         
                            </table><br><br>
                   <div>

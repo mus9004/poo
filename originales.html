@@ -6,6 +6,20 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/signin.css">
 	 <link rel="icon" type="image/icon" href="images/netbit.ico" />
+   <script src="js/jquery.min.js"></script>
+  <script type="text/javascript">
+    $.ajax({      
+      url:"acceso.php",
+      success:function(respuesta){
+        if (respuesta==1) {
+          $("#cierre").hide();
+        }
+        else {
+          $("#inicio").hide();
+        }
+      }
+  });
+  </script>
 
 </head>
 <body>
@@ -18,7 +32,8 @@
 		 </div>-->
 		<div id="navbar" class="navbar-collapse collapse" style="padding-top: 20px">
           <form class="navbar-form navbar-right">  
-            <button type="button" id="btn-sesion" class="btn btn-success">Iniciar Sesion</button>
+           <a type="button" id="inicio" class="btn btn-danger submit" href="login.html">Iniciar Sesion</a>
+            <a type="button" id="cierre" class="btn btn-danger submit" href="cerrar_sesion.php">Cerrar Sesion</a>
           </form>
         </div>
 	</div>

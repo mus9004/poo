@@ -43,7 +43,8 @@
                     </div>
                 <!-- icono de netbit -->
                        <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6"> 
-                            <a href="index.html" style="text-decoration: none; color: #E50914;" class="authLinks signupBasicHeader" >Cerrar sesión</a>
+                            <a href="cerrar_sesion.php" id="cierre" style="text-decoration: none; color: #E50914;" class="authLinks signupBasicHeader" >Cerrar sesión</a>
+                            <a href="login.html" id="inicio" style="text-decoration: none; color: #E50914;" class="authLinks signupBasicHeader" >Iniciar sesión</a>
                       </div>
                  </div>
                </div>
@@ -128,6 +129,19 @@
       </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $.ajax({      
+      url:"acceso.php",
+      success:function(respuesta){
+        if (respuesta==1) {
+          $("#cierre").hide();
+        }
+        else {
+          $("#inicio").hide();
+        }
+      }
+  });
+  </script>
     <script>
     $(document).ready(function() {
         $.ajax({
