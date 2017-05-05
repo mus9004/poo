@@ -46,8 +46,8 @@ switch ($_GET["accion"]) {
       ON c.codigo_persona=d.codigo_usuario
       LEFT JOIN tbl_membresia e 
       ON c.codigo_persona=e.codigo_membresia
-      WHERE c.codigo_persona
-      ";
+      WHERE c.codigo_persona=
+      ".$_SESSION["codigo_usuario"];
 
       $resultado=$conexion->ejecutarInstruccion($sql);
      $usuario=$conexion->obtenerRegistro($resultado);
@@ -63,7 +63,7 @@ switch ($_GET["accion"]) {
            // $_POST["txt-passwordNueva"];
       $sql="SELECT codigo_persona, contrasena 
       FROM tbl_personas 
-      WHERE codigo_persona";
+      WHERE codigo_persona=".$_SESSION["codigo_usuario"];
 
       $resultado=$conexion->ejecutarInstruccion($sql);
       $usuario=$conexion->obtenerRegistro($resultado);

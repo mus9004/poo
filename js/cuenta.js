@@ -18,10 +18,10 @@ $(document).ready(function(){
 			method: "POST",
 			dataType:"json",
 			success:function(resultado){
-				$("#nombreUsuario").html(resultado.usuario);
-				$("#correo").html(resultado.correo);
+				$("#nombreUsuario").html("Nombre :"+resultado.usuario);
+				$("#correo").html("correo :"+resultado.correo);
 			  
-			},
+			}, 
 			error:function(){
 				alert("algo esta mal");
 
