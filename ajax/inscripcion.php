@@ -150,13 +150,13 @@ switch ($_GET["accion"]) {
             $respuesta['codigo_resultado']=1;
              $respuesta['mensaje']=$_SESSION["Pantallas_membresia"];
              echo json_encode($respuesta);
-
+             $_SESSION['codigo_usuario']=1;
 
             $conexion->ejecutarInstruccion(sprintf("INSERT INTO tbl_personas
                            (nombre_persona, apellido_persona, nombre_usuario, contrasena) 
                             values ('%s', '%s', '%s', sha1('%s'))",
                           stripslashes($_SESSION["Nombre_T"]),
-                          stripslashes($_SESSION["Apellido_T"]),
+                          stripslashes($_SESSION["Apellido_T"]), 
                           stripslashes($_SESSION["correo"]),
                           stripslashes($_SESSION["contrasena"])
             ));
