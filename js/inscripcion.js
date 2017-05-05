@@ -131,6 +131,16 @@ $("#comenzarpago").click(function(e){
 	e.preventDefault();		
 })
 
+function cart(){
+	$.ajax({			
+			url:"acceso.php",
+			success:function(respuesta){
+				if (respuesta==1) {
+					location.href = "index.html";
+				}	
+			}
+	});
+}
 
 
         

@@ -141,7 +141,7 @@ switch ($_GET["accion"]) {
               echo json_encode($respuesta);
                exit;
             }
-            
+             $_SESSION['codigo_usuario']=1;
             $_SESSION["Nombre_T"]=$_POST["ipt-nombre"];
             $_SESSION["Apellido_T"]=$_POST["ipt-apellido"];
             $_SESSION["Numero_T"]=$_POST["ipt-numTarjet"];
@@ -150,7 +150,7 @@ switch ($_GET["accion"]) {
             $respuesta['codigo_resultado']=1;
              $respuesta['mensaje']=$_SESSION["Pantallas_membresia"];
              echo json_encode($respuesta);
-
+             
 
             $conexion->ejecutarInstruccion(sprintf("INSERT INTO tbl_personas
                            (nombre_persona, apellido_persona, nombre_usuario, contrasena) 
