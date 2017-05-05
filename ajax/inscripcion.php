@@ -51,6 +51,9 @@ switch ($_GET["accion"]) {
             $respuesta= array();
            if (($_SESSION["precio"] ==1)){
               $respuesta['P']="USD7.99";
+              $_SESSION['precio_membresia']=$respuesta['P'];
+              $_SESSION['Nombre_membresia']="Basico";
+              $_SESSION['Pantallas_membresia']="1 Pantalla";
               $respuesta['D']='Streaming ilimitado en SD por USD7.99 al mes después de la prueba gratuita.';
               $respuesta['F']=$_SESSION["fechasV"];
               $respuesta['T']=$_SESSION["precio"];
@@ -60,6 +63,11 @@ switch ($_GET["accion"]) {
 
             if (($_SESSION["precio"] ==2)){
               $respuesta['P']="USD9.99";
+
+              $_SESSION['precio_membresia']=$respuesta['P'];
+              $_SESSION['Nombre_membresia']="Estandar";
+              $_SESSION['Pantallas_membresia']="2 Pantallas";
+
               $respuesta['D']='Streaming ilimitado en HD por USD9.99 al mes después de la prueba gratuita.';
               $respuesta['F']=$_SESSION["fechasV"];
                $respuesta['T']=$_SESSION["precio"];
@@ -69,6 +77,11 @@ switch ($_GET["accion"]) {
 
             if (($_SESSION["precio"] ==3)){
               $respuesta['P']="USD11.99";
+
+              $_SESSION['precio_membresia']=$respuesta['P'];
+              $_SESSION['Nombre_membresia']="Premium";
+              $_SESSION['Pantallas_membresia']="4 Pantallas";
+
               $respuesta['D']='Streaming ilimitado en HD y Ultra HD por USD11.99 al mes después de la prueba gratuita.';
               $respuesta['F']=$_SESSION["fechasV"];
                $respuesta['T']=$_SESSION["precio"];
@@ -95,7 +108,7 @@ switch ($_GET["accion"]) {
     case '5':
 
            $respuesta= array();
-            if (($_POST["ipt-nombre"] =="")){
+            if (($_POST["ipt-nombre"] ==="")){
               $respuesta['codigo_resultado']=0;
               $respuesta['mensaje']='No se ha ingresado el nombre del propietario de la tarjeta.';
               echo json_encode($respuesta);
@@ -128,15 +141,40 @@ switch ($_GET["accion"]) {
               echo json_encode($respuesta);
                exit;
             }
-           
+            
             $_SESSION["Nombre_T"]=$_POST["ipt-nombre"];
             $_SESSION["Apellido_T"]=$_POST["ipt-apellido"];
             $_SESSION["Numero_T"]=$_POST["ipt-numTarjet"];
             $_SESSION["Fecha_T"]=$_POST["ipt-fechaV"];
             $_SESSION["Codigo_T"]=$_POST["ipt-codigoV"];
-             $respuesta['codigo_resultado']=1;
-             $respuesta['mensaje']='Redireccionando';
+            $respuesta['codigo_resultado']=1;
+             $respuesta['mensaje']=$_SESSION["Pantallas_membresia"];
              echo json_encode($respuesta);
+
+
+            $conexion->ejecutarInstruccion(sprintf("INSERT INTO tbl_personas
+                           (nombre_persona, apellido_persona, nombre_usuario, contrasena) 
+                            values ('%s', '%s', '%s', sha1('%s'))",
+                          stripslashes($_SESSION["Nombre_T"]),
+                          stripslashes($_SESSION["Apellido_T"]),
+                          stripslashes($_SESSION["correo"]),
+                          stripslashes($_SESSION["contrasena"])
+            ));
+
+            $conexion->ejecutarInstruccion(sprintf("INSERT INTO tbl_tarjeta_credito
+                           (numero_tarjeta, fecha_vencimiento, numero_seguridad) 
+                           values ( sha1('%s'),'%s',sha1('%s') )",
+                          stripslashes($_SESSION["Numero_T"]),
+                          stripslashes($_SESSION["Fecha_T"]),
+                          stripslashes($_SESSION["Codigo_T"])
+            ));
+            
+            $conexion->ejecutarInstruccion('INSERT INTO tbl_membresia
+              (nombre_membresia, pantallas_simultaneas,  precio_membresia) 
+             values (\''.$_SESSION["Nombre_membresia"].'\',
+                     \''.$_SESSION["Pantallas_membresia"].'\',
+                     \''.$_SESSION["precio_membresia"].'\')');
+
       break;
 }
 
