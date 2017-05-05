@@ -78,7 +78,7 @@ switch ($_GET["accion"]) {
 								                   echo '<tr>';
 								                    echo '<td><h4>Duracion:</h4>';
 								                    echo '</td>';
-								                    echo '<td> <h5>'.$pel["duracion_contenido"] .'Minutos </h5></td>';
+								                    echo '<td> <h5>'.$pel["duracion_contenido"] .' Minutos </h5></td>';
 								                  echo '</tr>';
 								                 
 								                  echo '<tr>';
