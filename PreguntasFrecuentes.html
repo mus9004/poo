@@ -5,6 +5,20 @@
 	<title>Netbit</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="icon" type="image/icon" href="images/netbit.ico"/>
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+		$.ajax({			
+			url:"acceso.php",
+			success:function(respuesta){
+				if (respuesta==1) {
+					$("#cierre").hide();
+				}
+				else {
+					$("#inicio").hide();
+				}
+			}
+	});
+	</script>
 
 </head>
 <body>
@@ -16,7 +30,8 @@
 	              <!-- icono de netbit -->
 	            <div id="navbar" class="col-xs-6 col-md-6 col-sm-6 col-lg-6 " style="padding-top: 20px; padding-right: 0px;">
                     <form class="navbar-form navbar-right" style="padding-right: 0px">  
-                       <a type="button" class="btn btn-danger submit" href="login.html">Iniciar Sesion</a>
+                       <a type="button" id="inicio" class="btn btn-danger submit" href="login.html">Iniciar Sesion</a>
+                       <a type="button" id="cierre" class="btn btn-danger submit" href="cerrar_sesion.php">Cerrar Sesion</a>
                     </form>
                 </div>
 	         </div>
