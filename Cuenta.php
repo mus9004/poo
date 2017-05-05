@@ -103,8 +103,8 @@
 		</tr>
 	</table>
 		<br><br><br>
-		<input type="button" name="btn-continuar" id="btn-guardar" class="btn btn-success" value="Guardar" style="font-size: 140%">
-		<input type="button" name="btn-continuar" id="btn-continuar" class="btn btn-success" value="Continuar" style="font-size: 140%">
+		<input type="button" name="btn-continuar" id="btn-guardar" class="btn btn-primary" value="Guardar" style="font-size: 140%">
+		<input type="button" name="btn-continuar" id="btn-continuar" class="btn btn-primary" value="Continuar" style="font-size: 140%">
 		
 	</div>
 

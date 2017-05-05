@@ -1,11 +1,3 @@
-<?php
-  include_once("class/class-conexion.php");
-  $conexion = new Conexion();
-  $conexion->establecerConexion();
-  $resultadoUsuarios = $conexion->ejecutarInstruccion("SELECT codigo_persona, codigo_genero, codigo_imagen, codigo_tipo_usuario, nombre_persona, apellido_persona, fecha_nacimiento, nombre_usuario, contrasena FROM tbl_personas");
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,33 +38,42 @@
      </div>-->
     <div id="navbar" class="navbar-collapse collapse" style="padding-top: 20px">
           <form class="navbar-form navbar-right">  
-            <button type="button" id="btn-sesion" class="btn btn-danger submit">Cerrar Sesion</button>
+            <button type="button" id="btn-sesion" class="btn btn-success">Cerrar Sesion</button>
           </form>
         </div>
   </div>
-
-   <div class="container">
+        
+    <div class="container">
       <div class="diseno" style="margin-left: 350px">
-              <h1>Usuarios Registrados</h1>
+              <h1>¿Quien Esta Viendo Ahora?</h1>
             </div>
           <table class="table">
           <tr>
-            <td style="align-content: center;">
-              <Strong><h3>Informacion del Usuario</h3></Strong>
+            <td>
+               <a href="https://www.google.hn"><img src="img/usuario.png" style="width: 200px;height: 200px"></a>
             </td>
-            <td style="align-content: center;">
-             <Strong><h3>Imagen</h3></Strong>
+            <td>
+              <a href="https://www.google.hn"><img src="img/usuario.png" style="width: 200px;height: 200px"></a>
+            </td>
+            <td>
+               <a href="https://www.google.hn"><img src="img/usuario.png" style="width: 200px;height: 200px"></a>
+            </td>
+            <td>
+              <a href="https://www.google.hn"><img src="img/usuario.png" style="width: 200px;height: 200px"></a>
+            </td>
+            <td>
+                <a href="https://www.google.hn"><img src="img/add_user_256.png" style="padding-top: 60px"></a>
             </td>
           </tr>
-          <?php 
-
-          while($fila=$conexion->obtenerRegistro($resultadoUsuarios)){
-              echo '<tr><td>'.$fila["nombre_persona"].' '.$fila["apellido_persona"].' <br>'.$fila["nombre_usuario"].'</td><td><a href="http://memeschistosos.net/wp-content/uploads/2016/07/memes-de-ingenieros-leonidas.jpg"><img src="https://cdn3-6.cdn.schoology.com/system/files/imagecache/profile_reg/pictures/picture-cf28f4eac3aaca52882fef6e3f022000_56a66f6b60355.jpg?1453748075" style="width: 100px;height: 100px"></a></td></tr>';
-            }
-          ?>
+          <tr>
+            <td>Usuario1</td>
+            <td>Usuario2</td>
+            <td>Usuario3</td>
+            <td>Usuario4</td>
+            <td>Agregar Perfil</td>
+          </tr>
         </table><br>
-    </div>
-        
+</div>
  <div class="container">
        <button type="button" id="btn-admin-perfiles" class="btn btn-primary btn-lg btn-block texto disenoBoton" style="margin-left: 300px">Administrar Perfiles</button>  <br><br><br><br>
  </div>
