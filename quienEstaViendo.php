@@ -67,7 +67,7 @@
           <?php 
 
           while($fila=$conexion->obtenerRegistro($resultadoUsuarios)){
-              echo '<tr><td>'.$fila["nombre_persona"].' '.$fila["apellido_persona"].' <br>'.$fila["nombre_usuario"].'</td><td></td></tr>';
+              echo '<tr><td>'.$fila["nombre_persona"].' '.$fila["apellido_persona"].' <br>'.$fila["nombre_usuario"].'</td><td><a href="http://memeschistosos.net/wp-content/uploads/2016/07/memes-de-ingenieros-leonidas.jpg"><img src="https://cdn3-6.cdn.schoology.com/system/files/imagecache/profile_reg/pictures/picture-cf28f4eac3aaca52882fef6e3f022000_56a66f6b60355.jpg?1453748075" style="width: 100px;height: 100px"></a></td></tr>';
             }
           ?>
         </table><br>
