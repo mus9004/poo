@@ -100,8 +100,9 @@ $("#comenzarpago").click(function(e){
    var datosT="ipt-nombre="+$("#ipt-nombre").val()+"&"+
 			 "ipt-apellido="+$("#ipt-apellido").val()+"&"+
 			 "ipt-numTarjet="+$("#ipt-numTarjet").val()+"&"+
-			 "ipt-codigoV="+$("#ipt-codigoV").val()+"&"+
-			 "ipt-fechaV="+$("#ipt-fechaV").val();
+			 "ipt-fechaV="+$("#ipt-fechaV").val()+"&"+
+			 "ipt-codigoV="+$("#ipt-codigoV").val();
+			 //alert(datosT);
         $("#comenzarpago").button("loading");
 			$.ajax({
 				url:"ajax/inscripcion.php?accion=5",
@@ -110,7 +111,6 @@ $("#comenzarpago").click(function(e){
 				dataType:"json",
 				success:function(result){
                  if (result.codigo_resultado==0){
-				    
 				  setTimeout(function() {
                      $("#comenzarpago").button("reset");
                       alert(result.mensaje);
@@ -120,6 +120,7 @@ $("#comenzarpago").click(function(e){
                  if (result.codigo_resultado==1){
                       setTimeout(function() {
                      $("#comenzarpago").button("reset");
+                       alert(result.mensaje);
                        window.location="quienUsaraNetflix.html";
                    }, 2900);
 				    
@@ -130,6 +131,16 @@ $("#comenzarpago").click(function(e){
 	e.preventDefault();		
 })
 
+function cart(){
+	$.ajax({			
+			url:"acceso.php",
+			success:function(respuesta){
+				if (respuesta==1) {
+					location.href = "index.html";
+				}	
+			}
+	});
+}
 
 
         
